@@ -1,16 +1,90 @@
 <!doctype html>
-<html lang="<!-- figma:lang -->">
+<html lang="ar" dir="rtl">
   <head>
-    <!-- figma:head-start -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><!-- figma:title --></title>
-    <!-- figma:head-end -->
+
+    <title>جالاكسي كافيه — قائمة المشروبات | Galaxy Café</title>
+    <meta
+      name="description"
+      content="قائمة مشروبات جالاكسي كافيه: قهوة ساخنة وباردة، قهوة تركي وفرنسي، شاي وأعشاب، مشروبات شوكولاتة وشتوية، موهيتو، ميلك شيك، فرابيه، عصائر فريش وسموذي."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#191410" />
+    <link rel="canonical" href="https://saherss.github.io/galaxy/" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/og-image.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Galaxy Café" />
+    <meta property="og:locale" content="ar_AR" />
+    <meta property="og:title" content="جالاكسي كافيه — قائمة المشروبات" />
+    <meta
+      property="og:description"
+      content="قهوة رائعة في كل وقت ومع أي شخص. تصفح قائمة مشروبات جالاكسي كافيه كاملة."
+    />
+    <meta property="og:url" content="https://saherss.github.io/galaxy/" />
+    <meta property="og:image" content="https://saherss.github.io/galaxy/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="جالاكسي كافيه — Galaxy Café" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="جالاكسي كافيه — قائمة المشروبات" />
+    <meta
+      name="twitter:description"
+      content="قهوة رائعة في كل وقت ومع أي شخص. تصفح قائمة مشروبات جالاكسي كافيه كاملة."
+    />
+    <meta name="twitter:image" content="https://saherss.github.io/galaxy/og-image.png" />
+
+    <!-- Fonts loaded here rather than via CSS @import so the browser can start
+         fetching them without waiting to parse the stylesheet first. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CafeOrCoffeeShop",
+        "name": "جالاكسي كافيه",
+        "alternateName": "Galaxy Café",
+        "description": "قهوة رائعة في كل وقت ومع أي شخص",
+        "url": "https://saherss.github.io/galaxy/",
+        "image": "https://saherss.github.io/galaxy/og-image.png",
+        "servesCuisine": "Coffee & Beverages",
+        "hasMenu": {
+          "@type": "Menu",
+          "name": "قائمة المشروبات",
+          "inLanguage": "ar",
+          "hasMenuSection": [
+            { "@type": "MenuSection", "name": "القهوة الساخنة" },
+            { "@type": "MenuSection", "name": "القهوة الباردة" },
+            { "@type": "MenuSection", "name": "القهوة الشرقي" },
+            { "@type": "MenuSection", "name": "الشاي" },
+            { "@type": "MenuSection", "name": "الأعشاب" },
+            { "@type": "MenuSection", "name": "مشروبات شوكولاتة" },
+            { "@type": "MenuSection", "name": "مشروبات شتوية" },
+            { "@type": "MenuSection", "name": "الموهيتو" },
+            { "@type": "MenuSection", "name": "الميلك شيك" },
+            { "@type": "MenuSection", "name": "الفرابيه" },
+            { "@type": "MenuSection", "name": "العصائر الفريش" },
+            { "@type": "MenuSection", "name": "السموذي" },
+            { "@type": "MenuSection", "name": "مياه ومشروبات غازية" },
+            { "@type": "MenuSection", "name": "الإضافات" }
+          ]
+        }
+      }
+    </script>
   </head>
   <body>
-    <!-- figma:body-start -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- figma:body-end -->
   </body>
 </html>

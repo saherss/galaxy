@@ -1,41 +1,64 @@
-# figma-make-app
+# galaxy-cafe-menu
 
-React + Vite + Tailwind CSS project running inside Figma Make.
+Arabic (RTL) café drink menu for Galaxy Café. React + Vite + Tailwind CSS,
+deployed to GitHub Pages.
 
-## Development Server
+## Development
 
-A Vite development server is **already running** on `$PORT` (default 8443). You don't need to start it manually.
+```sh
+npm install
+npm run dev        # dev server on $PORT (default 8443)
+npm run build      # production build to dist/
+npm run preview    # serve the built output
+npm run typecheck  # tsc --noEmit
+```
 
-- Preview URL: The user can access the running app through the preview panel
-- Hot reload: Changes to source files are reflected immediately
+Requires Node `^20.19.0 || >=22.12.0` — Vite 8 and rolldown refuse to install
+their native binding on older versions, and the dev server fails to start.
 
 ## Project Structure
 
-This is the canonical project structure. Start with task-relevant files below. Only follow imports or inspect other files when required, when a documented path is missing, or when the repository contradicts this guide.
+- `index.html` — document shell; holds all SEO metadata, Open Graph/Twitter
+  tags, the Google Fonts `<link>`, and the `CafeOrCoffeeShop` JSON-LD block
+- `src/main.tsx` — React entrypoint; imports `src/index.css` and mounts `App`
+- `src/App.tsx` — the entire menu: palette, menu data, and every page component
+- `src/index.css` — Tailwind import plus the responsive layout classes
+- `public/` — copied verbatim to the build root (`favicon.svg`, `og-image.png`)
+- `vite.config.ts` — React + Tailwind plugins, `@` alias for `src`
+- `.github/workflows/deploy.yml` — builds and publishes to GitHub Pages
 
-- `src/main.tsx` - React entrypoint; imports `src/index.css` and mounts `src/App.tsx` into the `#root` element
-- `src/App.tsx` - Primary application component and the usual starting point for UI work
-- `src/index.css` - Global CSS entrypoint and Tailwind CSS v4 import
-- `index.html` - Vite HTML shell containing the `#root` element and loading `src/main.tsx`
-- `package.json` - Project dependencies and the Vite build, development, preview, and formatting scripts
-- `vite.config.ts` - Vite configuration with React, Tailwind CSS v4, and Figma Make plugins plus the `@` alias for `src`
-- `.mise.toml` - Toolchain versions for Node.js and pnpm
+## Layout
 
-## Dependencies
+Pages are fluid, capped at the 794px A4 width. Each sheet carries `.gx-sheet`,
+which sets `container-type: inline-size`, so the `cqw` units behind the fluid
+type scale measure against the sheet rather than the viewport.
 
-- Runtime: React 19 and React DOM 19
-- Styling: Tailwind CSS v4 with the `@tailwindcss/vite` plugin
-- Build tooling: Vite 8, TypeScript 5.7, and `@vitejs/plugin-react`
-- Formatting: oxfmt
+Two helpers in `App.tsx` generate those sizes: `fl(min, max)` reaches `max` at
+the full sheet width and eases down to `min` as it narrows; `flDown(wide,
+narrow)` is the inverse, for values that need to grow on small screens. When
+adding sizes, keep `min < max` in `fl` — a reversed pair silently collapses to
+a constant.
+
+Below a 620px sheet width the two-column pages stack and the cover's header
+band goes vertical, both driven by `@container` rules in `index.css`.
+
+## Direction
+
+`<html>` is `lang="ar" dir="rtl"`. A few flex rows must stay in visual
+left-to-right order regardless (the cover header band, the cover's bottom
+label, the page-number row) and pin `direction: 'ltr'` explicitly. Leave those
+pins in place when editing those rows.
 
 ## Styling
 
-This project uses **Tailwind CSS v4** through the `@tailwindcss/vite` plugin configured in `vite.config.ts`. `src/index.css` imports Tailwind with `@import 'tailwindcss';`. Use Tailwind utility classes directly in JSX and put global CSS or Tailwind v4 theme customization in `src/index.css`. This scaffold does not need a Tailwind config file or PostCSS config.
-
-`src/main.tsx` imports `src/index.css`, so global font wiring belongs in `src/index.css`. Keep CSS `@import` statements first, then add any `@font-face` rules and font-family defaults there.
+Tailwind CSS v4 via the `@tailwindcss/vite` plugin; `src/index.css` imports it
+with `@import 'tailwindcss';`. No Tailwind config or PostCSS config is needed.
+Component styling is inline `style` objects — Tailwind classes are only used
+for the handful of `.gx-*` layout rules that need container queries.
 
 ## Code quality
 
-- Use double quotes for strings containing apostrophes (`"We're here to help"`), or escape them in single-quoted strings. An unescaped apostrophe in a single-quoted string breaks the build.
+- Use double quotes for strings containing apostrophes (`"We're here to help"`),
+  or escape them in single-quoted strings.
 - Ensure JSX tags are closed and braces are balanced.
 - Export components as default exports.

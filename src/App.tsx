@@ -197,8 +197,10 @@ function Cover() {
         }}/>
 
       {/* ── HEADER BAND ───────────────────────────────────── */}
+      {/* `direction: ltr` pins the brand | ornament | tagline order against the
+          RTL document root; each panel sets its own text direction below. */}
       <div className="gx-band" style={{
-        position: 'relative', zIndex: 1,
+        position: 'relative', zIndex: 1, direction: 'ltr',
         minHeight: fl(150, 228),
         padding: '14px 0',
         background: 'linear-gradient(180deg, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.32) 85%, transparent 100%)',
@@ -307,9 +309,9 @@ function Cover() {
         <div style={{ flex: '1.4 1 28px', minHeight: 28 }}/>
 
         {/* ── BOTTOM LABEL ──────────────────────────────────── */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12, direction: 'ltr' }}>
           <div style={{ fontFamily: BODY, fontSize: 8, color: W.muted, letterSpacing: '0.28em', textTransform: 'uppercase', direction: 'ltr' }}>
-            Galaxy Café · قائمة المشروبات · 2025
+            Galaxy Café · قائمة المشروبات · 2026
           </div>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
             <GoldLeaf size={16} rotate={25}/>
@@ -400,7 +402,7 @@ function Page({ children, pageNum }: { children: ReactNode; pageNum: number }) {
         {children}
       </div>
       {/* Page number */}
-      <div style={{ position: 'absolute', bottom: 24, left: '50%', transform: 'translateX(-50%)', zIndex: 1, display: 'flex', alignItems: 'center', gap: 12 }}>
+      <div style={{ position: 'absolute', bottom: 24, left: '50%', transform: 'translateX(-50%)', zIndex: 1, display: 'flex', alignItems: 'center', gap: 12, direction: 'ltr' }}>
         <GoldLeaf size={14} rotate={90}/>
         <span style={{ fontFamily: BODY, fontSize: 9, color: W.muted, letterSpacing: '0.24em', direction: 'ltr' }}>{pageNum}</span>
         <GoldLeaf size={14} rotate={-90}/>
