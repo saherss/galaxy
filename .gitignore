@@ -9,3 +9,4 @@ logs/
 *.log
 .claude-replay.*
 .tmp-*
+.DS_Store
