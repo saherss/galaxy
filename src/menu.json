@@ -215,8 +215,8 @@
       "id": 30,
       "key": "turkish",
       "name": {
-        "ar": "القهوة الشرقي",
-        "en": "Turkish & French"
+        "ar": "القهوة",
+        "en": "Coffee"
       },
       "items": [
         {
@@ -702,6 +702,18 @@
         {
           "id": 60,
           "name": {
+            "ar": "فراولة",
+            "en": "Strawberry"
+          },
+          "small": 90,
+          "price": 120,
+          "barcode": "000080",
+          "cost": null,
+          "barcodeSmall": "000177"
+        },
+        {
+          "id": 70,
+          "name": {
             "ar": "مانجو",
             "en": "Mango"
           },
@@ -712,7 +724,7 @@
           "barcodeSmall": "000178"
         },
         {
-          "id": 70,
+          "id": 80,
           "name": {
             "ar": "بطيخ",
             "en": "Watermelon"
@@ -724,7 +736,7 @@
           "barcodeSmall": "000179"
         },
         {
-          "id": 80,
+          "id": 90,
           "name": {
             "ar": "ليمون",
             "en": "Lemon"
@@ -736,7 +748,7 @@
           "barcodeSmall": "000180"
         },
         {
-          "id": 90,
+          "id": 100,
           "name": {
             "ar": "بيناكولادا",
             "en": "Piña Colada"
@@ -1489,56 +1501,56 @@
     {
       "barcode": "000008",
       "name": "تركي سادة",
-      "category": "القهوة الشرقي",
+      "category": "القهوة",
       "price": 50,
       "cost": 25
     },
     {
       "barcode": "000035",
       "name": "تركي مضبوط",
-      "category": "القهوة الشرقي",
+      "category": "القهوة",
       "price": 50,
       "cost": null
     },
     {
       "barcode": "000036",
       "name": "تركي زيادة",
-      "category": "القهوة الشرقي",
+      "category": "القهوة",
       "price": 50,
       "cost": null
     },
     {
       "barcode": "000037",
       "name": "تركي هيل",
-      "category": "القهوة الشرقي",
+      "category": "القهوة",
       "price": 50,
       "cost": null
     },
     {
       "barcode": "000038",
       "name": "تركي بندق",
-      "category": "القهوة الشرقي",
+      "category": "القهوة",
       "price": 50,
       "cost": null
     },
     {
       "barcode": "000039",
       "name": "فرنسي",
-      "category": "القهوة الشرقي",
+      "category": "القهوة",
       "price": 50,
       "cost": null
     },
     {
       "barcode": "000040",
       "name": "فرنسي بندق",
-      "category": "القهوة الشرقي",
+      "category": "القهوة",
       "price": 50,
       "cost": null
     },
     {
       "barcode": "000041",
       "name": "فرنسي فانيليا",
-      "category": "القهوة الشرقي",
+      "category": "القهوة",
       "price": 50,
       "cost": null
     },
@@ -1617,20 +1629,6 @@
       "name": "قرفة بلبن - صغير",
       "category": "مشروبات شتوية",
       "price": 60,
-      "cost": null
-    },
-    {
-      "barcode": "000080",
-      "name": "فراولة",
-      "category": "الموهيتو",
-      "price": 110,
-      "cost": null
-    },
-    {
-      "barcode": "000177",
-      "name": "فراولة - صغير",
-      "category": "الموهيتو",
-      "price": 85,
       "cost": null
     },
     {

@@ -208,9 +208,11 @@ const priceCell = (gold: boolean): React.CSSProperties => ({
 function SizeLegend() {
   const t = useT()
   const dir = useDir()
+  // No letter-spacing: it prises apart the joined letters of عربي and makes
+  // the caption harder to read, not airier.
   const cap: React.CSSProperties = {
-    ...priceCell(false), fontSize: 6.5, direction: dir,
-    letterSpacing: '0.1em', opacity: 0.85,
+    ...priceCell(false), fontSize: 9.5, direction: dir,
+    color: W.gold, opacity: 0.7,
   }
   return (
     <div style={{ display: 'flex', direction: dir, alignItems: 'center', padding: '0 5px 4px' }}>
