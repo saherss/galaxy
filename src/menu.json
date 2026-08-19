@@ -759,7 +759,11 @@
           "cost": null,
           "barcodeSmall": "000181"
         }
-      ]
+      ],
+      "posPrefix": {
+        "ar": "موهيتو",
+        "en": "Mojito"
+      }
     },
     {
       "id": 90,
@@ -889,7 +893,11 @@
           "barcode": "000100",
           "cost": null
         }
-      ]
+      ],
+      "posPrefix": {
+        "ar": "ميلك شيك",
+        "en": "Milkshake"
+      }
     },
     {
       "id": 100,
@@ -989,7 +997,11 @@
           "barcode": "000109",
           "cost": null
         }
-      ]
+      ],
+      "posPrefix": {
+        "ar": "فرابيه",
+        "en": "Frappe"
+      }
     },
     {
       "id": 110,
@@ -1191,7 +1203,11 @@
           "cost": null,
           "barcodeSmall": "000241"
         }
-      ]
+      ],
+      "posPrefix": {
+        "ar": "عصير",
+        "en": "Juice"
+      }
     },
     {
       "id": 120,
@@ -1261,7 +1277,11 @@
           "barcode": "000125",
           "cost": null
         }
-      ]
+      ],
+      "posPrefix": {
+        "ar": "سموذي",
+        "en": "Smoothie"
+      }
     },
     {
       "id": 130,
@@ -1454,308 +1474,352 @@
       "name": "آيس كابتشينو",
       "category": "القهوة الباردة",
       "price": null,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000063",
       "name": "حلبة",
       "category": "الأعشاب",
       "price": null,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000064",
       "name": "حلبة لبن",
       "category": "الأعشاب",
       "price": null,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000077",
       "name": "جرين أبل",
       "category": "الموهيتو",
       "price": null,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000083",
       "name": "خوخ",
       "category": "الموهيتو",
       "price": null,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000138",
       "name": "صوص كراميل مملح",
       "category": "الإضافات",
       "price": null,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000140",
       "name": "سيرب كراميل",
       "category": "الإضافات",
       "price": null,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000008",
       "name": "تركي سادة",
       "category": "القهوة",
       "price": 50,
-      "cost": 25
+      "cost": 25,
+      "archived": true
     },
     {
       "barcode": "000035",
       "name": "تركي مضبوط",
       "category": "القهوة",
       "price": 50,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000036",
       "name": "تركي زيادة",
       "category": "القهوة",
       "price": 50,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000037",
       "name": "تركي هيل",
       "category": "القهوة",
       "price": 50,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000038",
       "name": "تركي بندق",
       "category": "القهوة",
       "price": 50,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000039",
       "name": "فرنسي",
       "category": "القهوة",
       "price": 50,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000040",
       "name": "فرنسي بندق",
       "category": "القهوة",
       "price": 50,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000041",
       "name": "فرنسي فانيليا",
       "category": "القهوة",
       "price": 50,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000003",
       "name": "كوب شاي",
       "category": "الشاي",
       "price": 20,
-      "cost": 0.52
+      "cost": 0.52,
+      "archived": true
     },
     {
       "barcode": "000044",
       "name": "شاي أخضر تفاح",
       "category": "الشاي",
       "price": 45,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000046",
       "name": "شاي ماسالا",
       "category": "الشاي",
       "price": 90,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000047",
       "name": "شاي فروتة",
       "category": "الشاي",
       "price": 40,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000055",
       "name": "خمرة",
       "category": "الأعشاب",
       "price": 40,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000057",
       "name": "كركديه",
       "category": "الأعشاب",
       "price": 50,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000061",
       "name": "ليمون نعناع",
       "category": "الأعشاب",
       "price": 70,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000068",
       "name": "هوت شوكليت مارشميلو",
       "category": "مشروبات شوكولاتة",
       "price": 110,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000166",
       "name": "هوت شوكليت مارشميلو - صغير",
       "category": "مشروبات شوكولاتة",
       "price": 85,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000073",
       "name": "قرفة بلبن",
       "category": "مشروبات شتوية",
       "price": 80,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000171",
       "name": "قرفة بلبن - صغير",
       "category": "مشروبات شتوية",
       "price": 60,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000096",
       "name": "موز",
       "category": "الميلك شيك",
       "price": 140,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000192",
       "name": "موز - صغير",
       "category": "الميلك شيك",
       "price": 110,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000098",
       "name": "ريد فيلفيت",
       "category": "الميلك شيك",
       "price": 160,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000194",
       "name": "ريد فيلفيت - صغير",
       "category": "الميلك شيك",
       "price": 125,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000012",
       "name": "جوافة",
       "category": "العصائر الفريش",
       "price": 80,
-      "cost": 65
+      "cost": 65,
+      "archived": true
     },
     {
       "barcode": "000209",
       "name": "جوافة - صغير",
       "category": "العصائر الفريش",
       "price": 60,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000013",
       "name": "تين بلبن",
       "category": "العصائر الفريش",
       "price": 120,
-      "cost": 100
+      "cost": 100,
+      "archived": true
     },
     {
       "barcode": "000214",
       "name": "تين بلبن - صغير",
       "category": "العصائر الفريش",
       "price": 95,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000112",
       "name": "موز",
       "category": "العصائر الفريش",
       "price": 80,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000216",
       "name": "موز - صغير",
       "category": "العصائر الفريش",
       "price": 60,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000129",
       "name": "سبرايت",
       "category": "مياه ومشروبات غازية",
       "price": 25,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000130",
       "name": "فانتا",
       "category": "مياه ومشروبات غازية",
       "price": 25,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000132",
       "name": "لبن نباتي",
       "category": "الإضافات",
       "price": 50,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000133",
       "name": "كريمة مخفوقة",
       "category": "الإضافات",
       "price": 40,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000141",
       "name": "سيرب موهيتو",
       "category": "الإضافات",
       "price": 70,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000142",
       "name": "سيرب بلو كوراكاو",
       "category": "الإضافات",
       "price": 70,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000143",
       "name": "سيرب جرين أبل",
       "category": "الإضافات",
       "price": 70,
-      "cost": null
+      "cost": null,
+      "archived": true
     },
     {
       "barcode": "000145",
       "name": "سيرب خوخ",
       "category": "الإضافات",
       "price": 70,
-      "cost": null
+      "cost": null,
+      "archived": true
     }
   ],
   "lastBarcode": "000241"

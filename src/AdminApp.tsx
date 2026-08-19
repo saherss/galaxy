@@ -179,6 +179,7 @@ export default function AdminApp() {
         category: section.name.ar,
         price: item.price ?? null,
         cost: item.cost ?? null,
+        archived: true,
       }]
       if (item.barcodeSmall && typeof item.small === 'number') {
         archived.push({
@@ -187,6 +188,7 @@ export default function AdminApp() {
           category: section.name.ar,
           price: item.small,
           cost: null,
+          archived: true,
         })
       }
       return {

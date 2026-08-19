@@ -21,7 +21,15 @@ export type Item = {
   cost: number | null
 }
 
-export type Section = { id: number; key: string; name: Localized; items: Item[] }
+export type Section = {
+  id: number
+  key: string
+  name: Localized
+  /** Names the kind of drink in the POS sheet, where there are no section
+   *  headings to tell one bare `مانجو` from another. */
+  posPrefix?: Localized
+  items: Item[]
+}
 
 /** Records the POS carries but the menu does not show: stock items, and
  *  drinks struck off the price list that still need to exist in the till. */
@@ -31,6 +39,9 @@ export type PosOnly = {
   category: string
   price: number | null
   cost: number | null
+  /** A drink taken off the menu. Kept so its barcode is never reissued, but
+   *  left out of the sheet — nobody can order it. */
+  archived?: boolean
 }
 
 export type Menu = {
