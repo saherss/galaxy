@@ -20,8 +20,14 @@ their native binding on older versions, and the dev server fails to start.
 
 - `index.html` — document shell; holds all SEO metadata, Open Graph/Twitter
   tags, the Google Fonts `<link>`, and the `CafeOrCoffeeShop` JSON-LD block
+- `src/menu.json` — **the data**: sections, drinks, prices, translations,
+  barcodes and costs. Everything the menu shows comes from here
+- `src/menu.ts` — types for that JSON plus the sorted `SECTIONS` / `BY_KEY`
+  views. Import the menu through this module, never the raw `.json`, or
+  TypeScript infers a useless union of object literals
+- `src/posExport.ts` — flattens the menu into the POS sheet's five columns
 - `src/main.tsx` — React entrypoint; imports `src/index.css` and mounts `App`
-- `src/App.tsx` — the entire menu: palette, menu data, and every page component
+- `src/App.tsx` — palette, the `T` string table, and every page component
 - `src/index.css` — Tailwind import plus the responsive layout classes
 - `public/` — copied verbatim to the build root (`favicon.svg`, `og-image.png`)
 - `vite.config.ts` — React + Tailwind plugins, `@` alias for `src`
@@ -42,12 +48,32 @@ a constant.
 Below a 620px sheet width the two-column pages stack and the cover's header
 band goes vertical, both driven by `@container` rules in `index.css`.
 
+## Menu data
+
+`src/menu.json` is the single source of truth, and `products.xlsx` is generated
+from it — never the other way round.
+
+- Names are `{ ar, en }` objects. Adding a language means adding a key there
+  and a matching block in `T` in `App.tsx`.
+- `price` is the large size (or the only one); `small` appears only on drinks
+  poured in two sizes. `seasonal: true` replaces the figure with a localized
+  word.
+- `barcode` is the identity that links a drink to its POS row, and it must stay
+  stable. `posOnly` holds records the till needs but the menu must not show:
+  stock items, and drinks struck off the price list.
+- `id` fixes the running order and is spaced by 10, so a new drink slots
+  between two others without renumbering. Render paths sort by it.
+
 ## Direction
 
-`<html>` is `lang="ar" dir="rtl"`. A few flex rows must stay in visual
-left-to-right order regardless (the cover header band, the cover's bottom
-label, the page-number row) and pin `direction: 'ltr'` explicitly. Leave those
-pins in place when editing those rows.
+`App` writes `lang` and `dir` onto `<html>` from the active language, so both
+CSS and assistive tech follow the switch; the choice persists in
+`localStorage`. Components read it through `useLang()` / `useDir()` and must
+use `dir` rather than a hard-coded `'rtl'`.
+
+Three flex rows stay in visual left-to-right order in *both* languages — the
+cover header band, the cover's bottom label, and the page-number row — and pin
+`direction: 'ltr'` explicitly. Leave those pins in place when editing them.
 
 ## Styling
 

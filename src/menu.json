@@ -1,0 +1,1768 @@
+{
+  "currency": "EGP",
+  "sections": [
+    {
+      "id": 10,
+      "key": "hotCoffee",
+      "name": {
+        "ar": "القهوة الساخنة",
+        "en": "Hot Coffee"
+      },
+      "items": [
+        {
+          "id": 10,
+          "name": {
+            "ar": "إسبريسو سينجل",
+            "en": "Espresso Single"
+          },
+          "price": 60,
+          "barcode": "000019",
+          "cost": null
+        },
+        {
+          "id": 20,
+          "name": {
+            "ar": "إسبريسو دابل",
+            "en": "Espresso Double"
+          },
+          "price": 85,
+          "barcode": "000020",
+          "cost": null
+        },
+        {
+          "id": 30,
+          "name": {
+            "ar": "أمريكانو",
+            "en": "Americano"
+          },
+          "small": 55,
+          "price": 70,
+          "barcode": "000021",
+          "cost": null,
+          "barcodeSmall": "000149"
+        },
+        {
+          "id": 40,
+          "name": {
+            "ar": "كابتشينو",
+            "en": "Cappuccino"
+          },
+          "small": 85,
+          "price": 110,
+          "barcode": "000022",
+          "cost": null,
+          "barcodeSmall": "000150"
+        },
+        {
+          "id": 50,
+          "name": {
+            "ar": "كافيه لاتيه",
+            "en": "Café Latte"
+          },
+          "small": 85,
+          "price": 110,
+          "barcode": "000023",
+          "cost": null,
+          "barcodeSmall": "000151"
+        },
+        {
+          "id": 60,
+          "name": {
+            "ar": "فلات وايت",
+            "en": "Flat White"
+          },
+          "small": 85,
+          "price": 110,
+          "barcode": "000024",
+          "cost": null,
+          "barcodeSmall": "000152"
+        },
+        {
+          "id": 70,
+          "name": {
+            "ar": "كورتادو",
+            "en": "Cortado"
+          },
+          "price": 120,
+          "barcode": "000025",
+          "cost": null
+        },
+        {
+          "id": 80,
+          "name": {
+            "ar": "موكا",
+            "en": "Mocha"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000026",
+          "cost": null,
+          "barcodeSmall": "000153"
+        },
+        {
+          "id": 90,
+          "name": {
+            "ar": "سبانيش لاتيه",
+            "en": "Spanish Latte"
+          },
+          "small": 110,
+          "price": 140,
+          "barcode": "000027",
+          "cost": null,
+          "barcodeSmall": "000154"
+        },
+        {
+          "id": 100,
+          "name": {
+            "ar": "كراميل لاتيه",
+            "en": "Caramel Latte"
+          },
+          "small": 110,
+          "price": 140,
+          "barcode": "000028",
+          "cost": null,
+          "barcodeSmall": "000155"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "key": "icedCoffee",
+      "name": {
+        "ar": "القهوة الباردة",
+        "en": "Iced Coffee"
+      },
+      "items": [
+        {
+          "id": 10,
+          "name": {
+            "ar": "آيس كوفي",
+            "en": "Iced Coffee"
+          },
+          "small": 85,
+          "price": 110,
+          "barcode": "000007",
+          "cost": 60,
+          "barcodeSmall": "000156"
+        },
+        {
+          "id": 20,
+          "name": {
+            "ar": "آيس أمريكانو",
+            "en": "Iced Americano"
+          },
+          "small": 55,
+          "price": 70,
+          "barcode": "000029",
+          "cost": null,
+          "barcodeSmall": "000157"
+        },
+        {
+          "id": 30,
+          "name": {
+            "ar": "آيس لاتيه",
+            "en": "Iced Latte"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000030",
+          "cost": null,
+          "barcodeSmall": "000158"
+        },
+        {
+          "id": 40,
+          "name": {
+            "ar": "آيس موكا",
+            "en": "Iced Mocha"
+          },
+          "small": 105,
+          "price": 135,
+          "barcode": "000032",
+          "cost": null,
+          "barcodeSmall": "000159"
+        },
+        {
+          "id": 50,
+          "name": {
+            "ar": "آيس وايت موكا",
+            "en": "Iced White Mocha"
+          },
+          "small": 115,
+          "price": 145,
+          "barcode": "000033",
+          "cost": null,
+          "barcodeSmall": "000160"
+        },
+        {
+          "id": 60,
+          "name": {
+            "ar": "آيس فانيليا لاتيه",
+            "en": "Iced Vanilla Latte"
+          },
+          "small": 65,
+          "price": 85,
+          "barcode": "000034",
+          "cost": null,
+          "barcodeSmall": "000161"
+        },
+        {
+          "id": 70,
+          "name": {
+            "ar": "آيس سبانيش لاتيه",
+            "en": "Iced Spanish Latte"
+          },
+          "small": 115,
+          "price": 145,
+          "barcode": "000148",
+          "cost": null,
+          "barcodeSmall": "000162"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "key": "turkish",
+      "name": {
+        "ar": "القهوة الشرقي",
+        "en": "Turkish & French"
+      },
+      "items": [
+        {
+          "id": 10,
+          "name": {
+            "ar": "تركي سادة",
+            "en": "Turkish, Plain"
+          },
+          "price": 50,
+          "barcode": "000008",
+          "cost": 25
+        },
+        {
+          "id": 20,
+          "name": {
+            "ar": "تركي مضبوط",
+            "en": "Turkish, Medium Sweet"
+          },
+          "price": 50,
+          "barcode": "000035",
+          "cost": null
+        },
+        {
+          "id": 30,
+          "name": {
+            "ar": "تركي زيادة",
+            "en": "Turkish, Extra Sweet"
+          },
+          "price": 50,
+          "barcode": "000036",
+          "cost": null
+        },
+        {
+          "id": 40,
+          "name": {
+            "ar": "تركي هيل",
+            "en": "Turkish, Cardamom"
+          },
+          "price": 50,
+          "barcode": "000037",
+          "cost": null
+        },
+        {
+          "id": 50,
+          "name": {
+            "ar": "تركي بندق",
+            "en": "Turkish, Hazelnut"
+          },
+          "price": 50,
+          "barcode": "000038",
+          "cost": null
+        },
+        {
+          "id": 60,
+          "name": {
+            "ar": "فرنسي",
+            "en": "French"
+          },
+          "price": 50,
+          "barcode": "000039",
+          "cost": null
+        },
+        {
+          "id": 70,
+          "name": {
+            "ar": "فرنسي بندق",
+            "en": "French Hazelnut"
+          },
+          "price": 50,
+          "barcode": "000040",
+          "cost": null
+        },
+        {
+          "id": 80,
+          "name": {
+            "ar": "فرنسي فانيليا",
+            "en": "French Vanilla"
+          },
+          "price": 50,
+          "barcode": "000041",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "key": "tea",
+      "name": {
+        "ar": "الشاي",
+        "en": "Tea"
+      },
+      "items": [
+        {
+          "id": 10,
+          "name": {
+            "ar": "شاي أحمر",
+            "en": "Black Tea"
+          },
+          "price": 25,
+          "barcode": "000001",
+          "cost": 2
+        },
+        {
+          "id": 20,
+          "name": {
+            "ar": "كوب شاي",
+            "en": "Cup of Tea"
+          },
+          "price": 20,
+          "barcode": "000003",
+          "cost": 0.52
+        },
+        {
+          "id": 30,
+          "name": {
+            "ar": "شاي فتلة تيك أواي ىونا",
+            "en": "Tea Bag, Takeaway"
+          },
+          "price": 25,
+          "barcode": "000004",
+          "cost": 9.52
+        },
+        {
+          "id": 40,
+          "name": {
+            "ar": "شاي أخضر",
+            "en": "Green Tea"
+          },
+          "price": 40,
+          "barcode": "000042",
+          "cost": null
+        },
+        {
+          "id": 50,
+          "name": {
+            "ar": "شاي بلبن",
+            "en": "Tea with Milk"
+          },
+          "price": 50,
+          "barcode": "000043",
+          "cost": null
+        },
+        {
+          "id": 60,
+          "name": {
+            "ar": "شاي أخضر تفاح",
+            "en": "Apple Green Tea"
+          },
+          "price": 45,
+          "barcode": "000044",
+          "cost": null
+        },
+        {
+          "id": 70,
+          "name": {
+            "ar": "شاي كرك",
+            "en": "Karak Tea"
+          },
+          "price": 90,
+          "barcode": "000045",
+          "cost": null
+        },
+        {
+          "id": 80,
+          "name": {
+            "ar": "شاي ماسالا",
+            "en": "Masala Tea"
+          },
+          "price": 90,
+          "barcode": "000046",
+          "cost": null
+        },
+        {
+          "id": 90,
+          "name": {
+            "ar": "شاي فروتة",
+            "en": "Fruit Tea"
+          },
+          "price": 40,
+          "barcode": "000047",
+          "cost": null
+        },
+        {
+          "id": 100,
+          "name": {
+            "ar": "شاي ليمون",
+            "en": "Lemon Tea"
+          },
+          "price": 40,
+          "barcode": "000048",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "key": "herbal",
+      "name": {
+        "ar": "الأعشاب",
+        "en": "Herbal Infusions"
+      },
+      "items": [
+        {
+          "id": 10,
+          "name": {
+            "ar": "ينسون",
+            "en": "Anise"
+          },
+          "price": 40,
+          "barcode": "000049",
+          "cost": null
+        },
+        {
+          "id": 20,
+          "name": {
+            "ar": "نعناع",
+            "en": "Mint"
+          },
+          "price": 70,
+          "barcode": "000050",
+          "cost": null
+        },
+        {
+          "id": 30,
+          "name": {
+            "ar": "بابونج",
+            "en": "Chamomile"
+          },
+          "price": 50,
+          "barcode": "000051",
+          "cost": null
+        },
+        {
+          "id": 40,
+          "name": {
+            "ar": "تيليو",
+            "en": "Linden"
+          },
+          "price": 50,
+          "barcode": "000052",
+          "cost": null
+        },
+        {
+          "id": 50,
+          "name": {
+            "ar": "كراوية",
+            "en": "Caraway"
+          },
+          "price": 40,
+          "barcode": "000053",
+          "cost": null
+        },
+        {
+          "id": 60,
+          "name": {
+            "ar": "كراوية بلبن",
+            "en": "Caraway with Milk"
+          },
+          "price": 80,
+          "barcode": "000054",
+          "cost": null
+        },
+        {
+          "id": 70,
+          "name": {
+            "ar": "خمرة",
+            "en": "Khamra"
+          },
+          "price": 40,
+          "barcode": "000055",
+          "cost": null
+        },
+        {
+          "id": 80,
+          "name": {
+            "ar": "ميرمية",
+            "en": "Sage"
+          },
+          "price": 45,
+          "barcode": "000056",
+          "cost": null
+        },
+        {
+          "id": 90,
+          "name": {
+            "ar": "كركديه",
+            "en": "Hibiscus"
+          },
+          "price": 50,
+          "barcode": "000057",
+          "cost": null
+        },
+        {
+          "id": 100,
+          "name": {
+            "ar": "قرفة",
+            "en": "Cinnamon"
+          },
+          "price": 40,
+          "barcode": "000058",
+          "cost": null
+        },
+        {
+          "id": 110,
+          "name": {
+            "ar": "زنجبيل",
+            "en": "Ginger"
+          },
+          "price": 60,
+          "barcode": "000059",
+          "cost": null
+        },
+        {
+          "id": 120,
+          "name": {
+            "ar": "زنجبيل ليمون",
+            "en": "Ginger Lemon"
+          },
+          "price": 70,
+          "barcode": "000060",
+          "cost": null
+        },
+        {
+          "id": 130,
+          "name": {
+            "ar": "ليمون نعناع",
+            "en": "Lemon Mint"
+          },
+          "price": 70,
+          "barcode": "000061",
+          "cost": null
+        },
+        {
+          "id": 140,
+          "name": {
+            "ar": "ليمون عسل",
+            "en": "Lemon Honey"
+          },
+          "price": 65,
+          "barcode": "000062",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "key": "chocolate",
+      "name": {
+        "ar": "مشروبات شوكولاتة",
+        "en": "Chocolate"
+      },
+      "items": [
+        {
+          "id": 10,
+          "name": {
+            "ar": "هوت شوكليت",
+            "en": "Hot Chocolate"
+          },
+          "small": 60,
+          "price": 80,
+          "barcode": "000065",
+          "cost": null,
+          "barcodeSmall": "000163"
+        },
+        {
+          "id": 20,
+          "name": {
+            "ar": "وايت هوت شوكليت",
+            "en": "White Hot Chocolate"
+          },
+          "small": 85,
+          "price": 110,
+          "barcode": "000066",
+          "cost": null,
+          "barcodeSmall": "000164"
+        },
+        {
+          "id": 30,
+          "name": {
+            "ar": "دارك هوت شوكليت",
+            "en": "Dark Hot Chocolate"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000067",
+          "cost": null,
+          "barcodeSmall": "000165"
+        },
+        {
+          "id": 40,
+          "name": {
+            "ar": "هوت شوكليت مارشميلو",
+            "en": "Hot Chocolate Marshmallow"
+          },
+          "small": 85,
+          "price": 110,
+          "barcode": "000068",
+          "cost": null,
+          "barcodeSmall": "000166"
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "key": "winter",
+      "name": {
+        "ar": "مشروبات شتوية",
+        "en": "Winter Drinks"
+      },
+      "items": [
+        {
+          "id": 10,
+          "name": {
+            "ar": "سحلب",
+            "en": "Sahlab"
+          },
+          "small": 60,
+          "price": 80,
+          "barcode": "000069",
+          "cost": null,
+          "barcodeSmall": "000167"
+        },
+        {
+          "id": 20,
+          "name": {
+            "ar": "سحلب أوريو",
+            "en": "Sahlab Oreo"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000070",
+          "cost": null,
+          "barcodeSmall": "000168"
+        },
+        {
+          "id": 30,
+          "name": {
+            "ar": "سحلب لوتس",
+            "en": "Sahlab Lotus"
+          },
+          "small": 115,
+          "price": 150,
+          "barcode": "000071",
+          "cost": null,
+          "barcodeSmall": "000169"
+        },
+        {
+          "id": 40,
+          "name": {
+            "ar": "سحلب نوتيلا",
+            "en": "Sahlab Nutella"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000072",
+          "cost": null,
+          "barcodeSmall": "000170"
+        },
+        {
+          "id": 50,
+          "name": {
+            "ar": "قرفة بلبن",
+            "en": "Cinnamon with Milk"
+          },
+          "small": 60,
+          "price": 80,
+          "barcode": "000073",
+          "cost": null,
+          "barcodeSmall": "000171"
+        },
+        {
+          "id": 60,
+          "name": {
+            "ar": "حمص الشام",
+            "en": "Hummus El Sham"
+          },
+          "small": 55,
+          "price": 70,
+          "barcode": "000074",
+          "cost": null,
+          "barcodeSmall": "000172"
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "key": "mojito",
+      "name": {
+        "ar": "الموهيتو",
+        "en": "Mojito"
+      },
+      "items": [
+        {
+          "id": 10,
+          "name": {
+            "ar": "كلاسيك",
+            "en": "Classic"
+          },
+          "small": 70,
+          "price": 90,
+          "barcode": "000075",
+          "cost": null,
+          "barcodeSmall": "000173"
+        },
+        {
+          "id": 20,
+          "name": {
+            "ar": "بلو",
+            "en": "Blue"
+          },
+          "small": 80,
+          "price": 100,
+          "barcode": "000076",
+          "cost": null,
+          "barcodeSmall": "000174"
+        },
+        {
+          "id": 30,
+          "name": {
+            "ar": "باشن فروت",
+            "en": "Passion Fruit"
+          },
+          "small": 80,
+          "price": 100,
+          "barcode": "000078",
+          "cost": null,
+          "barcodeSmall": "000175"
+        },
+        {
+          "id": 40,
+          "name": {
+            "ar": "بيري",
+            "en": "Berry"
+          },
+          "small": 80,
+          "price": 100,
+          "barcode": "000079",
+          "cost": null,
+          "barcodeSmall": "000176"
+        },
+        {
+          "id": 50,
+          "name": {
+            "ar": "فراولة",
+            "en": "Strawberry"
+          },
+          "small": 85,
+          "price": 110,
+          "barcode": "000080",
+          "cost": null,
+          "barcodeSmall": "000177"
+        },
+        {
+          "id": 60,
+          "name": {
+            "ar": "مانجو",
+            "en": "Mango"
+          },
+          "small": 80,
+          "price": 100,
+          "barcode": "000081",
+          "cost": null,
+          "barcodeSmall": "000178"
+        },
+        {
+          "id": 70,
+          "name": {
+            "ar": "بطيخ",
+            "en": "Watermelon"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000082",
+          "cost": null,
+          "barcodeSmall": "000179"
+        },
+        {
+          "id": 80,
+          "name": {
+            "ar": "ليمون",
+            "en": "Lemon"
+          },
+          "small": 70,
+          "price": 90,
+          "barcode": "000084",
+          "cost": null,
+          "barcodeSmall": "000180"
+        },
+        {
+          "id": 90,
+          "name": {
+            "ar": "بيناكولادا",
+            "en": "Piña Colada"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000085",
+          "cost": null,
+          "barcodeSmall": "000181"
+        },
+        {
+          "id": 100,
+          "name": {
+            "ar": "ميكس بيري",
+            "en": "Mixed Berry"
+          },
+          "small": 80,
+          "price": 100,
+          "barcode": "000086",
+          "cost": null,
+          "barcodeSmall": "000182"
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "key": "milkshake",
+      "name": {
+        "ar": "الميلك شيك",
+        "en": "Milkshake"
+      },
+      "items": [
+        {
+          "id": 10,
+          "name": {
+            "ar": "شوكليت",
+            "en": "Chocolate"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000087",
+          "cost": null,
+          "barcodeSmall": "000183"
+        },
+        {
+          "id": 20,
+          "name": {
+            "ar": "وايت شوكليت",
+            "en": "White Chocolate"
+          },
+          "small": 110,
+          "price": 140,
+          "barcode": "000088",
+          "cost": null,
+          "barcodeSmall": "000184"
+        },
+        {
+          "id": 30,
+          "name": {
+            "ar": "كراميل",
+            "en": "Caramel"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000089",
+          "cost": null,
+          "barcodeSmall": "000185"
+        },
+        {
+          "id": 40,
+          "name": {
+            "ar": "أوريو",
+            "en": "Oreo"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000090",
+          "cost": null,
+          "barcodeSmall": "000186"
+        },
+        {
+          "id": 50,
+          "name": {
+            "ar": "لوتس",
+            "en": "Lotus"
+          },
+          "small": 125,
+          "price": 160,
+          "barcode": "000091",
+          "cost": null,
+          "barcodeSmall": "000187"
+        },
+        {
+          "id": 60,
+          "name": {
+            "ar": "نوتيلا",
+            "en": "Nutella"
+          },
+          "small": 125,
+          "price": 160,
+          "barcode": "000092",
+          "cost": null,
+          "barcodeSmall": "000188"
+        },
+        {
+          "id": 70,
+          "name": {
+            "ar": "فانيليا",
+            "en": "Vanilla"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000093",
+          "cost": null,
+          "barcodeSmall": "000189"
+        },
+        {
+          "id": 80,
+          "name": {
+            "ar": "فراولة",
+            "en": "Strawberry"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000094",
+          "cost": null,
+          "barcodeSmall": "000190"
+        },
+        {
+          "id": 90,
+          "name": {
+            "ar": "مانجو",
+            "en": "Mango"
+          },
+          "small": 110,
+          "price": 140,
+          "barcode": "000095",
+          "cost": null,
+          "barcodeSmall": "000191"
+        },
+        {
+          "id": 100,
+          "name": {
+            "ar": "موز",
+            "en": "Banana"
+          },
+          "small": 110,
+          "price": 140,
+          "barcode": "000096",
+          "cost": null,
+          "barcodeSmall": "000192"
+        },
+        {
+          "id": 110,
+          "name": {
+            "ar": "بلوبيري",
+            "en": "Blueberry"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000097",
+          "cost": null,
+          "barcodeSmall": "000193"
+        },
+        {
+          "id": 120,
+          "name": {
+            "ar": "ريد فيلفيت",
+            "en": "Red Velvet"
+          },
+          "small": 125,
+          "price": 160,
+          "barcode": "000098",
+          "cost": null,
+          "barcodeSmall": "000194"
+        },
+        {
+          "id": 130,
+          "name": {
+            "ar": "كيندر",
+            "en": "Kinder"
+          },
+          "small": 115,
+          "price": 150,
+          "barcode": "000099",
+          "cost": null,
+          "barcodeSmall": "000195"
+        },
+        {
+          "id": 140,
+          "name": {
+            "ar": "سنيكرز",
+            "en": "Snickers"
+          },
+          "small": 140,
+          "price": 180,
+          "barcode": "000100",
+          "cost": null,
+          "barcodeSmall": "000196"
+        }
+      ]
+    },
+    {
+      "id": 100,
+      "key": "frappe",
+      "name": {
+        "ar": "الفرابيه",
+        "en": "Frappe"
+      },
+      "items": [
+        {
+          "id": 10,
+          "name": {
+            "ar": "فرابيه قهوة",
+            "en": "Coffee Frappe"
+          },
+          "small": 80,
+          "price": 100,
+          "barcode": "000101",
+          "cost": null,
+          "barcodeSmall": "000197"
+        },
+        {
+          "id": 20,
+          "name": {
+            "ar": "موكا",
+            "en": "Mocha"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000102",
+          "cost": null,
+          "barcodeSmall": "000198"
+        },
+        {
+          "id": 30,
+          "name": {
+            "ar": "كراميل",
+            "en": "Caramel"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000103",
+          "cost": null,
+          "barcodeSmall": "000199"
+        },
+        {
+          "id": 40,
+          "name": {
+            "ar": "وايت موكا",
+            "en": "White Mocha"
+          },
+          "small": 115,
+          "price": 150,
+          "barcode": "000104",
+          "cost": null,
+          "barcodeSmall": "000200"
+        },
+        {
+          "id": 50,
+          "name": {
+            "ar": "فانيليا",
+            "en": "Vanilla"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000105",
+          "cost": null,
+          "barcodeSmall": "000201"
+        },
+        {
+          "id": 60,
+          "name": {
+            "ar": "أوريو",
+            "en": "Oreo"
+          },
+          "small": 100,
+          "price": 125,
+          "barcode": "000106",
+          "cost": null,
+          "barcodeSmall": "000202"
+        },
+        {
+          "id": 70,
+          "name": {
+            "ar": "لوتس",
+            "en": "Lotus"
+          },
+          "small": 115,
+          "price": 145,
+          "barcode": "000107",
+          "cost": null,
+          "barcodeSmall": "000203"
+        },
+        {
+          "id": 80,
+          "name": {
+            "ar": "نوتيلا",
+            "en": "Nutella"
+          },
+          "small": 125,
+          "price": 160,
+          "barcode": "000108",
+          "cost": null,
+          "barcodeSmall": "000204"
+        },
+        {
+          "id": 90,
+          "name": {
+            "ar": "شوكليت",
+            "en": "Chocolate"
+          },
+          "small": 80,
+          "price": 100,
+          "barcode": "000109",
+          "cost": null,
+          "barcodeSmall": "000205"
+        }
+      ]
+    },
+    {
+      "id": 110,
+      "key": "juices",
+      "name": {
+        "ar": "العصائر الفريش",
+        "en": "Fresh Juices"
+      },
+      "items": [
+        {
+          "id": 10,
+          "name": {
+            "ar": "مانجو",
+            "en": "Mango"
+          },
+          "small": 70,
+          "price": 90,
+          "barcode": "000009",
+          "cost": 80,
+          "barcodeSmall": "000206"
+        },
+        {
+          "id": 20,
+          "name": {
+            "ar": "برتقال",
+            "en": "Orange"
+          },
+          "small": 70,
+          "price": 90,
+          "barcode": "000110",
+          "cost": null,
+          "barcodeSmall": "000207"
+        },
+        {
+          "id": 30,
+          "name": {
+            "ar": "فراولة",
+            "en": "Strawberry"
+          },
+          "small": 80,
+          "price": 100,
+          "barcode": "000015",
+          "cost": 65,
+          "barcodeSmall": "000208"
+        },
+        {
+          "id": 40,
+          "name": {
+            "ar": "جوافة",
+            "en": "Guava"
+          },
+          "small": 60,
+          "price": 80,
+          "barcode": "000012",
+          "cost": 65,
+          "barcodeSmall": "000209"
+        },
+        {
+          "id": 50,
+          "name": {
+            "ar": "جوافة بلبن",
+            "en": "Guava with Milk"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000011",
+          "cost": 65,
+          "barcodeSmall": "000210"
+        },
+        {
+          "id": 60,
+          "name": {
+            "ar": "ليمون",
+            "en": "Lemon"
+          },
+          "small": 55,
+          "price": 70,
+          "barcode": "000111",
+          "cost": null,
+          "barcodeSmall": "000211"
+        },
+        {
+          "id": 70,
+          "name": {
+            "ar": "ليمون نعناع",
+            "en": "Lemon Mint"
+          },
+          "small": 60,
+          "price": 75,
+          "barcode": "000017",
+          "cost": 60,
+          "barcodeSmall": "000212"
+        },
+        {
+          "id": 80,
+          "name": {
+            "ar": "تين",
+            "en": "Fig"
+          },
+          "small": 80,
+          "price": 100,
+          "barcode": "000014",
+          "cost": 65,
+          "barcodeSmall": "000213"
+        },
+        {
+          "id": 90,
+          "name": {
+            "ar": "تين بلبن",
+            "en": "Fig with Milk"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000013",
+          "cost": 100,
+          "barcodeSmall": "000214"
+        },
+        {
+          "id": 100,
+          "name": {
+            "ar": "عناب",
+            "en": "Jujube"
+          },
+          "small": 50,
+          "price": 65,
+          "barcode": "000010",
+          "cost": 40,
+          "barcodeSmall": "000215"
+        },
+        {
+          "id": 110,
+          "name": {
+            "ar": "موز",
+            "en": "Banana"
+          },
+          "small": 60,
+          "price": 80,
+          "barcode": "000112",
+          "cost": null,
+          "barcodeSmall": "000216"
+        },
+        {
+          "id": 120,
+          "name": {
+            "ar": "موز بلبن",
+            "en": "Banana with Milk"
+          },
+          "small": 75,
+          "price": 95,
+          "barcode": "000113",
+          "cost": null,
+          "barcodeSmall": "000217"
+        },
+        {
+          "id": 130,
+          "name": {
+            "ar": "فراولة بلبن",
+            "en": "Strawberry with Milk"
+          },
+          "small": 85,
+          "price": 110,
+          "barcode": "000016",
+          "cost": 100,
+          "barcodeSmall": "000218"
+        },
+        {
+          "id": 140,
+          "name": {
+            "ar": "مانجو بلبن",
+            "en": "Mango with Milk"
+          },
+          "small": 85,
+          "price": 110,
+          "barcode": "000114",
+          "cost": null,
+          "barcodeSmall": "000219"
+        },
+        {
+          "id": 150,
+          "name": {
+            "ar": "أفوكادو",
+            "en": "Avocado"
+          },
+          "small": 135,
+          "price": 170,
+          "barcode": "000115",
+          "cost": null,
+          "barcodeSmall": "000220"
+        },
+        {
+          "id": 160,
+          "name": {
+            "ar": "كوكتيل",
+            "en": "Cocktail"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000116",
+          "cost": null,
+          "barcodeSmall": "000221"
+        },
+        {
+          "id": 170,
+          "name": {
+            "ar": "رمان",
+            "en": "Pomegranate"
+          },
+          "seasonal": true,
+          "barcode": "000117",
+          "cost": null
+        },
+        {
+          "id": 180,
+          "name": {
+            "ar": "بطيخ",
+            "en": "Watermelon"
+          },
+          "seasonal": true,
+          "barcode": "000118",
+          "cost": null
+        },
+        {
+          "id": 190,
+          "name": {
+            "ar": "كنتالوب",
+            "en": "Cantaloupe"
+          },
+          "seasonal": true,
+          "barcode": "000119",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "id": 120,
+      "key": "smoothie",
+      "name": {
+        "ar": "السموذي",
+        "en": "Smoothie"
+      },
+      "items": [
+        {
+          "id": 10,
+          "name": {
+            "ar": "مانجو",
+            "en": "Mango"
+          },
+          "small": 80,
+          "price": 100,
+          "barcode": "000120",
+          "cost": null,
+          "barcodeSmall": "000222"
+        },
+        {
+          "id": 20,
+          "name": {
+            "ar": "فراولة",
+            "en": "Strawberry"
+          },
+          "small": 85,
+          "price": 110,
+          "barcode": "000121",
+          "cost": null,
+          "barcodeSmall": "000223"
+        },
+        {
+          "id": 30,
+          "name": {
+            "ar": "ليمون",
+            "en": "Lemon"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000122",
+          "cost": null,
+          "barcodeSmall": "000224"
+        },
+        {
+          "id": 40,
+          "name": {
+            "ar": "ميكس بيري",
+            "en": "Mixed Berry"
+          },
+          "small": 85,
+          "price": 110,
+          "barcode": "000123",
+          "cost": null,
+          "barcodeSmall": "000225"
+        },
+        {
+          "id": 50,
+          "name": {
+            "ar": "باشن فروت",
+            "en": "Passion Fruit"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000124",
+          "cost": null,
+          "barcodeSmall": "000226"
+        },
+        {
+          "id": 60,
+          "name": {
+            "ar": "بينا كولادا",
+            "en": "Piña Colada"
+          },
+          "small": 95,
+          "price": 120,
+          "barcode": "000125",
+          "cost": null,
+          "barcodeSmall": "000227"
+        }
+      ]
+    },
+    {
+      "id": 130,
+      "key": "waterSoda",
+      "name": {
+        "ar": "مياه ومشروبات غازية",
+        "en": "Water & Soda"
+      },
+      "items": [
+        {
+          "id": 10,
+          "name": {
+            "ar": "مياه معدنية",
+            "en": "Mineral Water"
+          },
+          "price": 15,
+          "barcode": "000018",
+          "cost": 10
+        },
+        {
+          "id": 20,
+          "name": {
+            "ar": "مياه فوارة",
+            "en": "Sparkling Water"
+          },
+          "price": 50,
+          "barcode": "000126",
+          "cost": null
+        },
+        {
+          "id": 30,
+          "name": {
+            "ar": "كولا",
+            "en": "Cola"
+          },
+          "price": 25,
+          "barcode": "000127",
+          "cost": null
+        },
+        {
+          "id": 40,
+          "name": {
+            "ar": "كولا دايت",
+            "en": "Diet Cola"
+          },
+          "price": 25,
+          "barcode": "000128",
+          "cost": null
+        },
+        {
+          "id": 50,
+          "name": {
+            "ar": "سبرايت",
+            "en": "Sprite"
+          },
+          "price": 25,
+          "barcode": "000129",
+          "cost": null
+        },
+        {
+          "id": 60,
+          "name": {
+            "ar": "فانتا",
+            "en": "Fanta"
+          },
+          "price": 25,
+          "barcode": "000130",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "id": 140,
+      "key": "extras",
+      "name": {
+        "ar": "الإضافات",
+        "en": "Extras"
+      },
+      "items": [
+        {
+          "id": 10,
+          "name": {
+            "ar": "شوت إسبريسو",
+            "en": "Espresso Shot"
+          },
+          "price": 50,
+          "barcode": "000131",
+          "cost": null
+        },
+        {
+          "id": 20,
+          "name": {
+            "ar": "لبن نباتي",
+            "en": "Plant Milk"
+          },
+          "price": 50,
+          "barcode": "000132",
+          "cost": null
+        },
+        {
+          "id": 30,
+          "name": {
+            "ar": "كريمة مخفوقة",
+            "en": "Whipped Cream"
+          },
+          "price": 40,
+          "barcode": "000133",
+          "cost": null
+        },
+        {
+          "id": 40,
+          "name": {
+            "ar": "آيس كريم",
+            "en": "Ice Cream"
+          },
+          "price": 50,
+          "barcode": "000134",
+          "cost": null
+        },
+        {
+          "id": 50,
+          "name": {
+            "ar": "صوص شوكليت",
+            "en": "Chocolate Sauce"
+          },
+          "price": 40,
+          "barcode": "000135",
+          "cost": null
+        },
+        {
+          "id": 60,
+          "name": {
+            "ar": "صوص وايت",
+            "en": "White Sauce"
+          },
+          "price": 50,
+          "barcode": "000136",
+          "cost": null
+        },
+        {
+          "id": 70,
+          "name": {
+            "ar": "صوص كراميل",
+            "en": "Caramel Sauce"
+          },
+          "price": 40,
+          "barcode": "000137",
+          "cost": null
+        },
+        {
+          "id": 80,
+          "name": {
+            "ar": "سيرب فانيليا",
+            "en": "Vanilla Syrup"
+          },
+          "price": 60,
+          "barcode": "000139",
+          "cost": null
+        },
+        {
+          "id": 90,
+          "name": {
+            "ar": "سيرب موهيتو",
+            "en": "Mojito Syrup"
+          },
+          "price": 70,
+          "barcode": "000141",
+          "cost": null
+        },
+        {
+          "id": 100,
+          "name": {
+            "ar": "سيرب بلو كوراكاو",
+            "en": "Blue Curaçao Syrup"
+          },
+          "price": 70,
+          "barcode": "000142",
+          "cost": null
+        },
+        {
+          "id": 110,
+          "name": {
+            "ar": "سيرب جرين أبل",
+            "en": "Green Apple Syrup"
+          },
+          "price": 70,
+          "barcode": "000143",
+          "cost": null
+        },
+        {
+          "id": 120,
+          "name": {
+            "ar": "سيرب ليمون",
+            "en": "Lemon Syrup"
+          },
+          "price": 60,
+          "barcode": "000144",
+          "cost": null
+        },
+        {
+          "id": 130,
+          "name": {
+            "ar": "سيرب خوخ",
+            "en": "Peach Syrup"
+          },
+          "price": 70,
+          "barcode": "000145",
+          "cost": null
+        },
+        {
+          "id": 140,
+          "name": {
+            "ar": "سيرب بطيخ",
+            "en": "Watermelon Syrup"
+          },
+          "price": 80,
+          "barcode": "000146",
+          "cost": null
+        },
+        {
+          "id": 150,
+          "name": {
+            "ar": "سيرب جوز الهند",
+            "en": "Coconut Syrup"
+          },
+          "price": 65,
+          "barcode": "000147",
+          "cost": null
+        }
+      ]
+    },
+    {
+      "id": 150,
+      "key": "psTime",
+      "name": {
+        "ar": "بلايستيشن",
+        "en": "PS Time"
+      },
+      "items": [
+        {
+          "id": 10,
+          "name": {
+            "ar": "PS",
+            "en": "PlayStation"
+          },
+          "price": 50,
+          "barcode": "000006",
+          "cost": 20
+        }
+      ]
+    }
+  ],
+  "posOnly": [
+    {
+      "barcode": "000002",
+      "name": "سكر",
+      "category": "خامات تشغيل",
+      "price": 26,
+      "cost": 25
+    },
+    {
+      "barcode": "000005",
+      "name": "كوب ورق",
+      "category": "خامات تشغيل",
+      "price": 5,
+      "cost": 3
+    },
+    {
+      "barcode": "000031",
+      "name": "آيس كابتشينو",
+      "category": "القهوة الباردة",
+      "price": null,
+      "cost": null
+    },
+    {
+      "barcode": "000063",
+      "name": "حلبة",
+      "category": "الأعشاب",
+      "price": null,
+      "cost": null
+    },
+    {
+      "barcode": "000064",
+      "name": "حلبة لبن",
+      "category": "الأعشاب",
+      "price": null,
+      "cost": null
+    },
+    {
+      "barcode": "000077",
+      "name": "جرين أبل",
+      "category": "الموهيتو",
+      "price": null,
+      "cost": null
+    },
+    {
+      "barcode": "000083",
+      "name": "خوخ",
+      "category": "الموهيتو",
+      "price": null,
+      "cost": null
+    },
+    {
+      "barcode": "000138",
+      "name": "صوص كراميل مملح",
+      "category": "الإضافات",
+      "price": null,
+      "cost": null
+    },
+    {
+      "barcode": "000140",
+      "name": "سيرب كراميل",
+      "category": "الإضافات",
+      "price": null,
+      "cost": null
+    }
+  ]
+}

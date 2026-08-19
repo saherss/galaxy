@@ -1,4 +1,6 @@
-import React, { type ReactNode } from 'react'
+import React, { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
+
+import { BY_KEY, type Item, type Lang, type Localized, type Section } from './menu'
 
 // ── PALETTE ───────────────────────────────────────────────────────────────────
 
@@ -39,32 +41,45 @@ const PAD_X = fl(16, 52)
 
 // ── MENU DATA ─────────────────────────────────────────────────────────────────
 
-// An entry is either a bare name (price not set yet, renders as a dash) or a
-// [name, price] pair. Priced entries come from products.xlsx.
-type Item = string | [name: string, price: number | string]
+// Prices live in src/menu.json, not here — that file is what the admin page
+// edits and what a rebuild picks up. `price` is the large (or only) size and
+// `small` is present only on drinks poured in two sizes; a price may also be
+// a short label such as "موسمي".
+// ── LANGUAGE ──────────────────────────────────────────────────────────────────
 
-const itemName = (i: Item) => (typeof i === 'string' ? i : i[0])
-const itemPrice = (i: Item) => (typeof i === 'string' ? null : i[1])
+// Every string the menu chrome needs; drink and section names come from the JSON.
+const T = {
+  ar: {
+    brand: 'جالاكسي', menuLabel: 'قائمة المشروبات',
+    tagline: 'قهوة رائعة في كل وقت ومع أي شخص',
+    coffee: 'القهوة', assorted: 'مشروبات متنوعة',
+    small: 'صغير', large: 'كبير', seasonal: 'موسمي',
+    footer: 'Galaxy Café · قائمة المشروبات · 2026',
+    toggle: 'English',
+  },
+  en: {
+    brand: 'Galaxy', menuLabel: 'Drinks Menu',
+    tagline: 'Great coffee, any time, with anyone',
+    coffee: 'Coffee', assorted: 'Assorted Drinks',
+    small: 'Small', large: 'Large', seasonal: 'Seasonal',
+    footer: 'Galaxy Café · Drinks Menu · 2026',
+    toggle: 'العربية',
+  },
+} as const
 
-const D = {
-  hotCoffee:  { ar: 'القهوة الساخنة',      en: 'Hot Coffee',       items: [['إسبريسو سينجل',60],['إسبريسو دابل',85],['أمريكانو',70],['كابتشينو',110],['كافيه لاتيه',110],['فلات وايت',110],['كورتادو',120],['موكا',120],['سبانيش لاتيه',140],['كراميل لاتيه',140]] as Item[] },
-  icedCoffee: { ar: 'القهوة الباردة',       en: 'Iced Coffee',      items: [['آيس كوفي',110],['آيس أمريكانو',70],['آيس لاتيه',120],['آيس موكا',135],['آيس وايت موكا',145],['آيس فانيليا لاتيه',85],['آيس سبانيش لاتيه',145]] as Item[] },
-  turkish:    { ar: 'القهوة الشرقي',        en: 'Turkish & French', items: [['تركي سادة',50],['تركي مضبوط',50],['تركي زيادة',50],['تركي هيل',50],['تركي بندق',50],['فرنسي',50],['فرنسي بندق',50],['فرنسي فانيليا',50]] as Item[] },
-  tea:        { ar: 'الشاي',               en: 'Tea',              items: [['شاي أحمر',25],['كوب شاي',20],['شاي فتلة تيك أواي ىونا',25],['شاي أخضر',40],['شاي بلبن',50],['شاي أخضر تفاح',45],['شاي كرك',90],['شاي ماسالا',90],['شاي فروتة',40],['شاي ليمون',40]] as Item[] },
-  herbal:     { ar: 'الأعشاب',             en: 'Herbal Infusions', items: [['ينسون',40],['نعناع',70],['بابونج',50],['تيليو',50],['كراوية',40],['كراوية بلبن',80],['خمرة',40],['ميرمية',45],['كركديه',50],['قرفة',40],['زنجبيل',60],['زنجبيل ليمون',70],['ليمون نعناع',70],['ليمون عسل',65]] as Item[] },
-  chocolate:  { ar: 'مشروبات شوكولاتة',    en: 'Chocolate',        items: [['هوت شوكليت',80],['وايت هوت شوكليت',110],['دارك هوت شوكليت',120],['هوت شوكليت مارشميلو',110]] as Item[] },
-  winter:     { ar: 'مشروبات شتوية',       en: 'Winter Drinks',    items: [['سحلب',80],['سحلب أوريو',120],['سحلب لوتس',150],['سحلب نوتيلا',120],['قرفة بلبن',80],['حمص الشام',70]] as Item[] },
-  mojito:     { ar: 'الموهيتو',            en: 'Mojito',           items: [['كلاسيك',90],['بلو',100],['باشن فروت',100],['بيري',100],['فراولة',110],['مانجو',100],['بطيخ',120],['ليمون',90],['بيناكولادا',120],['ميكس بيري',100]] as Item[] },
-  milkshake:  { ar: 'الميلك شيك',          en: 'Milkshake',        items: [['شوكليت',120],['وايت شوكليت',140],['كراميل',120],['أوريو',120],['لوتس',160],['نوتيلا',160],['فانيليا',120],['فراولة',120],['مانجو',140],['موز',140],['بلوبيري',120],['ريد فيلفيت',160],['كيندر',150],['سنيكرز',180]] as Item[] },
-  frappe:     { ar: 'الفرابيه',            en: 'Frappe',           items: [['فرابيه قهوة',100],['موكا',120],['كراميل',120],['وايت موكا',150],['فانيليا',120],['أوريو',125],['لوتس',145],['نوتيلا',160],['شوكليت',100]] as Item[] },
-  juices:     { ar: 'العصائر الفريش',      en: 'Fresh Juices',     items: [['مانجو',90],['برتقال',90],['فراولة',100],['جوافة',80],['جوافة بلبن',120],['ليمون',70],['ليمون نعناع',75],['تين',100],['تين بلبن',120],['عناب',65],['موز',80],['موز بلبن',95],['فراولة بلبن',110],['مانجو بلبن',110],['أفوكادو',170],['كوكتيل',120],['رمان','موسمي'],['بطيخ','موسمي'],['كنتالوب','موسمي']] as Item[] },
-  smoothie:   { ar: 'السموذي',             en: 'Smoothie',         items: [['مانجو',100],['فراولة',110],['ليمون',120],['ميكس بيري',110],['باشن فروت',120],['بينا كولادا',120]] as Item[] },
-  waterSoda:  { ar: 'مياه ومشروبات غازية', en: 'Water & Soda',     items: [['مياه معدنية',15],['مياه فوارة',50],['كولا',25],['كولا دايت',25],['سبرايت',25],['فانتا',25]] as Item[] },
-  extras:     { ar: 'الإضافات',            en: 'Extras',           items: [['شوت إسبريسو',50],['لبن نباتي',50],['كريمة مخفوقة',40],['آيس كريم',50],['صوص شوكليت',40],['صوص وايت',50],['صوص كراميل',40],['سيرب فانيليا',60],['سيرب موهيتو',70],['سيرب بلو كوراكاو',70],['سيرب جرين أبل',70],['سيرب ليمون',60],['سيرب خوخ',70],['سيرب بطيخ',80],['سيرب جوز الهند',65]] as Item[] },
-  // Operating supplies (sugar, paper cups) are stock items, not menu products —
-  // they live in products.xlsx only and are deliberately not rendered here.
-  psTime:     { ar: 'بلايستيشن',           en: 'PS Time',          items: [['PS',50]] as Item[] },
-}
+const LangCtx = createContext<Lang>('ar')
+const useLang = () => useContext(LangCtx)
+const useT = () => T[useContext(LangCtx)]
+// Text direction of the active language. A few rows pin 'ltr' regardless.
+const useDir = () => (useContext(LangCtx) === 'ar' ? 'rtl' : 'ltr')
+
+// ── ITEM HELPERS ──────────────────────────────────────────────────────────────
+
+const isSized = (i: Item) => typeof i.small === 'number'
+const itemPrice = (i: Item) => i.price ?? null
+const itemSmall = (i: Item) => i.small ?? null
+
+const D = BY_KEY
 
 // ── PHOTO URLS ────────────────────────────────────────────────────────────────
 
@@ -177,12 +192,23 @@ function PhotoCircle({ src, size, alt = '' }: { src: string; size: number | stri
 // COVER PAGE
 // ═══════════════════════════════════════════════════════════════
 
+// The cover teases a handful of drinks. Look their price up in D rather than
+// repeating it here, so the cover can never quote a stale figure. `label` may
+// differ from the menu name ("موهيتو كلاسيك" vs "كلاسيك" under الموهيتو).
+const coverRow = (label: string, en: string, section: Section, name: string): Item => {
+  const entry = section.items.find((i) => i.name.ar === name)
+  return { id: 0, name: { ar: label, en }, price: entry?.price, seasonal: entry?.seasonal, barcode: entry?.barcode ?? '', cost: null }
+}
+
 // A cover row: dish name, dotted lead, price slot.
 function CoverItem({ item, big }: { item: Item; big: boolean }) {
-  const price = itemPrice(item)
+  const lang = useLang()
+  const dir = useDir()
+  const t = useT()
+  const price = item.seasonal ? t.seasonal : itemPrice(item)
   return (
-    <div style={{ display: 'flex', direction: 'rtl', alignItems: 'center', padding: big ? '8.5px 0' : '7px 0', borderBottom: `0.5px solid ${W.rule}` }}>
-      <span style={{ fontFamily: BODY, fontSize: big ? fl(13.5, 15) : fl(13, 14), fontStyle: 'italic', color: W.cream, flex: 1 }}>{itemName(item)}</span>
+    <div style={{ display: 'flex', direction: dir, alignItems: 'center', padding: big ? '8.5px 0' : '7px 0', borderBottom: `0.5px solid ${W.rule}` }}>
+      <span style={{ fontFamily: BODY, fontSize: big ? fl(13.5, 15) : fl(13, 14), fontStyle: 'italic', color: W.cream, flex: 1 }}>{item.name[lang]}</span>
       <span style={{ color: W.muted, fontSize: big ? 10 : 9, letterSpacing: big ? '5px' : '4px', marginLeft: big ? 12 : 10, flexShrink: 0 }}>——</span>
       <span style={{ fontFamily: BODY, fontSize: big ? fl(13, 14) : fl(12, 13), color: W.gold, direction: 'ltr', minWidth: big ? 22 : 20, textAlign: 'right', marginLeft: big ? 10 : 8, flexShrink: 0 }}>{price ?? '—'}</span>
     </div>
@@ -190,6 +216,8 @@ function CoverItem({ item, big }: { item: Item; big: boolean }) {
 }
 
 function Cover() {
+  const t = useT()
+  const dir = useDir()
   return (
     <div className="gx-sheet" style={{
       ...woodBg, position: 'relative', overflow: 'hidden',
@@ -217,14 +245,14 @@ function Cover() {
         background: 'linear-gradient(180deg, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.32) 85%, transparent 100%)',
       }}>
         {/* ── LEFT: brand panel ── */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: `10px ${fl(16, 44)} 10px ${PAD_X}`, direction: 'rtl' }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: `10px ${fl(16, 44)} 10px ${PAD_X}`, direction: dir }}>
           {/* EN label — above, wide-tracked gold */}
           <div style={{ fontFamily: BODY, fontSize: 7.5, color: W.gold, letterSpacing: '0.48em', textTransform: 'uppercase', direction: 'ltr', marginBottom: 10, opacity: 0.85 }}>
             Galaxy Café
           </div>
           {/* Brand name */}
           <div style={{ fontFamily: DISPLAY, fontSize: fl(38, 82), fontWeight: 700, color: W.cream, lineHeight: 0.95, letterSpacing: '0.01em', textShadow: `0 2px 40px rgba(208,166,40,0.18)` }}>
-            جالاكسي
+            {t.brand}
           </div>
           {/* Thin gold rule below name */}
           <div style={{ marginTop: 14, display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -250,7 +278,7 @@ function Cover() {
         </div>
 
         {/* ── RIGHT: tagline panel ── */}
-        <div className="gx-band-tag" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: `10px ${PAD_X} 10px ${flDown(8, 16)}`, direction: 'rtl', gap: 14 }}>
+        <div className="gx-band-tag" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: `10px ${PAD_X} 10px ${flDown(8, 16)}`, direction: dir, gap: 14 }}>
           {/* Decorative gold accent line */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <div style={{ flex: 1, height: 0.5, backgroundColor: W.gold, opacity: 0.4 }}/>
@@ -258,7 +286,7 @@ function Cover() {
           </div>
           {/* Tagline */}
           <div style={{ fontFamily: BODY, fontSize: fl(13, 14.5), color: W.cream, lineHeight: 1.85, opacity: 0.62 }}>
-            قهوة رائعة في كل وقت ومع أي شخص
+            {t.tagline}
           </div>
           {/* Bottom accent */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -276,17 +304,23 @@ function Cover() {
         {/* ── SECTION 1: COFFEE ─────────────────────────────── */}
         <div>
           {/* Script heading + brushstroke */}
-          <div style={{ direction: 'rtl', marginBottom: 14 }}>
+          <div style={{ direction: dir, marginBottom: 14 }}>
             <div style={{ fontFamily: DISPLAY, fontSize: fl(32, 62), fontStyle: 'italic', color: W.cream, lineHeight: 1.05, letterSpacing: '0.01em' }}>
-              القهوة
+              {t.coffee}
             </div>
             <BrushStroke width={300} weight={4}/>
           </div>
           {/* Photo + items */}
-          <div style={{ display: 'flex', direction: 'rtl', gap: fl(14, 28), alignItems: 'flex-start' }}>
+          <div style={{ display: 'flex', direction: dir, gap: fl(14, 28), alignItems: 'flex-start' }}>
             <PhotoCircle src={P.espresso} size={fl(88, 168)} alt="espresso"/>
             <div style={{ flex: 1, paddingTop: 6, minWidth: 0 }}>
-              {['إسبريسو سينجل', 'كابتشينو', 'كافيه لاتيه', 'فلات وايت', 'آيس لاتيه'].map((item, i) => (
+              {[
+                coverRow('إسبريسو سينجل', 'Espresso Single', D.hotCoffee, 'إسبريسو سينجل'),
+                coverRow('كابتشينو', 'Cappuccino', D.hotCoffee, 'كابتشينو'),
+                coverRow('كافيه لاتيه', 'Café Latte', D.hotCoffee, 'كافيه لاتيه'),
+                coverRow('فلات وايت', 'Flat White', D.hotCoffee, 'فلات وايت'),
+                coverRow('آيس لاتيه', 'Iced Latte', D.icedCoffee, 'آيس لاتيه'),
+              ].map((item, i) => (
                 <CoverItem key={i} item={item} big/>
               ))}
             </div>
@@ -301,16 +335,21 @@ function Cover() {
 
         {/* ── SECTION 2: DRINKS ─────────────────────────────── */}
         <div>
-          <div style={{ direction: 'rtl', marginBottom: 14 }}>
+          <div style={{ direction: dir, marginBottom: 14 }}>
             <div style={{ fontFamily: DISPLAY, fontSize: fl(26, 46), fontStyle: 'italic', color: W.cream, lineHeight: 1.05, opacity: 0.9 }}>
-              مشروبات متنوعة
+              {t.assorted}
             </div>
             <BrushStroke width={230} weight={3}/>
           </div>
-          <div style={{ display: 'flex', direction: 'rtl', gap: fl(14, 28), alignItems: 'flex-start' }}>
+          <div style={{ display: 'flex', direction: dir, gap: fl(14, 28), alignItems: 'flex-start' }}>
             <PhotoCircle src={P.smoothie} size={fl(72, 130)} alt="smoothie"/>
             <div style={{ flex: 1, paddingTop: 4, minWidth: 0 }}>
-              {(['موهيتو كلاسيك', 'ميلك شيك شوكليت', 'فرابيه قهوة', ['عصير مانجو', 90]] as Item[]).map((item, i) => (
+              {[
+                coverRow('موهيتو كلاسيك', 'Classic Mojito', D.mojito, 'كلاسيك'),
+                coverRow('ميلك شيك شوكليت', 'Chocolate Milkshake', D.milkshake, 'شوكليت'),
+                coverRow('فرابيه قهوة', 'Coffee Frappe', D.frappe, 'فرابيه قهوة'),
+                coverRow('عصير مانجو', 'Mango Juice', D.juices, 'مانجو'),
+              ].map((item, i) => (
                 <CoverItem key={i} item={item} big={false}/>
               ))}
             </div>
@@ -322,7 +361,7 @@ function Cover() {
         {/* ── BOTTOM LABEL ──────────────────────────────────── */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12, direction: 'ltr' }}>
           <div style={{ fontFamily: BODY, fontSize: 8, color: W.muted, letterSpacing: '0.28em', textTransform: 'uppercase', direction: 'ltr' }}>
-            Galaxy Café · قائمة المشروبات · 2026
+            {t.footer}
           </div>
           <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
             <GoldLeaf size={16} rotate={25}/>
@@ -344,51 +383,89 @@ function Cover() {
 // ═══════════════════════════════════════════════════════════════
 
 // Section header with optional photo circle
-function SectionHeader({ ar, en, photo }: { ar: string; en: string; photo?: string }) {
+function SectionHeader({ name, photo }: { name: Localized; photo?: string }) {
+  const lang = useLang()
+  const dir = useDir()
+  // The active language leads in the display face; the other sits underneath
+  // as the small tracked caption.
+  const [lead, caption] = lang === 'ar' ? [name.ar, name.en] : [name.en, name.ar]
   return (
-    <div style={{ marginBottom: 12, direction: 'rtl' }}>
+    <div style={{ marginBottom: 12, direction: dir }}>
       <div style={{ display: 'flex', alignItems: 'flex-end', gap: fl(10, 14), marginBottom: 8 }}>
         {photo && (
           <div style={{ flexShrink: 0, marginBottom: 4 }}>
-            <PhotoCircle src={photo} size={fl(40, 52)} alt={en}/>
+            <PhotoCircle src={photo} size={fl(40, 52)} alt={name.en}/>
           </div>
         )}
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ fontFamily: DISPLAY, fontSize: fl(21, 26), fontStyle: 'italic', color: W.cream, lineHeight: 1.05 }}>
-            {ar}
+            {lead}
           </div>
         </div>
       </div>
       <BrushStroke width={160} weight={3}/>
-      <div style={{ fontFamily: BODY, fontSize: 6.5, color: W.muted, letterSpacing: '0.26em', textTransform: 'uppercase', direction: 'ltr', marginTop: 5, opacity: 0.75 }}>
-        {en}
+      <div style={{ fontFamily: BODY, fontSize: 6.5, color: W.muted, letterSpacing: '0.26em', textTransform: 'uppercase', marginTop: 5, opacity: 0.75 }}>
+        {caption}
       </div>
+    </div>
+  )
+}
+
+// Price cell — the two columns must line up down the whole section, so both
+// the rows and the legend use this same box.
+const priceCell = (gold: boolean): React.CSSProperties => ({
+  fontFamily: BODY, fontSize: 12, color: gold ? W.gold : W.muted,
+  direction: 'ltr', minWidth: 24, textAlign: 'right', marginLeft: 8, flexShrink: 0,
+})
+
+// Column captions, shown only above sections that price two sizes.
+function SizeLegend() {
+  const t = useT()
+  const dir = useDir()
+  const cap: React.CSSProperties = {
+    ...priceCell(false), fontSize: 6.5, direction: dir,
+    letterSpacing: '0.1em', opacity: 0.85,
+  }
+  return (
+    <div style={{ display: 'flex', direction: dir, alignItems: 'center', padding: '0 5px 4px' }}>
+      <span style={{ flex: 1 }}/>
+      <span style={cap}>{t.small}</span>
+      <span style={cap}>{t.large}</span>
     </div>
   )
 }
 
 // Standard menu item row
-function MenuItem({ item, even }: { item: Item; even: boolean }) {
-  const price = itemPrice(item)
+function MenuItem({ item, even, sized }: { item: Item; even: boolean; sized: boolean }) {
+  const lang = useLang()
+  const dir = useDir()
+  const t = useT()
+  const price = item.seasonal ? t.seasonal : itemPrice(item)
+  const small = itemSmall(item)
   return (
     <div style={{
-      display: 'flex', direction: 'rtl', alignItems: 'center',
+      display: 'flex', direction: dir, alignItems: 'center',
       padding: '5.5px 5px',
       backgroundColor: even ? W.rowEven : 'transparent',
     }}>
-      <span style={{ fontFamily: BODY, fontSize: 13, fontStyle: 'italic', color: W.cream, flex: 1, lineHeight: 1.4 }}>{itemName(item)}</span>
+      <span style={{ fontFamily: BODY, fontSize: 13, fontStyle: 'italic', color: W.cream, flex: 1, lineHeight: 1.4 }}>{item.name[lang]}</span>
       <span style={{ color: W.dim, fontSize: 9, letterSpacing: '4px', marginLeft: 10, flexShrink: 0 }}>——</span>
-      <span style={{ fontFamily: BODY, fontSize: 12, color: W.gold, direction: 'ltr', minWidth: 18, textAlign: 'right', marginLeft: 8, flexShrink: 0 }}>{price ?? '—'}</span>
+      {/* One-size drinks in a two-size section leave the small column empty
+          rather than showing a dash, so the large price reads unambiguously. */}
+      {sized && <span style={priceCell(false)}>{small ?? ''}</span>}
+      <span style={priceCell(true)}>{price ?? '—'}</span>
     </div>
   )
 }
 
 // Full section: header + items
-function Section({ d, photo }: { d: typeof D.hotCoffee; photo?: string }) {
+function Section({ d, photo }: { d: Section; photo?: string }) {
+  const sized = d.items.some(isSized)
   return (
     <div style={{ marginBottom: fl(18, 24) }}>
-      <SectionHeader ar={d.ar} en={d.en} photo={photo}/>
-      {d.items.map((item, i) => <MenuItem key={i} item={item} even={i % 2 === 0}/>)}
+      <SectionHeader name={d.name} photo={photo}/>
+      {sized && <SizeLegend/>}
+      {d.items.map((item, i) => <MenuItem key={i} item={item} even={i % 2 === 0} sized={sized}/>)}
     </div>
   )
 }
@@ -428,18 +505,20 @@ function Page({ children, pageNum }: { children: ReactNode; pageNum: number }) {
 
 // Page header (brand + divider + label)
 function PageHeader() {
+  const t = useT()
+  const dir = useDir()
   return (
-    <div style={{ display: 'flex', direction: 'rtl', alignItems: 'center', justifyContent: 'space-between', marginBottom: fl(22, 32), paddingBottom: 18, borderBottom: `0.5px solid ${W.rule}` }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: fl(10, 14), direction: 'rtl', minWidth: 0 }}>
+    <div style={{ display: 'flex', direction: dir, alignItems: 'center', justifyContent: 'space-between', marginBottom: fl(22, 32), paddingBottom: 18, borderBottom: `0.5px solid ${W.rule}` }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: fl(10, 14), direction: dir, minWidth: 0 }}>
         <PhotoCircle src={P.espresso} size={fl(34, 42)} alt="coffee"/>
         <div style={{ minWidth: 0 }}>
-          <div style={{ fontFamily: DISPLAY, fontSize: fl(18, 22), fontStyle: 'italic', color: W.cream, lineHeight: 1 }}>جالاكسي</div>
+          <div style={{ fontFamily: DISPLAY, fontSize: fl(18, 22), fontStyle: 'italic', color: W.cream, lineHeight: 1 }}>{t.brand}</div>
           <div style={{ fontFamily: BODY, fontSize: 6.5, color: W.muted, letterSpacing: '0.22em', textTransform: 'uppercase', direction: 'ltr', marginTop: 3 }}>Galaxy Café</div>
         </div>
       </div>
       <div style={{ flex: 1, margin: `0 ${fl(10, 20)}`, height: 1, background: `linear-gradient(to right, transparent, ${W.gold}40, transparent)` }}/>
       <div style={{ fontFamily: BODY, fontSize: 7.5, color: W.gold, letterSpacing: '0.28em', textTransform: 'uppercase', direction: 'ltr', opacity: 0.85, flexShrink: 0 }}>
-        قائمة المشروبات
+        {t.menuLabel}
       </div>
     </div>
   )
@@ -465,7 +544,7 @@ function TwoColPage({ left, right, n }: { left: ReactNode; right: ReactNode; n: 
 // ═══════════════════════════════════════════════════════════════
 
 function InnerPages() {
-  const S = (d: typeof D.hotCoffee, photo?: string) => <Section d={d} photo={photo}/>
+  const S = (d: Section, photo?: string) => <Section d={d} photo={photo}/>
 
   return (
     <>
@@ -493,19 +572,57 @@ function InnerPages() {
 // APP
 // ═══════════════════════════════════════════════════════════════
 
-export default function App() {
+// Floating control that flips the whole menu between Arabic and English.
+function LangToggle({ lang, onToggle }: { lang: Lang; onToggle: () => void }) {
   return (
-    <div style={{
-      backgroundColor: '#0D0B08', minHeight: '100vh',
-      display: 'flex', flexDirection: 'column', alignItems: 'center',
-      padding: 'clamp(14px, 4vw, 32px) clamp(10px, 3vw, 24px)',
-      gap: 'clamp(16px, 3vw, 28px)',
-      // Consumed by the responsive rules in index.css.
-      '--gx-gold': W.gold,
-      '--gx-gold-35': `${W.gold}35`,
-    } as React.CSSProperties}>
-      <Cover/>
-      <InnerPages/>
-    </div>
+    <button
+      onClick={onToggle}
+      aria-label={lang === 'ar' ? 'Switch to English' : 'التبديل إلى العربية'}
+      style={{
+        position: 'fixed', top: 14, insetInlineEnd: 14, zIndex: 50,
+        fontFamily: BODY, fontSize: 12, letterSpacing: '0.08em',
+        color: W.gold, backgroundColor: 'rgba(25,20,16,0.92)',
+        border: `1px solid ${W.gold}55`, borderRadius: 999,
+        padding: '7px 16px', cursor: 'pointer',
+        backdropFilter: 'blur(6px)',
+        boxShadow: '0 4px 18px rgba(0,0,0,0.6)',
+      }}
+    >
+      {T[lang].toggle}
+    </button>
+  )
+}
+
+const LANG_KEY = 'gx-lang'
+
+export default function App() {
+  const [lang, setLang] = useState<Lang>(() =>
+    (typeof localStorage !== 'undefined' && localStorage.getItem(LANG_KEY)) === 'en' ? 'en' : 'ar'
+  )
+
+  // The document element owns lang/dir so the whole tree — including the CSS
+  // in index.css — follows the choice, and screen readers announce it right.
+  useEffect(() => {
+    document.documentElement.lang = lang
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr'
+    localStorage.setItem(LANG_KEY, lang)
+  }, [lang])
+
+  return (
+    <LangCtx.Provider value={lang}>
+      <LangToggle lang={lang} onToggle={() => setLang((l) => (l === 'ar' ? 'en' : 'ar'))}/>
+      <div style={{
+        backgroundColor: '#0D0B08', minHeight: '100vh',
+        display: 'flex', flexDirection: 'column', alignItems: 'center',
+        padding: 'clamp(14px, 4vw, 32px) clamp(10px, 3vw, 24px)',
+        gap: 'clamp(16px, 3vw, 28px)',
+        // Consumed by the responsive rules in index.css.
+        '--gx-gold': W.gold,
+        '--gx-gold-35': `${W.gold}35`,
+      } as React.CSSProperties}>
+        <Cover/>
+        <InnerPages/>
+      </div>
+    </LangCtx.Provider>
   )
 }

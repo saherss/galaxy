@@ -9,6 +9,15 @@ export default defineConfig({
   // prefix. BASE_PATH is set by .github/workflows/deploy.yml; local dev and
   // plain builds fall back to the root.
   base: process.env.BASE_PATH || '/',
+  build: {
+    rollupOptions: {
+      input: {
+        // Two pages: the public menu, and the staff-only price editor.
+        main: path.resolve(import.meta.dirname, 'index.html'),
+        admin: path.resolve(import.meta.dirname, 'admin.html'),
+      },
+    },
+  },
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
