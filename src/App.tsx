@@ -39,21 +39,31 @@ const PAD_X = fl(16, 52)
 
 // ── MENU DATA ─────────────────────────────────────────────────────────────────
 
+// An entry is either a bare name (price not set yet, renders as a dash) or a
+// [name, price] pair. Priced entries come from products.xlsx.
+type Item = string | [name: string, price: number | string]
+
+const itemName = (i: Item) => (typeof i === 'string' ? i : i[0])
+const itemPrice = (i: Item) => (typeof i === 'string' ? null : i[1])
+
 const D = {
-  hotCoffee:  { ar: 'القهوة الساخنة',      en: 'Hot Coffee',       items: ['إسبريسو سينجل','إسبريسو دابل','أمريكانو','كابتشينو','كافيه لاتيه','فلات وايت','كورتادو','موكا','سبانيش لاتيه','كراميل لاتيه'] },
-  icedCoffee: { ar: 'القهوة الباردة',       en: 'Iced Coffee',      items: ['آيس أمريكانو','آيس لاتيه','آيس كابتشينو','آيس موكا','آيس وايت موكا','آيس فانيليا لاتيه'] },
-  turkish:    { ar: 'القهوة الشرقي',        en: 'Turkish & French', items: ['تركي سادة','تركي مضبوط','تركي زيادة','تركي هيل','تركي بندق','فرنسي','فرنسي بندق','فرنسي فانيليا'] },
-  tea:        { ar: 'الشاي',               en: 'Tea',              items: ['شاي أحمر','شاي أخضر','شاي بلبن','شاي أخضر تفاح','شاي كرك','شاي ماسالا','شاي فروتة','شاي ليمون'] },
-  herbal:     { ar: 'الأعشاب',             en: 'Herbal Infusions', items: ['ينسون','نعناع','بابونج','تيليو','كراوية','كراوية بلبن','خمرة','ميرمية','كركديه','قرفة','زنجبيل','زنجبيل ليمون','ليمون نعناع','ليمون عسل','حلبة','حلبة لبن'] },
-  chocolate:  { ar: 'مشروبات شوكولاتة',    en: 'Chocolate',        items: ['هوت شوكليت','وايت هوت شوكليت','دارك هوت شوكليت','هوت شوكليت مارشميلو'] },
-  winter:     { ar: 'مشروبات شتوية',       en: 'Winter Drinks',    items: ['سحلب','سحلب أوريو','سحلب لوتس','سحلب نوتيلا','قرفة بلبن','حمص الشام'] },
-  mojito:     { ar: 'الموهيتو',            en: 'Mojito',           items: ['كلاسيك','بلو','جرين أبل','باشن فروت','بيري','فراولة','مانجو','بطيخ','خوخ','ليمون','بيناكولادا','ميكس بيري'] },
-  milkshake:  { ar: 'الميلك شيك',          en: 'Milkshake',        items: ['شوكليت','وايت شوكليت','كراميل','أوريو','لوتس','نوتيلا','فانيليا','فراولة','مانجو','موز','بلوبيري','ريد فيلفيت','كيندر','سنيكرز'] },
-  frappe:     { ar: 'الفرابيه',            en: 'Frappe',           items: ['فرابيه قهوة','موكا','كراميل','وايت موكا','فانيليا','أوريو','لوتس','نوتيلا','شوكليت'] },
-  juices:     { ar: 'العصائر الفريش',      en: 'Fresh Juices',     items: ['مانجو','برتقال','فراولة','جوافة','ليمون','ليمون نعناع','موز','موز بلبن','فراولة بلبن','مانجو بلبن','أفوكادو','كوكتيل','رمان','بطيخ','كنتالوب'] },
-  smoothie:   { ar: 'السموذي',             en: 'Smoothie',         items: ['مانجو','فراولة','ليمون','ميكس بيري','باشن فروت','بينا كولادا'] },
-  waterSoda:  { ar: 'مياه ومشروبات غازية', en: 'Water & Soda',     items: ['مياه معدنية','مياه فوارة','كولا','كولا دايت','سبرايت','فانتا'] },
-  extras:     { ar: 'الإضافات',            en: 'Extras',           items: ['شوت إسبريسو','لبن نباتي','كريمة مخفوقة','آيس كريم','صوص شوكليت','صوص وايت','صوص كراميل','صوص كراميل مملح','سيرب فانيليا','سيرب كراميل','سيرب موهيتو','سيرب بلو كوراكاو','سيرب جرين أبل','سيرب ليمون','سيرب خوخ','سيرب بطيخ','سيرب جوز الهند'] },
+  hotCoffee:  { ar: 'القهوة الساخنة',      en: 'Hot Coffee',       items: [['إسبريسو سينجل',60],['إسبريسو دابل',85],['أمريكانو',70],['كابتشينو',110],['كافيه لاتيه',110],['فلات وايت',110],['كورتادو',120],['موكا',120],['سبانيش لاتيه',140],['كراميل لاتيه',140]] as Item[] },
+  icedCoffee: { ar: 'القهوة الباردة',       en: 'Iced Coffee',      items: [['آيس كوفي',110],['آيس أمريكانو',70],['آيس لاتيه',120],['آيس موكا',135],['آيس وايت موكا',145],['آيس فانيليا لاتيه',85],['آيس سبانيش لاتيه',145]] as Item[] },
+  turkish:    { ar: 'القهوة الشرقي',        en: 'Turkish & French', items: [['تركي سادة',50],['تركي مضبوط',50],['تركي زيادة',50],['تركي هيل',50],['تركي بندق',50],['فرنسي',50],['فرنسي بندق',50],['فرنسي فانيليا',50]] as Item[] },
+  tea:        { ar: 'الشاي',               en: 'Tea',              items: [['شاي أحمر',25],['كوب شاي',20],['شاي فتلة تيك أواي ىونا',25],['شاي أخضر',40],['شاي بلبن',50],['شاي أخضر تفاح',45],['شاي كرك',90],['شاي ماسالا',90],['شاي فروتة',40],['شاي ليمون',40]] as Item[] },
+  herbal:     { ar: 'الأعشاب',             en: 'Herbal Infusions', items: [['ينسون',40],['نعناع',70],['بابونج',50],['تيليو',50],['كراوية',40],['كراوية بلبن',80],['خمرة',40],['ميرمية',45],['كركديه',50],['قرفة',40],['زنجبيل',60],['زنجبيل ليمون',70],['ليمون نعناع',70],['ليمون عسل',65]] as Item[] },
+  chocolate:  { ar: 'مشروبات شوكولاتة',    en: 'Chocolate',        items: [['هوت شوكليت',80],['وايت هوت شوكليت',110],['دارك هوت شوكليت',120],['هوت شوكليت مارشميلو',110]] as Item[] },
+  winter:     { ar: 'مشروبات شتوية',       en: 'Winter Drinks',    items: [['سحلب',80],['سحلب أوريو',120],['سحلب لوتس',150],['سحلب نوتيلا',120],['قرفة بلبن',80],['حمص الشام',70]] as Item[] },
+  mojito:     { ar: 'الموهيتو',            en: 'Mojito',           items: [['كلاسيك',90],['بلو',100],['باشن فروت',100],['بيري',100],['فراولة',110],['مانجو',100],['بطيخ',120],['ليمون',90],['بيناكولادا',120],['ميكس بيري',100]] as Item[] },
+  milkshake:  { ar: 'الميلك شيك',          en: 'Milkshake',        items: [['شوكليت',120],['وايت شوكليت',140],['كراميل',120],['أوريو',120],['لوتس',160],['نوتيلا',160],['فانيليا',120],['فراولة',120],['مانجو',140],['موز',140],['بلوبيري',120],['ريد فيلفيت',160],['كيندر',150],['سنيكرز',180]] as Item[] },
+  frappe:     { ar: 'الفرابيه',            en: 'Frappe',           items: [['فرابيه قهوة',100],['موكا',120],['كراميل',120],['وايت موكا',150],['فانيليا',120],['أوريو',125],['لوتس',145],['نوتيلا',160],['شوكليت',100]] as Item[] },
+  juices:     { ar: 'العصائر الفريش',      en: 'Fresh Juices',     items: [['مانجو',90],['برتقال',90],['فراولة',100],['جوافة',80],['جوافة بلبن',120],['ليمون',70],['ليمون نعناع',75],['تين',100],['تين بلبن',120],['عناب',65],['موز',80],['موز بلبن',95],['فراولة بلبن',110],['مانجو بلبن',110],['أفوكادو',170],['كوكتيل',120],['رمان','موسمي'],['بطيخ','موسمي'],['كنتالوب','موسمي']] as Item[] },
+  smoothie:   { ar: 'السموذي',             en: 'Smoothie',         items: [['مانجو',100],['فراولة',110],['ليمون',120],['ميكس بيري',110],['باشن فروت',120],['بينا كولادا',120]] as Item[] },
+  waterSoda:  { ar: 'مياه ومشروبات غازية', en: 'Water & Soda',     items: [['مياه معدنية',15],['مياه فوارة',50],['كولا',25],['كولا دايت',25],['سبرايت',25],['فانتا',25]] as Item[] },
+  extras:     { ar: 'الإضافات',            en: 'Extras',           items: [['شوت إسبريسو',50],['لبن نباتي',50],['كريمة مخفوقة',40],['آيس كريم',50],['صوص شوكليت',40],['صوص وايت',50],['صوص كراميل',40],['سيرب فانيليا',60],['سيرب موهيتو',70],['سيرب بلو كوراكاو',70],['سيرب جرين أبل',70],['سيرب ليمون',60],['سيرب خوخ',70],['سيرب بطيخ',80],['سيرب جوز الهند',65]] as Item[] },
+  // Operating supplies (sugar, paper cups) are stock items, not menu products —
+  // they live in products.xlsx only and are deliberately not rendered here.
+  psTime:     { ar: 'بلايستيشن',           en: 'PS Time',          items: [['PS',50]] as Item[] },
 }
 
 // ── PHOTO URLS ────────────────────────────────────────────────────────────────
@@ -168,12 +178,13 @@ function PhotoCircle({ src, size, alt = '' }: { src: string; size: number | stri
 // ═══════════════════════════════════════════════════════════════
 
 // A cover row: dish name, dotted lead, price slot.
-function CoverItem({ item, big }: { item: string; big: boolean }) {
+function CoverItem({ item, big }: { item: Item; big: boolean }) {
+  const price = itemPrice(item)
   return (
     <div style={{ display: 'flex', direction: 'rtl', alignItems: 'center', padding: big ? '8.5px 0' : '7px 0', borderBottom: `0.5px solid ${W.rule}` }}>
-      <span style={{ fontFamily: BODY, fontSize: big ? fl(13.5, 15) : fl(13, 14), fontStyle: 'italic', color: W.cream, flex: 1 }}>{item}</span>
+      <span style={{ fontFamily: BODY, fontSize: big ? fl(13.5, 15) : fl(13, 14), fontStyle: 'italic', color: W.cream, flex: 1 }}>{itemName(item)}</span>
       <span style={{ color: W.muted, fontSize: big ? 10 : 9, letterSpacing: big ? '5px' : '4px', marginLeft: big ? 12 : 10, flexShrink: 0 }}>——</span>
-      <span style={{ fontFamily: BODY, fontSize: big ? fl(13, 14) : fl(12, 13), color: W.gold, direction: 'ltr', minWidth: big ? 22 : 20, textAlign: 'right', marginLeft: big ? 10 : 8, flexShrink: 0 }}>—</span>
+      <span style={{ fontFamily: BODY, fontSize: big ? fl(13, 14) : fl(12, 13), color: W.gold, direction: 'ltr', minWidth: big ? 22 : 20, textAlign: 'right', marginLeft: big ? 10 : 8, flexShrink: 0 }}>{price ?? '—'}</span>
     </div>
   )
 }
@@ -299,7 +310,7 @@ function Cover() {
           <div style={{ display: 'flex', direction: 'rtl', gap: fl(14, 28), alignItems: 'flex-start' }}>
             <PhotoCircle src={P.smoothie} size={fl(72, 130)} alt="smoothie"/>
             <div style={{ flex: 1, paddingTop: 4, minWidth: 0 }}>
-              {['موهيتو كلاسيك', 'ميلك شيك شوكليت', 'فرابيه قهوة', 'عصير مانجو'].map((item, i) => (
+              {(['موهيتو كلاسيك', 'ميلك شيك شوكليت', 'فرابيه قهوة', ['عصير مانجو', 90]] as Item[]).map((item, i) => (
                 <CoverItem key={i} item={item} big={false}/>
               ))}
             </div>
@@ -357,16 +368,17 @@ function SectionHeader({ ar, en, photo }: { ar: string; en: string; photo?: stri
 }
 
 // Standard menu item row
-function MenuItem({ item, even }: { item: string; even: boolean }) {
+function MenuItem({ item, even }: { item: Item; even: boolean }) {
+  const price = itemPrice(item)
   return (
     <div style={{
       display: 'flex', direction: 'rtl', alignItems: 'center',
       padding: '5.5px 5px',
       backgroundColor: even ? W.rowEven : 'transparent',
     }}>
-      <span style={{ fontFamily: BODY, fontSize: 13, fontStyle: 'italic', color: W.cream, flex: 1, lineHeight: 1.4 }}>{item}</span>
+      <span style={{ fontFamily: BODY, fontSize: 13, fontStyle: 'italic', color: W.cream, flex: 1, lineHeight: 1.4 }}>{itemName(item)}</span>
       <span style={{ color: W.dim, fontSize: 9, letterSpacing: '4px', marginLeft: 10, flexShrink: 0 }}>——</span>
-      <span style={{ fontFamily: BODY, fontSize: 12, color: W.gold, direction: 'ltr', minWidth: 18, textAlign: 'right', marginLeft: 8, flexShrink: 0 }}>—</span>
+      <span style={{ fontFamily: BODY, fontSize: 12, color: W.gold, direction: 'ltr', minWidth: 18, textAlign: 'right', marginLeft: 8, flexShrink: 0 }}>{price ?? '—'}</span>
     </div>
   )
 }
@@ -470,7 +482,7 @@ function InnerPages() {
         right={<>{S(D.frappe)}{S(D.juices)}</>}
       />
       <TwoColPage n={5}
-        left={<>{S(D.smoothie, P.smoothie)}{S(D.waterSoda)}</>}
+        left={<>{S(D.smoothie, P.smoothie)}{S(D.waterSoda)}{S(D.psTime)}</>}
         right={<>{S(D.extras)}</>}
       />
     </>
