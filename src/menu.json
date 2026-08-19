@@ -36,7 +36,7 @@
             "en": "Americano"
           },
           "small": 55,
-          "price": 70,
+          "price": 75,
           "barcode": "000021",
           "cost": null,
           "barcodeSmall": "000149"
@@ -47,8 +47,8 @@
             "ar": "كابتشينو",
             "en": "Cappuccino"
           },
-          "small": 85,
-          "price": 110,
+          "small": 80,
+          "price": 100,
           "barcode": "000022",
           "cost": null,
           "barcodeSmall": "000150"
@@ -71,8 +71,8 @@
             "ar": "فلات وايت",
             "en": "Flat White"
           },
-          "small": 85,
-          "price": 110,
+          "small": 90,
+          "price": 120,
           "barcode": "000024",
           "cost": null,
           "barcodeSmall": "000152"
@@ -117,8 +117,8 @@
             "ar": "كراميل لاتيه",
             "en": "Caramel Latte"
           },
-          "small": 110,
-          "price": 140,
+          "small": 100,
+          "price": 130,
           "barcode": "000028",
           "cost": null,
           "barcodeSmall": "000155"
@@ -139,11 +139,9 @@
             "ar": "آيس كوفي",
             "en": "Iced Coffee"
           },
-          "small": 85,
-          "price": 110,
+          "price": 120,
           "barcode": "000007",
-          "cost": 60,
-          "barcodeSmall": "000156"
+          "cost": 60
         },
         {
           "id": 20,

@@ -52,7 +52,6 @@ const T = {
   ar: {
     brand: 'جالاكسي', menuLabel: 'قائمة المشروبات',
     tagline: 'قهوة رائعة في كل وقت ومع أي شخص',
-    coffee: 'القهوة', assorted: 'مشروبات متنوعة',
     small: 'صغير', large: 'كبير', seasonal: 'موسمي',
     footer: 'Galaxy Café · قائمة المشروبات · 2026',
     toggle: 'English',
@@ -60,7 +59,6 @@ const T = {
   en: {
     brand: 'Galaxy', menuLabel: 'Drinks Menu',
     tagline: 'Great coffee, any time, with anyone',
-    coffee: 'Coffee', assorted: 'Assorted Drinks',
     small: 'Small', large: 'Large', seasonal: 'Seasonal',
     footer: 'Galaxy Café · Drinks Menu · 2026',
     toggle: 'العربية',
@@ -192,29 +190,6 @@ function PhotoCircle({ src, size, alt = '' }: { src: string; size: number | stri
 // COVER PAGE
 // ═══════════════════════════════════════════════════════════════
 
-// The cover teases a handful of drinks. Look their price up in D rather than
-// repeating it here, so the cover can never quote a stale figure. `label` may
-// differ from the menu name ("موهيتو كلاسيك" vs "كلاسيك" under الموهيتو).
-const coverRow = (label: string, en: string, section: Section, name: string): Item => {
-  const entry = section.items.find((i) => i.name.ar === name)
-  return { id: 0, name: { ar: label, en }, price: entry?.price, seasonal: entry?.seasonal, barcode: entry?.barcode ?? '', cost: null }
-}
-
-// A cover row: dish name, dotted lead, price slot.
-function CoverItem({ item, big }: { item: Item; big: boolean }) {
-  const lang = useLang()
-  const dir = useDir()
-  const t = useT()
-  const price = item.seasonal ? t.seasonal : itemPrice(item)
-  return (
-    <div style={{ display: 'flex', direction: dir, alignItems: 'center', padding: big ? '8.5px 0' : '7px 0', borderBottom: `0.5px solid ${W.rule}` }}>
-      <span style={{ fontFamily: BODY, fontSize: big ? fl(13.5, 15) : fl(13, 14), fontStyle: 'italic', color: W.cream, flex: 1 }}>{item.name[lang]}</span>
-      <span style={{ color: W.muted, fontSize: big ? 10 : 9, letterSpacing: big ? '5px' : '4px', marginLeft: big ? 12 : 10, flexShrink: 0 }}>——</span>
-      <span style={{ fontFamily: BODY, fontSize: big ? fl(13, 14) : fl(12, 13), color: W.gold, direction: 'ltr', minWidth: big ? 22 : 20, textAlign: 'right', marginLeft: big ? 10 : 8, flexShrink: 0 }}>{price ?? '—'}</span>
-    </div>
-  )
-}
-
 function Cover() {
   const t = useT()
   const dir = useDir()
@@ -299,64 +274,7 @@ function Cover() {
       {/* ── BODY ──────────────────────────────────────────────
           Flows instead of sitting at fixed offsets; the flexible
           spacers soak up whatever height is left on a tall sheet. */}
-      <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column', padding: `${flDown(12, 16)} ${PAD_X} ${fl(24, 42)}` }}>
-
-        {/* ── SECTION 1: COFFEE ─────────────────────────────── */}
-        <div>
-          {/* Script heading + brushstroke */}
-          <div style={{ direction: dir, marginBottom: 14 }}>
-            <div style={{ fontFamily: DISPLAY, fontSize: fl(32, 62), fontStyle: 'italic', color: W.cream, lineHeight: 1.05, letterSpacing: '0.01em' }}>
-              {t.coffee}
-            </div>
-            <BrushStroke width={300} weight={4}/>
-          </div>
-          {/* Photo + items */}
-          <div style={{ display: 'flex', direction: dir, gap: fl(14, 28), alignItems: 'flex-start' }}>
-            <PhotoCircle src={P.espresso} size={fl(88, 168)} alt="espresso"/>
-            <div style={{ flex: 1, paddingTop: 6, minWidth: 0 }}>
-              {[
-                coverRow('إسبريسو سينجل', 'Espresso Single', D.hotCoffee, 'إسبريسو سينجل'),
-                coverRow('كابتشينو', 'Cappuccino', D.hotCoffee, 'كابتشينو'),
-                coverRow('كافيه لاتيه', 'Café Latte', D.hotCoffee, 'كافيه لاتيه'),
-                coverRow('فلات وايت', 'Flat White', D.hotCoffee, 'فلات وايت'),
-                coverRow('آيس لاتيه', 'Iced Latte', D.icedCoffee, 'آيس لاتيه'),
-              ].map((item, i) => (
-                <CoverItem key={i} item={item} big/>
-              ))}
-            </div>
-            {/* Leaf decoration */}
-            <div style={{ paddingTop: 10, flexShrink: 0 }}>
-              <GoldLeaf size={32} rotate={-18}/>
-            </div>
-          </div>
-        </div>
-
-        <div style={{ flex: '1 1 24px', minHeight: 24 }}/>
-
-        {/* ── SECTION 2: DRINKS ─────────────────────────────── */}
-        <div>
-          <div style={{ direction: dir, marginBottom: 14 }}>
-            <div style={{ fontFamily: DISPLAY, fontSize: fl(26, 46), fontStyle: 'italic', color: W.cream, lineHeight: 1.05, opacity: 0.9 }}>
-              {t.assorted}
-            </div>
-            <BrushStroke width={230} weight={3}/>
-          </div>
-          <div style={{ display: 'flex', direction: dir, gap: fl(14, 28), alignItems: 'flex-start' }}>
-            <PhotoCircle src={P.smoothie} size={fl(72, 130)} alt="smoothie"/>
-            <div style={{ flex: 1, paddingTop: 4, minWidth: 0 }}>
-              {[
-                coverRow('موهيتو كلاسيك', 'Classic Mojito', D.mojito, 'كلاسيك'),
-                coverRow('ميلك شيك شوكليت', 'Chocolate Milkshake', D.milkshake, 'شوكليت'),
-                coverRow('فرابيه قهوة', 'Coffee Frappe', D.frappe, 'فرابيه قهوة'),
-                coverRow('عصير مانجو', 'Mango Juice', D.juices, 'مانجو'),
-              ].map((item, i) => (
-                <CoverItem key={i} item={item} big={false}/>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div style={{ flex: '1.4 1 28px', minHeight: 28 }}/>
+      <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: `${flDown(12, 16)} ${PAD_X} ${fl(24, 42)}` }}>
 
         {/* ── BOTTOM LABEL ──────────────────────────────────── */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12, direction: 'ltr' }}>
