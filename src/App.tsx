@@ -31,14 +31,6 @@ const SHEET = 794
 const fl = (min: number, max: number) =>
   `clamp(${min}px, ${((max / SHEET) * 100).toFixed(3)}cqw, ${max}px)`
 
-// Inverse ramp, for the handful of values that need to be *larger* on a narrow
-// sheet: `wide` at the full 794px, growing toward `narrow` as it shrinks.
-const flDown = (wide: number, narrow: number) =>
-  `clamp(${wide}px, calc(${narrow}px - ${(((narrow - wide) / SHEET) * 100).toFixed(3)}cqw), ${narrow}px)`
-
-// Horizontal padding shared by the cover and inner pages.
-const PAD_X = fl(16, 52)
-
 // ── MENU DATA ─────────────────────────────────────────────────────────────────
 
 // Prices live in src/menu.json, not here — that file is what the admin page
@@ -51,16 +43,12 @@ const PAD_X = fl(16, 52)
 const T = {
   ar: {
     brand: 'جالاكسي', menuLabel: 'قائمة المشروبات',
-    tagline: 'قهوة رائعة في كل وقت ومع أي شخص',
     small: 'صغير', large: 'كبير', seasonal: 'موسمي',
-    footer: 'Galaxy Café · قائمة المشروبات · 2026',
     toggle: 'English',
   },
   en: {
     brand: 'Galaxy', menuLabel: 'Drinks Menu',
-    tagline: 'Great coffee, any time, with anyone',
     small: 'Small', large: 'Large', seasonal: 'Seasonal',
-    footer: 'Galaxy Café · Drinks Menu · 2026',
     toggle: 'العربية',
   },
 } as const
@@ -83,10 +71,8 @@ const D = BY_KEY
 
 const P = {
   espresso: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=400&h=400&fit=crop&auto=format',
-  latte:    'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=400&fit=crop&auto=format',
   iced:     'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=400&fit=crop&auto=format',
   smoothie: 'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=400&h=400&fit=crop&auto=format',
-  beans:    'https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=640&h=480&fit=crop&auto=format',
   cup:      'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=640&h=480&fit=crop&auto=format',
   matcha:   'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=400&fit=crop&auto=format',
 }
@@ -125,20 +111,12 @@ function GoldStrip({ edge }: { edge: 'top' | 'bottom' }) {
 
 // Inset hairline frame. Plain borders rather than a fixed-size <svg> so the
 // frame tracks whatever size the sheet has settled at.
-function SheetFrame({ double = false }: { double?: boolean }) {
+function SheetFrame() {
   return (
-    <>
-      <div style={{
-        position: 'absolute', inset: fl(8, 13), zIndex: 2, pointerEvents: 'none',
-        border: `1px solid ${W.gold}`, opacity: double ? 0.22 : 0.18,
-      }}/>
-      {double && (
-        <div style={{
-          position: 'absolute', inset: fl(13, 20), zIndex: 2, pointerEvents: 'none',
-          border: `0.4px solid ${W.gold}`, opacity: 0.1,
-        }}/>
-      )}
-    </>
+    <div style={{
+      position: 'absolute', inset: fl(8, 13), zIndex: 2, pointerEvents: 'none',
+      border: `1px solid ${W.gold}`, opacity: 0.18,
+    }}/>
   )
 }
 
@@ -182,116 +160,6 @@ function PhotoCircle({ src, size, alt = '' }: { src: string; size: number | stri
       boxShadow: `0 0 0 1px ${W.goldD}50, 0 10px 36px rgba(0,0,0,0.7)`,
     }}>
       <img src={src} alt={alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }}/>
-    </div>
-  )
-}
-
-// ═══════════════════════════════════════════════════════════════
-// COVER PAGE
-// ═══════════════════════════════════════════════════════════════
-
-function Cover() {
-  const t = useT()
-  const dir = useDir()
-  return (
-    <div className="gx-sheet" style={{
-      ...woodBg, position: 'relative', overflow: 'hidden',
-      display: 'flex', flexDirection: 'column',
-      minHeight: 'min(141vw, 1123px)',
-      boxShadow: '0 24px 96px rgba(0,0,0,0.95)',
-    }}>
-
-      {/* ── BEANS PHOTO FADE (bottom-right) ───────────────── */}
-      <img src={P.beans} alt=""
-        style={{
-          position: 'absolute', bottom: 0, right: 0, width: '53%', aspectRatio: '420 / 300',
-          objectFit: 'cover', opacity: 0.22, zIndex: 0,
-          maskImage: 'radial-gradient(ellipse at 100% 100%, black 30%, transparent 70%)',
-          WebkitMaskImage: 'radial-gradient(ellipse at 100% 100%, black 30%, transparent 70%)',
-        }}/>
-
-      {/* ── HEADER BAND ───────────────────────────────────── */}
-      {/* `direction: ltr` pins the brand | ornament | tagline order against the
-          RTL document root; each panel sets its own text direction below. */}
-      <div className="gx-band" style={{
-        position: 'relative', zIndex: 1, direction: 'ltr',
-        minHeight: fl(150, 228),
-        padding: '14px 0',
-        background: 'linear-gradient(180deg, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.32) 85%, transparent 100%)',
-      }}>
-        {/* ── LEFT: brand panel ── */}
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: `10px ${fl(16, 44)} 10px ${PAD_X}`, direction: dir }}>
-          {/* EN label — above, wide-tracked gold */}
-          <div style={{ fontFamily: BODY, fontSize: 7.5, color: W.gold, letterSpacing: '0.48em', textTransform: 'uppercase', direction: 'ltr', marginBottom: 10, opacity: 0.85 }}>
-            Galaxy Café
-          </div>
-          {/* Brand name */}
-          <div style={{ fontFamily: DISPLAY, fontSize: fl(38, 82), fontWeight: 700, color: W.cream, lineHeight: 0.95, letterSpacing: '0.01em', textShadow: `0 2px 40px rgba(208,166,40,0.18)` }}>
-            {t.brand}
-          </div>
-          {/* Thin gold rule below name */}
-          <div style={{ marginTop: 14, display: 'flex', alignItems: 'center', gap: 8 }}>
-            <div style={{ width: 32, height: 1.5, backgroundColor: W.gold, flexShrink: 0 }}/>
-            <div style={{ width: 6, height: 6, border: `1.5px solid ${W.gold}`, transform: 'rotate(45deg)', flexShrink: 0 }}/>
-            <div style={{ flex: 1, height: 0.5, backgroundColor: W.gold, opacity: 0.35 }}/>
-          </div>
-        </div>
-
-        {/* ── ORNAMENTAL DIVIDER ── */}
-        <div className="gx-band-sep">
-          <div className="gx-band-line gx-band-line--a"/>
-          {/* Star ornament */}
-          <svg width={20} height={20} viewBox="0 0 20 20" style={{ flexShrink: 0, margin: '4px' }}>
-            <path d="M10,1 L11.8,8.2 L19,10 L11.8,11.8 L10,19 L8.2,11.8 L1,10 L8.2,8.2 Z"
-              fill={W.gold} opacity="0.9"/>
-          </svg>
-          <svg width={10} height={10} viewBox="0 0 10 10" style={{ flexShrink: 0, margin: '3px' }}>
-            <path d="M5,0.5 L5.9,4.1 L9.5,5 L5.9,5.9 L5,9.5 L4.1,5.9 L0.5,5 L4.1,4.1 Z"
-              fill={W.gold} opacity="0.45"/>
-          </svg>
-          <div className="gx-band-line gx-band-line--b"/>
-        </div>
-
-        {/* ── RIGHT: tagline panel ── */}
-        <div className="gx-band-tag" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: `10px ${PAD_X} 10px ${flDown(8, 16)}`, direction: dir, gap: 14 }}>
-          {/* Decorative gold accent line */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <div style={{ flex: 1, height: 0.5, backgroundColor: W.gold, opacity: 0.4 }}/>
-            <div style={{ width: 4, height: 4, backgroundColor: W.gold, transform: 'rotate(45deg)', flexShrink: 0, opacity: 0.7 }}/>
-          </div>
-          {/* Tagline */}
-          <div style={{ fontFamily: BODY, fontSize: fl(13, 14.5), color: W.cream, lineHeight: 1.85, opacity: 0.62 }}>
-            {t.tagline}
-          </div>
-          {/* Bottom accent */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <div style={{ width: 4, height: 4, backgroundColor: W.gold, transform: 'rotate(45deg)', flexShrink: 0, opacity: 0.7 }}/>
-            <div style={{ flex: 1, height: 0.5, backgroundColor: W.gold, opacity: 0.4 }}/>
-          </div>
-        </div>
-      </div>
-
-      {/* ── BODY ──────────────────────────────────────────────
-          Flows instead of sitting at fixed offsets; the flexible
-          spacers soak up whatever height is left on a tall sheet. */}
-      <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: `${flDown(12, 16)} ${PAD_X} ${fl(24, 42)}` }}>
-
-        {/* ── BOTTOM LABEL ──────────────────────────────────── */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12, direction: 'ltr' }}>
-          <div style={{ fontFamily: BODY, fontSize: 8, color: W.muted, letterSpacing: '0.28em', textTransform: 'uppercase', direction: 'ltr' }}>
-            {t.footer}
-          </div>
-          <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-            <GoldLeaf size={16} rotate={25}/>
-            <GoldLeaf size={20} rotate={0}/>
-            <GoldLeaf size={16} rotate={-25}/>
-          </div>
-        </div>
-      </div>
-
-      <SheetFrame double/>
-      <GoldStrip edge="top"/>
-      <GoldStrip edge="bottom"/>
     </div>
   )
 }
@@ -466,19 +334,19 @@ function InnerPages() {
 
   return (
     <>
-      <TwoColPage n={2}
+      <TwoColPage n={1}
         left={<>{S(D.hotCoffee, P.espresso)}{S(D.icedCoffee, P.iced)}</>}
         right={<>{S(D.turkish)}{S(D.tea, P.matcha)}</>}
       />
-      <TwoColPage n={3}
+      <TwoColPage n={2}
         left={<>{S(D.herbal, P.matcha)}</>}
         right={<>{S(D.chocolate)}{S(D.winter)}{S(D.mojito)}</>}
       />
-      <TwoColPage n={4}
+      <TwoColPage n={3}
         left={<>{S(D.milkshake, P.smoothie)}</>}
         right={<>{S(D.frappe)}{S(D.juices)}</>}
       />
-      <TwoColPage n={5}
+      <TwoColPage n={4}
         left={<>{S(D.smoothie, P.smoothie)}{S(D.waterSoda)}{S(D.psTime)}</>}
         right={<>{S(D.extras)}</>}
       />
@@ -538,7 +406,6 @@ export default function App() {
         '--gx-gold': W.gold,
         '--gx-gold-35': `${W.gold}35`,
       } as React.CSSProperties}>
-        <Cover/>
         <InnerPages/>
       </div>
     </LangCtx.Provider>

@@ -42,36 +42,10 @@ body { margin: 0; background: #1E1208; }
   );
 }
 
-/* Cover header band — brand | ornament | tagline. */
-.gx-band { display: flex; align-items: stretch; }
-
-.gx-band-sep {
-  width: 52px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.gx-band-line { width: 1px; height: 50px; flex-shrink: 0; }
-.gx-band-line--a { background: linear-gradient(to bottom, transparent, var(--gx-gold)); }
-.gx-band-line--b { background: linear-gradient(to top, transparent, var(--gx-gold)); }
-
-.gx-band-tag { width: 210px; flex-shrink: 0; }
-
 @container (max-width: 620px) {
   .gx-cols {
     grid-template-columns: 1fr;
     row-gap: clamp(16px, 4cqw, 24px);
   }
   .gx-rule { display: none; }
-
-  /* The band turns into a vertical stack, so the ornament lies on its side. */
-  .gx-band { flex-direction: column; }
-  .gx-band-sep { width: auto; height: 34px; flex-direction: row; }
-  .gx-band-line { width: 56px; height: 1px; }
-  .gx-band-line--a { background: linear-gradient(to right, transparent, var(--gx-gold)); }
-  .gx-band-line--b { background: linear-gradient(to left, transparent, var(--gx-gold)); }
-  .gx-band-tag { width: auto; }
 }
