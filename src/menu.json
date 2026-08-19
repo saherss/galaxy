@@ -93,11 +93,9 @@
             "ar": "موكا",
             "en": "Mocha"
           },
-          "small": 95,
           "price": 120,
           "barcode": "000026",
-          "cost": null,
-          "barcodeSmall": "000153"
+          "cost": null
         },
         {
           "id": 90,
@@ -105,11 +103,9 @@
             "ar": "سبانيش لاتيه",
             "en": "Spanish Latte"
           },
-          "small": 110,
           "price": 140,
           "barcode": "000027",
-          "cost": null,
-          "barcodeSmall": "000154"
+          "cost": null
         },
         {
           "id": 100,
@@ -117,11 +113,9 @@
             "ar": "كراميل لاتيه",
             "en": "Caramel Latte"
           },
-          "small": 100,
           "price": 130,
           "barcode": "000028",
-          "cost": null,
-          "barcodeSmall": "000155"
+          "cost": null
         }
       ]
     },
@@ -149,8 +143,8 @@
             "ar": "آيس أمريكانو",
             "en": "Iced Americano"
           },
-          "small": 55,
-          "price": 70,
+          "small": 60,
+          "price": 80,
           "barcode": "000029",
           "cost": null,
           "barcodeSmall": "000157"
@@ -162,7 +156,7 @@
             "en": "Iced Latte"
           },
           "small": 95,
-          "price": 120,
+          "price": 130,
           "barcode": "000030",
           "cost": null,
           "barcodeSmall": "000158"
@@ -173,7 +167,7 @@
             "ar": "آيس موكا",
             "en": "Iced Mocha"
           },
-          "small": 105,
+          "small": 110,
           "price": 135,
           "barcode": "000032",
           "cost": null,
@@ -185,8 +179,8 @@
             "ar": "آيس وايت موكا",
             "en": "Iced White Mocha"
           },
-          "small": 115,
-          "price": 145,
+          "small": 120,
+          "price": 140,
           "barcode": "000033",
           "cost": null,
           "barcodeSmall": "000160"
@@ -197,8 +191,8 @@
             "ar": "آيس فانيليا لاتيه",
             "en": "Iced Vanilla Latte"
           },
-          "small": 65,
-          "price": 85,
+          "small": 70,
+          "price": 95,
           "barcode": "000034",
           "cost": null,
           "barcodeSmall": "000161"
@@ -209,8 +203,8 @@
             "ar": "آيس سبانيش لاتيه",
             "en": "Iced Spanish Latte"
           },
-          "small": 115,
-          "price": 145,
+          "small": 120,
+          "price": 140,
           "barcode": "000148",
           "cost": null,
           "barcodeSmall": "000162"
@@ -1762,5 +1756,6 @@
       "price": null,
       "cost": null
     }
-  ]
+  ],
+  "lastBarcode": "000227"
 }

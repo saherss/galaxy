@@ -59,12 +59,14 @@ const allBarcodes = (m: Menu) => [
   ...m.posOnly.map((p) => p.barcode),
 ].filter(Boolean) as string[]
 
-/** Barcodes are never reused, even when a drink is taken off the menu, so a
- *  new one always continues past the highest number ever issued. */
-const nextBarcode = (m: Menu, taken: string[] = []) => {
-  const used = [...allBarcodes(m), ...taken]
-  const max = Math.max(0, ...used.map((b) => parseInt(b, 10) || 0))
-  return String(max + 1).padStart(6, '0')
+/**
+ * Barcodes are never reused. Clearing a small price drops that SKU out of the
+ * file, so the numbers still present are not enough to tell what has already
+ * been issued — `lastBarcode` remembers the high-water mark.
+ */
+const nextBarcode = (m: Menu) => {
+  const seen = [...allBarcodes(m).map((b) => parseInt(b, 10) || 0), parseInt(m.lastBarcode, 10) || 0]
+  return String(Math.max(0, ...seen) + 1).padStart(6, '0')
 }
 
 /** Ids order a section and are spaced by 10 so rows can be slotted between. */
@@ -121,9 +123,9 @@ export default function AdminApp() {
   }
 
   function patch(sectionId: number, itemId: number, change: Partial<Item>) {
-    setDraft((d) => ({
-      ...d,
-      sections: d.sections.map((s) =>
+    setDraft((d) => {
+      let issued: string | null = null
+      const sections = d.sections.map((s) =>
         s.id !== sectionId ? s : {
           ...s,
           items: s.items.map((i) => {
@@ -131,31 +133,34 @@ export default function AdminApp() {
             const next = { ...i, ...change }
             // A small pour is its own thing to sell, so the moment one is
             // priced it needs a barcode of its own; clearing the price
-            // retires it again.
-            if (typeof next.small === 'number' && !next.barcodeSmall) next.barcodeSmall = nextBarcode(d)
+            // retires it again — and the number stays retired.
+            if (typeof next.small === 'number' && !next.barcodeSmall) {
+              issued = nextBarcode(d)
+              next.barcodeSmall = issued
+            }
             if (typeof next.small !== 'number') delete next.barcodeSmall
             return next
           }),
         },
-      ),
-    }))
+      )
+      return { ...d, sections, lastBarcode: issued ?? d.lastBarcode }
+    })
   }
 
   function addItem(sectionId: number) {
-    setDraft((d) => ({
-      ...d,
-      sections: d.sections.map((s) =>
-        s.id !== sectionId ? s : {
-          ...s,
-          items: [...s.items, {
-            id: nextItemId(s),
-            name: { ar: '', en: '' },
-            barcode: nextBarcode(d),
-            cost: null,
-          }],
-        },
-      ),
-    }))
+    setDraft((d) => {
+      const barcode = nextBarcode(d)
+      return {
+        ...d,
+        lastBarcode: barcode,
+        sections: d.sections.map((s) =>
+          s.id !== sectionId ? s : {
+            ...s,
+            items: [...s.items, { id: nextItemId(s), name: { ar: '', en: '' }, barcode, cost: null }],
+          },
+        ),
+      }
+    })
   }
 
   /**

@@ -33,7 +33,14 @@ export type PosOnly = {
   cost: number | null
 }
 
-export type Menu = { currency: string; sections: Section[]; posOnly: PosOnly[] }
+export type Menu = {
+  currency: string
+  /** Highest barcode ever issued. Kept so a retired SKU's number is never
+   *  handed to a different drink, even after it leaves the file entirely. */
+  lastBarcode: string
+  sections: Section[]
+  posOnly: PosOnly[]
+}
 
 export const MENU = menuJson as unknown as Menu
 
