@@ -15,7 +15,7 @@
             "ar": "إسبريسو سينجل",
             "en": "Espresso Single"
           },
-          "price": 60,
+          "price": 45,
           "barcode": "000019",
           "cost": null
         },
@@ -25,7 +25,7 @@
             "ar": "إسبريسو دابل",
             "en": "Espresso Double"
           },
-          "price": 85,
+          "price": 60,
           "barcode": "000020",
           "cost": null
         },
@@ -35,11 +35,11 @@
             "ar": "أمريكانو",
             "en": "Americano"
           },
-          "small": 55,
-          "price": 75,
+          "small": 45,
+          "price": 60,
           "barcode": "000021",
           "cost": null,
-          "barcodeSmall": "000149"
+          "barcodeSmall": "000242"
         },
         {
           "id": 40,
@@ -47,11 +47,9 @@
             "ar": "كابتشينو",
             "en": "Cappuccino"
           },
-          "small": 80,
-          "price": 100,
+          "price": 80,
           "barcode": "000022",
-          "cost": null,
-          "barcodeSmall": "000150"
+          "cost": null
         },
         {
           "id": 50,
@@ -1822,5 +1820,5 @@
       "archived": true
     }
   ],
-  "lastBarcode": "000241"
+  "lastBarcode": "000243"
 }
