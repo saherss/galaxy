@@ -211,7 +211,7 @@
             "ar": "تركي غامق دابل",
             "en": "Turkish Dark, Double"
           },
-          "price": 70,
+          "price": 45,
           "barcode": "000229",
           "cost": null
         },
@@ -221,7 +221,7 @@
             "ar": "تركي وسط سينجل",
             "en": "Turkish Medium, Single"
           },
-          "price": 55,
+          "price": 45,
           "barcode": "000230",
           "cost": null
         },
@@ -231,7 +231,7 @@
             "ar": "تركي وسط دابل",
             "en": "Turkish Medium, Double"
           },
-          "price": 60,
+          "price": 40,
           "barcode": "000231",
           "cost": null
         },
@@ -241,7 +241,7 @@
             "ar": "تركي فاتح سينجل",
             "en": "Turkish Light, Single"
           },
-          "price": 50,
+          "price": 40,
           "barcode": "000232",
           "cost": null
         },
@@ -251,7 +251,7 @@
             "ar": "تركي فاتح دابل",
             "en": "Turkish Light, Double"
           },
-          "price": 55,
+          "price": 40,
           "barcode": "000233",
           "cost": null
         },
@@ -281,7 +281,7 @@
             "ar": "فرنساوي تشوكليت",
             "en": "French Chocolate"
           },
-          "price": 100,
+          "price": 85,
           "barcode": "000236",
           "cost": null
         },
@@ -291,7 +291,7 @@
             "ar": "فرنساوي فانيليا",
             "en": "French Vanilla"
           },
-          "price": 95,
+          "price": 80,
           "barcode": "000237",
           "cost": null
         }
@@ -421,7 +421,7 @@
             "ar": "تيليو",
             "en": "Linden"
           },
-          "price": 50,
+          "price": 40,
           "barcode": "000052",
           "cost": null
         },
@@ -739,7 +739,7 @@
             "ar": "شوكليت",
             "en": "Chocolate"
           },
-          "price": 100,
+          "price": 120,
           "barcode": "000087",
           "cost": null
         },
@@ -749,7 +749,7 @@
             "ar": "وايت شوكليت",
             "en": "White Chocolate"
           },
-          "price": 100,
+          "price": 120,
           "barcode": "000088",
           "cost": null
         },
@@ -759,7 +759,7 @@
             "ar": "كراميل",
             "en": "Caramel"
           },
-          "price": 100,
+          "price": 120,
           "barcode": "000089",
           "cost": null
         },
@@ -769,7 +769,7 @@
             "ar": "أوريو",
             "en": "Oreo"
           },
-          "price": 110,
+          "price": 130,
           "barcode": "000090",
           "cost": null
         },
@@ -779,7 +779,7 @@
             "ar": "لوتس",
             "en": "Lotus"
           },
-          "price": 125,
+          "price": 135,
           "barcode": "000091",
           "cost": null
         },
@@ -789,7 +789,7 @@
             "ar": "نوتيلا",
             "en": "Nutella"
           },
-          "price": 125,
+          "price": 135,
           "barcode": "000092",
           "cost": null
         },
@@ -799,17 +799,17 @@
             "ar": "فانيليا",
             "en": "Vanilla"
           },
-          "price": 100,
+          "price": 110,
           "barcode": "000093",
           "cost": null
         },
         {
           "id": 80,
           "name": {
-            "ar": "فراولة",
+            "ar": "فراولة ",
             "en": "Strawberry"
           },
-          "price": 100,
+          "price": 125,
           "barcode": "000094",
           "cost": null
         },
@@ -819,7 +819,7 @@
             "ar": "مانجو",
             "en": "Mango"
           },
-          "price": 100,
+          "price": 125,
           "barcode": "000095",
           "cost": null
         },
@@ -829,7 +829,7 @@
             "ar": "بلوبيري",
             "en": "Blueberry"
           },
-          "price": 100,
+          "price": 125,
           "barcode": "000097",
           "cost": null
         },
@@ -839,7 +839,7 @@
             "ar": "كيندر",
             "en": "Kinder"
           },
-          "price": 115,
+          "price": 130,
           "barcode": "000099",
           "cost": null
         },
@@ -849,7 +849,7 @@
             "ar": "سنيكرز",
             "en": "Snickers"
           },
-          "price": 110,
+          "price": 130,
           "barcode": "000100",
           "cost": null
         }
@@ -1109,6 +1109,15 @@
           },
           "price": 85,
           "barcode": "000119",
+          "cost": null
+        },
+        {
+          "id": 170,
+          "name": {
+            "ar": "مينت بنانا",
+            "en": "Mint banana "
+          },
+          "barcode": "000247",
           "cost": null
         }
       ],
@@ -1782,5 +1791,5 @@
       "archived": true
     }
   ],
-  "lastBarcode": "000246"
+  "lastBarcode": "000247"
 }
