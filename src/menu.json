@@ -967,7 +967,7 @@
             "ar": "فراولة",
             "en": "Strawberry"
           },
-          "price": 80,
+          "price": 85,
           "barcode": "000015",
           "cost": 65
         },
@@ -1100,6 +1100,16 @@
           "barcode": "000247",
           "cost": null,
           "price": 95
+        },
+        {
+          "id": 180,
+          "name": {
+            "ar": "افوكادو",
+            "en": "Avokado"
+          },
+          "barcode": "000254",
+          "cost": null,
+          "price": 140
         }
       ],
       "posPrefix": {
@@ -1174,6 +1184,26 @@
           "price": 95,
           "barcode": "000125",
           "cost": null
+        },
+        {
+          "id": 70,
+          "name": {
+            "ar": "سموزي افوكادو",
+            "en": "Avokado "
+          },
+          "barcode": "000255",
+          "cost": null,
+          "price": 120
+        },
+        {
+          "id": 80,
+          "name": {
+            "ar": "سموزي بطيخ ",
+            "en": "Watermelon "
+          },
+          "barcode": "000258",
+          "cost": null,
+          "price": 90
         }
       ],
       "posPrefix": {
@@ -1195,7 +1225,7 @@
             "ar": "مياه معدنية",
             "en": "Mineral Water"
           },
-          "price": 10,
+          "price": 15,
           "barcode": "000018",
           "cost": 10
         },
@@ -1268,6 +1298,16 @@
           "barcode": "000251",
           "cost": null,
           "price": 40
+        },
+        {
+          "id": 110,
+          "name": {
+            "ar": "تويست ",
+            "en": "Twist"
+          },
+          "barcode": "000257",
+          "cost": null,
+          "price": 45
         }
       ]
     },
@@ -1818,5 +1858,5 @@
       "archived": true
     }
   ],
-  "lastBarcode": "000253"
+  "lastBarcode": "000259"
 }
