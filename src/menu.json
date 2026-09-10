@@ -193,7 +193,7 @@
           "id": 80,
           "name": {
             "ar": "ايس كوفي نوتيلا",
-            "en": "Ice coffee notila "
+            "en": "Ice coffee notila"
           },
           "barcode": "000253",
           "cost": null,
@@ -786,7 +786,7 @@
         {
           "id": 80,
           "name": {
-            "ar": "فراولة ",
+            "ar": "فراولة",
             "en": "Strawberry"
           },
           "price": 120,
@@ -1095,7 +1095,7 @@
           "id": 170,
           "name": {
             "ar": "مينت بنانا",
-            "en": "Mint banana "
+            "en": "Mint banana"
           },
           "barcode": "000247",
           "cost": null,
@@ -1189,7 +1189,7 @@
           "id": 70,
           "name": {
             "ar": "سموزي افوكادو",
-            "en": "Avokado "
+            "en": "Avokado"
           },
           "barcode": "000255",
           "cost": null,
@@ -1198,8 +1198,8 @@
         {
           "id": 80,
           "name": {
-            "ar": "سموزي بطيخ ",
-            "en": "Watermelon "
+            "ar": "سموزي بطيخ",
+            "en": "Watermelon"
           },
           "barcode": "000258",
           "cost": null,
@@ -1252,7 +1252,7 @@
         {
           "id": 50,
           "name": {
-            "ar": "بيبسي ",
+            "ar": "بيبسي",
             "en": "Papsi"
           },
           "barcode": "000244",
@@ -1262,8 +1262,8 @@
         {
           "id": 60,
           "name": {
-            "ar": "ميراند ",
-            "en": "Merida "
+            "ar": "ميراند",
+            "en": "Merida"
           },
           "barcode": "000245",
           "cost": null,
@@ -1272,7 +1272,7 @@
         {
           "id": 70,
           "name": {
-            "ar": "سفن ",
+            "ar": "سفن",
             "en": "Seven up"
           },
           "barcode": "000246",
@@ -1283,7 +1283,7 @@
           "id": 80,
           "name": {
             "ar": "فيروز",
-            "en": "Fauroz "
+            "en": "Fauroz"
           },
           "barcode": "000249",
           "cost": null,
@@ -1302,7 +1302,7 @@
         {
           "id": 110,
           "name": {
-            "ar": "تويست ",
+            "ar": "تويست",
             "en": "Twist"
           },
           "barcode": "000257",
@@ -1322,7 +1322,118 @@
         "ar": "باور درينك",
         "en": "Power Drink"
       },
-      "items": []
+      "items": [
+        {
+          "id": 10,
+          "name": {
+            "ar": "ستروبري باور",
+            "en": "Strawberry power"
+          },
+          "barcode": "000260",
+          "cost": null,
+          "price": 125
+        },
+        {
+          "id": 20,
+          "name": {
+            "ar": "ليمون باور",
+            "en": "Lemon power"
+          },
+          "barcode": "000261",
+          "cost": null,
+          "price": 120
+        },
+        {
+          "id": 30,
+          "name": {
+            "ar": "خوخ باور",
+            "en": "Peach power"
+          },
+          "barcode": "000262",
+          "cost": null,
+          "price": 130
+        },
+        {
+          "id": 40,
+          "name": {
+            "ar": "مانجو باور",
+            "en": "Mango power"
+          },
+          "barcode": "000263",
+          "cost": null,
+          "price": 135
+        },
+        {
+          "id": 50,
+          "name": {
+            "ar": "أناناس باور",
+            "en": "Pineapple power"
+          },
+          "barcode": "000264",
+          "cost": null,
+          "price": 135
+        },
+        {
+          "id": 60,
+          "name": {
+            "ar": "بطيخ باور",
+            "en": "Water melone"
+          },
+          "barcode": "000265",
+          "cost": null,
+          "price": 135
+        },
+        {
+          "id": 70,
+          "name": {
+            "ar": "بلو بيري باور",
+            "en": "Blueberry power"
+          },
+          "barcode": "000266",
+          "cost": null,
+          "price": 130
+        },
+        {
+          "id": 80,
+          "name": {
+            "ar": "شيري باور",
+            "en": "Cheery power"
+          },
+          "barcode": "000267",
+          "cost": null,
+          "price": 130
+        },
+        {
+          "id": 90,
+          "name": {
+            "ar": "جوز هند باور",
+            "en": "Coconut power"
+          },
+          "barcode": "000268",
+          "cost": null,
+          "price": 140
+        },
+        {
+          "id": 100,
+          "name": {
+            "ar": "ليمون فراوله باور",
+            "en": "Strawberry lemon power"
+          },
+          "barcode": "000269",
+          "cost": null,
+          "price": 145
+        },
+        {
+          "id": 110,
+          "name": {
+            "ar": "باشن فروت باور",
+            "en": "Passion fruit"
+          },
+          "barcode": "000270",
+          "cost": null,
+          "price": 140
+        }
+      ]
     },
     {
       "id": 140,
@@ -1445,8 +1556,8 @@
         {
           "id": 20,
           "name": {
-            "ar": "سيملتور ",
-            "en": "Semilator "
+            "ar": "سيملتور",
+            "en": "Semilator"
           },
           "barcode": "000252",
           "cost": null,
@@ -1869,7 +1980,15 @@
       "price": null,
       "cost": null,
       "archived": true
+    },
+    {
+      "barcode": "000271",
+      "name": "",
+      "category": "الباور درينك",
+      "price": null,
+      "cost": null,
+      "archived": true
     }
   ],
-  "lastBarcode": "000259"
+  "lastBarcode": "000271"
 }
