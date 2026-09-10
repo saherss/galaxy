@@ -248,6 +248,9 @@ function MenuItem({ item, even, sized }: { item: Item; even: boolean; sized: boo
 
 // Full section: header + items
 function Section({ d, photo }: { d: Section; photo?: string }) {
+  // A section is created before its drinks are priced; until then it has
+  // nothing to show, and a bare heading reads as a mistake.
+  if (!d.items.length) return null
   const sized = d.items.some(isSized)
   return (
     <div style={{ marginBottom: fl(18, 24) }}>
@@ -349,7 +352,7 @@ function InnerPages() {
         right={<>{S(D.frappe)}{S(D.juices)}</>}
       />
       <TwoColPage n={4}
-        left={<>{S(D.smoothie, P.smoothie)}{S(D.waterSoda)}{S(D.psTime)}</>}
+        left={<>{S(D.smoothie, P.smoothie)}{S(D.waterSoda)}{S(D.powerDrinks)}{S(D.psTime)}</>}
         right={<>{S(D.extras)}</>}
       />
     </>

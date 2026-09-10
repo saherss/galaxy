@@ -72,6 +72,17 @@ const nextBarcode = (m: Menu) => {
 /** Ids order a section and are spaced by 10 so rows can be slotted between. */
 const nextItemId = (s: Section) => Math.max(0, ...s.items.map((i) => i.id)) + 10
 
+/** Names typed into the page often keep a stray space at either end. The POS
+ *  matches on the exact string, so "بيبسي " would be a different product from
+ *  "بيبسي"; strip them before anything is saved or exported. */
+const tidy = (m: Menu): Menu => ({
+  ...m,
+  sections: m.sections.map((s) => ({
+    ...s,
+    items: s.items.map((i) => ({ ...i, name: { ar: i.name.ar.trim(), en: i.name.en.trim() } })),
+  })),
+})
+
 // ── APP ───────────────────────────────────────────────────────────────────────
 
 type Status = { kind: 'idle' | 'busy' | 'ok' | 'bad'; text: string }
@@ -113,7 +124,7 @@ export default function AdminApp() {
     }
     setStatus({ kind: 'busy', text: 'جارٍ الحفظ…' })
     try {
-      const text = JSON.stringify(draft, null, 2) + '\n'
+      const text = JSON.stringify(tidy(draft), null, 2) + '\n'
       const next = await saveMenu(token, text, sha, 'Update menu prices from the admin page')
       setSha(next)
       setStatus({ kind: 'ok', text: 'تم الحفظ — الموقع هيتحدّث خلال دقيقة تقريباً' })
@@ -203,7 +214,7 @@ export default function AdminApp() {
 
   function exportExcel() {
     // Export the draft, not the bundled copy, so unsaved edits are included.
-    const rows = buildPosRows('ar', draft)
+    const rows = buildPosRows('ar', tidy(draft))
     const ws = XLSX.utils.json_to_sheet(rows, { header: [...POS_HEADER] })
     for (let i = 0; i < rows.length; i++) {
       const cell = ws['B' + (i + 2)]

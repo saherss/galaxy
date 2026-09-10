@@ -63,6 +63,10 @@ from it — never the other way round.
   stock items, and drinks struck off the price list.
 - `id` fixes the running order and is spaced by 10, so a new drink slots
   between two others without renumbering. Render paths sort by it.
+- The admin page edits drinks, not sections. A new section is added to
+  `menu.json` by hand and must also be placed in `InnerPages` in `App.tsx` —
+  pages are laid out by key, so an unplaced section never renders. Empty
+  sections render nothing, so one can be created before its drinks exist.
 
 ## Direction
 

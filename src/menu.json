@@ -1312,6 +1312,19 @@
       ]
     },
     {
+      "id": 135,
+      "key": "powerDrinks",
+      "name": {
+        "ar": "الباور درينك",
+        "en": "Power Drinks"
+      },
+      "posPrefix": {
+        "ar": "باور درينك",
+        "en": "Power Drink"
+      },
+      "items": []
+    },
+    {
       "id": 140,
       "key": "extras",
       "name": {
