@@ -50,12 +50,25 @@ function menuJsonLd(): Plugin {
       if (!html.includes(TOKEN)) return html
       const file = path.resolve(import.meta.dirname, 'src/menu.json')
       const menu = JSON.parse(fs.readFileSync(file, 'utf8')) as {
-        sections: { id: number; name: { ar: string }; items: unknown[] }[]
+        sections: { id: number; name: { ar: string }; group?: { ar: string }; items: unknown[] }[]
       }
-      const sections = [...menu.sections]
-        .sort((a, b) => a.id - b.id)
-        .filter((s) => s.items.length > 0)
-        .map((s) => ({ '@type': 'MenuSection', name: s.name.ar }))
+      const priced = [...menu.sections].sort((a, b) => a.id - b.id).filter((s) => s.items.length > 0)
+
+      // Sections sharing a `group` (ريد بول / تويست / فيوري under مشروبات
+      // الطاقة) nest under one parent MenuSection, matching the shared page
+      // heading on the printed menu instead of listing as three flat peers.
+      const sections: unknown[] = []
+      const nested = new Map<string, { '@type': string; name: string; hasMenuSection: unknown[] }>()
+      for (const s of priced) {
+        if (!s.group) { sections.push({ '@type': 'MenuSection', name: s.name.ar }); continue }
+        let parent = nested.get(s.group.ar)
+        if (!parent) {
+          parent = { '@type': 'MenuSection', name: s.group.ar, hasMenuSection: [] }
+          nested.set(s.group.ar, parent)
+          sections.push(parent)
+        }
+        parent.hasMenuSection.push({ '@type': 'MenuSection', name: s.name.ar })
+      }
       return html.replace(TOKEN, JSON.stringify(sections))
     },
   }

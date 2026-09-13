@@ -28,6 +28,10 @@ export type Section = {
   /** Names the kind of drink in the POS sheet, where there are no section
    *  headings to tell one bare `مانجو` from another. */
   posPrefix?: Localized
+  /** Parent category shown above several sections that belong together
+   *  (مشروبات الطاقة over ريد بول / تويست / فيوري). Sections sharing one
+   *  group must sit on the same page — PAGES reads this to label it. */
+  group?: Localized
   items: Item[]
 }
 

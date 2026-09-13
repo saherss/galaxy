@@ -295,6 +295,28 @@ function Page({ children, pageNum }: { children: ReactNode; pageNum: number }) {
 }
 
 // Page header (brand + divider + label)
+// A category label spanning a whole page, for when several sections on it
+// belong to one family (مشروبات الطاقة over ريد بول / تويست / فيوري). Each
+// section keeps its own smaller SectionHeader underneath.
+function PageGroupHeading({ name }: { name: Localized }) {
+  const lang = useLang()
+  const dir = useDir()
+  const [lead, caption] = lang === 'ar' ? [name.ar, name.en] : [name.en, name.ar]
+  return (
+    <div style={{ textAlign: 'center', marginBottom: fl(22, 30), direction: dir }}>
+      <div style={{ fontFamily: DISPLAY, fontSize: fl(26, 36), fontStyle: 'italic', color: W.gold, lineHeight: 1.05 }}>
+        {lead}
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center', margin: '7px 0' }}>
+        <BrushStroke width={200} weight={3}/>
+      </div>
+      <div style={{ fontFamily: BODY, fontSize: 7.5, color: W.muted, letterSpacing: '0.3em', textTransform: 'uppercase', opacity: 0.8 }}>
+        {caption}
+      </div>
+    </div>
+  )
+}
+
 function PageHeader() {
   const t = useT()
   const dir = useDir()
@@ -317,10 +339,11 @@ function PageHeader() {
 
 // Two-column inner page layout. `.gx-cols` collapses to one column on a
 // narrow sheet and `.gx-rule` (the divider) drops out with it.
-function TwoColPage({ left, right, n }: { left: ReactNode; right: ReactNode; n: number }) {
+function TwoColPage({ left, right, n, title }: { left: ReactNode; right: ReactNode; n: number; title?: Localized }) {
   return (
     <Page pageNum={n}>
       <PageHeader/>
+      {title && <PageGroupHeading name={title}/>}
       <div className="gx-cols">
         <div className="gx-rule"/>
         <div style={{ minWidth: 0 }}>{left}</div>
@@ -339,16 +362,20 @@ function TwoColPage({ left, right, n }: { left: ReactNode; right: ReactNode; n: 
 // sections are all still empty is skipped — otherwise a section created ahead
 // of its items would print a blank page — and the rest number themselves.
 type Slot = [key: string, photo?: string]
-const PAGES: { left: Slot[]; right: Slot[] }[] = [
+type PageDef = { left: Slot[]; right: Slot[]; title?: Localized }
+const PAGES: PageDef[] = [
   { left: [['hotCoffee', P.espresso], ['icedCoffee', P.iced]], right: [['turkish'], ['tea', P.matcha]] },
   { left: [['herbal', P.matcha]], right: [['chocolate'], ['winter'], ['mojito']] },
   { left: [['milkshake', P.smoothie]], right: [['frappe'], ['juices']] },
   { left: [['smoothie', P.smoothie], ['waterSoda'], ['psTime']], right: [['extras']] },
-  // مشروبات الطاقة (ريد بول + تويست + فيوري) get a page of their own so the
-  // family starts clean at the top of a sheet rather than trailing after an
-  // unrelated section. مكسات isn't part of that family, so it sits with the
-  // other new categories instead.
-  { left: [['powerDrinks']], right: [['twist'], ['fury']] },
+  // مشروبات الطاقة is the parent category; ريد بول, تويست and فيوري are the
+  // brands under it (D.powerDrinks.group in menu.json, so the label can't
+  // drift from what the sections themselves declare). The page gets a
+  // shared heading so that reads clearly, and the family starts clean at
+  // the top of a sheet rather than trailing after an unrelated section.
+  // مكسات isn't part of that family, so it sits with the other new
+  // categories instead.
+  { left: [['powerDrinks']], right: [['twist'], ['fury']], title: D.powerDrinks?.group },
   { left: [['mixes']], right: [['desserts'], ['breakfast']] },
 ]
 
@@ -361,7 +388,7 @@ function InnerPages() {
   return (
     <>
       {PAGES.filter((page) => hasItems(page.left) || hasItems(page.right)).map((page, n) => (
-        <TwoColPage key={n} n={n + 1} left={column(page.left)} right={column(page.right)}/>
+        <TwoColPage key={n} n={n + 1} left={column(page.left)} right={column(page.right)} title={page.title}/>
       ))}
     </>
   )

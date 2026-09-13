@@ -1315,8 +1315,8 @@
       "id": 140,
       "key": "powerDrinks",
       "name": {
-        "ar": "مشروبات طاقة ريد بول",
-        "en": "Red Bull Energy Drinks"
+        "ar": "ريد بول",
+        "en": "Red Bull"
       },
       "posPrefix": {
         "ar": "باور",
@@ -1433,7 +1433,11 @@
           "cost": null,
           "price": 140
         }
-      ]
+      ],
+      "group": {
+        "ar": "مشروبات الطاقة",
+        "en": "Energy Drinks"
+      }
     },
     {
       "id": 150,
@@ -1537,7 +1541,11 @@
           "cost": null,
           "price": 95
         }
-      ]
+      ],
+      "group": {
+        "ar": "مشروبات الطاقة",
+        "en": "Energy Drinks"
+      }
     },
     {
       "id": 160,
@@ -1641,7 +1649,11 @@
           "cost": null,
           "price": 70
         }
-      ]
+      ],
+      "group": {
+        "ar": "مشروبات الطاقة",
+        "en": "Energy Drinks"
+      }
     },
     {
       "id": 170,
