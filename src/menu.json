@@ -210,7 +210,7 @@
       },
       "items": [
         {
-          "id": 20,
+          "id": 10,
           "name": {
             "ar": "تركي غامق دابل",
             "en": "Turkish Dark, Double"
@@ -220,7 +220,7 @@
           "cost": null
         },
         {
-          "id": 30,
+          "id": 20,
           "name": {
             "ar": "تركي وسط سينجل",
             "en": "Turkish Medium, Single"
@@ -230,7 +230,7 @@
           "cost": null
         },
         {
-          "id": 40,
+          "id": 30,
           "name": {
             "ar": "تركي وسط دابل",
             "en": "Turkish Medium, Double"
@@ -240,7 +240,7 @@
           "cost": null
         },
         {
-          "id": 50,
+          "id": 40,
           "name": {
             "ar": "تركي فاتح سينجل",
             "en": "Turkish Light, Single"
@@ -250,7 +250,7 @@
           "cost": null
         },
         {
-          "id": 60,
+          "id": 50,
           "name": {
             "ar": "تركي فاتح دابل",
             "en": "Turkish Light, Double"
@@ -260,7 +260,7 @@
           "cost": null
         },
         {
-          "id": 70,
+          "id": 60,
           "name": {
             "ar": "فرنساوي كلاسيك",
             "en": "French Classic"
@@ -270,7 +270,7 @@
           "cost": null
         },
         {
-          "id": 80,
+          "id": 70,
           "name": {
             "ar": "فرنساوي بندق",
             "en": "French Hazelnut"
@@ -280,7 +280,7 @@
           "cost": null
         },
         {
-          "id": 90,
+          "id": 80,
           "name": {
             "ar": "فرنساوي تشوكليت",
             "en": "French Chocolate"
@@ -290,7 +290,7 @@
           "cost": null
         },
         {
-          "id": 100,
+          "id": 90,
           "name": {
             "ar": "فرنساوي فانيليا",
             "en": "French Vanilla"
@@ -310,7 +310,7 @@
       },
       "items": [
         {
-          "id": 20,
+          "id": 10,
           "name": {
             "ar": "شاي عادي",
             "en": "Regular Tea"
@@ -320,7 +320,7 @@
           "cost": null
         },
         {
-          "id": 30,
+          "id": 20,
           "name": {
             "ar": "شاي فتلة",
             "en": "Tea Bag"
@@ -330,7 +330,7 @@
           "cost": 9.52
         },
         {
-          "id": 40,
+          "id": 30,
           "name": {
             "ar": "شاي أخضر",
             "en": "Green Tea"
@@ -340,7 +340,7 @@
           "cost": null
         },
         {
-          "id": 50,
+          "id": 40,
           "name": {
             "ar": "شاي بلبن",
             "en": "Tea with Milk"
@@ -350,7 +350,7 @@
           "cost": null
         },
         {
-          "id": 60,
+          "id": 50,
           "name": {
             "ar": "شاي كرك",
             "en": "Karak Tea"
@@ -360,7 +360,7 @@
           "cost": null
         },
         {
-          "id": 70,
+          "id": 60,
           "name": {
             "ar": "شاي ليمون",
             "en": "Lemon Tea"
@@ -898,7 +898,7 @@
           "cost": null
         },
         {
-          "id": 70,
+          "id": 60,
           "name": {
             "ar": "لوتس",
             "en": "Lotus"
@@ -908,7 +908,7 @@
           "cost": null
         },
         {
-          "id": 80,
+          "id": 70,
           "name": {
             "ar": "نوتيلا",
             "en": "Nutella"
@@ -918,7 +918,7 @@
           "cost": null
         },
         {
-          "id": 90,
+          "id": 80,
           "name": {
             "ar": "شوكليت",
             "en": "Chocolate"
@@ -952,7 +952,7 @@
           "cost": 80
         },
         {
-          "id": 30,
+          "id": 20,
           "name": {
             "ar": "برتقال",
             "en": "Orange"
@@ -962,7 +962,7 @@
           "cost": null
         },
         {
-          "id": 40,
+          "id": 30,
           "name": {
             "ar": "فراولة",
             "en": "Strawberry"
@@ -972,7 +972,7 @@
           "cost": 65
         },
         {
-          "id": 50,
+          "id": 40,
           "name": {
             "ar": "فراولة بلبن",
             "en": "Strawberry with Milk"
@@ -982,7 +982,7 @@
           "cost": 100
         },
         {
-          "id": 60,
+          "id": 50,
           "name": {
             "ar": "جوافة بلبن",
             "en": "Guava with Milk"
@@ -992,7 +992,7 @@
           "cost": 65
         },
         {
-          "id": 70,
+          "id": 60,
           "name": {
             "ar": "ليمون",
             "en": "Lemon"
@@ -1002,7 +1002,7 @@
           "cost": null
         },
         {
-          "id": 80,
+          "id": 70,
           "name": {
             "ar": "ليمون نعناع",
             "en": "Lemon Mint"
@@ -1012,7 +1012,7 @@
           "cost": 60
         },
         {
-          "id": 90,
+          "id": 80,
           "name": {
             "ar": "تين",
             "en": "Fig"
@@ -1022,7 +1022,7 @@
           "cost": 65
         },
         {
-          "id": 100,
+          "id": 90,
           "name": {
             "ar": "عناب",
             "en": "Jujube"
@@ -1032,7 +1032,7 @@
           "cost": 40
         },
         {
-          "id": 110,
+          "id": 100,
           "name": {
             "ar": "موز بلبن",
             "en": "Banana with Milk"
@@ -1042,7 +1042,7 @@
           "cost": null
         },
         {
-          "id": 120,
+          "id": 110,
           "name": {
             "ar": "أفوكادو",
             "en": "Avocado"
@@ -1052,7 +1052,7 @@
           "cost": null
         },
         {
-          "id": 130,
+          "id": 120,
           "name": {
             "ar": "كوكتيل",
             "en": "Cocktail"
@@ -1062,7 +1062,7 @@
           "cost": null
         },
         {
-          "id": 140,
+          "id": 130,
           "name": {
             "ar": "بطيخ",
             "en": "Watermelon"
@@ -1072,7 +1072,7 @@
           "cost": null
         },
         {
-          "id": 150,
+          "id": 140,
           "name": {
             "ar": "رمان",
             "en": "Pomegranate"
@@ -1082,7 +1082,7 @@
           "cost": null
         },
         {
-          "id": 160,
+          "id": 150,
           "name": {
             "ar": "كنتالوب",
             "en": "Cantaloupe"
@@ -1092,7 +1092,7 @@
           "cost": null
         },
         {
-          "id": 170,
+          "id": 160,
           "name": {
             "ar": "مينت بنانا",
             "en": "Mint banana"
@@ -1102,7 +1102,7 @@
           "price": 95
         },
         {
-          "id": 180,
+          "id": 170,
           "name": {
             "ar": "افوكادو",
             "en": "Avokado"
@@ -1230,7 +1230,7 @@
           "cost": 10
         },
         {
-          "id": 30,
+          "id": 20,
           "name": {
             "ar": "كولا",
             "en": "Cola"
@@ -1240,7 +1240,7 @@
           "cost": null
         },
         {
-          "id": 40,
+          "id": 30,
           "name": {
             "ar": "كولا دايت",
             "en": "Diet Cola"
@@ -1250,7 +1250,7 @@
           "cost": null
         },
         {
-          "id": 50,
+          "id": 40,
           "name": {
             "ar": "بيبسي",
             "en": "Papsi"
@@ -1260,7 +1260,7 @@
           "price": 40
         },
         {
-          "id": 60,
+          "id": 50,
           "name": {
             "ar": "ميراند",
             "en": "Merida"
@@ -1270,7 +1270,7 @@
           "price": 40
         },
         {
-          "id": 70,
+          "id": 60,
           "name": {
             "ar": "سفن",
             "en": "Seven up"
@@ -1280,7 +1280,7 @@
           "price": 40
         },
         {
-          "id": 80,
+          "id": 70,
           "name": {
             "ar": "فيروز",
             "en": "Fauroz"
@@ -1290,7 +1290,7 @@
           "price": 40
         },
         {
-          "id": 100,
+          "id": 80,
           "name": {
             "ar": "في كولا",
             "en": "V cola"
@@ -1300,7 +1300,7 @@
           "price": 40
         },
         {
-          "id": 110,
+          "id": 90,
           "name": {
             "ar": "تويست",
             "en": "Twist"
@@ -1312,15 +1312,15 @@
       ]
     },
     {
-      "id": 135,
+      "id": 140,
       "key": "powerDrinks",
       "name": {
-        "ar": "الباور درينك",
-        "en": "Power Drinks"
+        "ar": "مشروبات طاقة ريد بول",
+        "en": "Red Bull Energy Drinks"
       },
       "posPrefix": {
-        "ar": "باور درينك",
-        "en": "Power Drink"
+        "ar": "باور",
+        "en": "Power"
       },
       "items": [
         {
@@ -1432,9 +1432,23 @@
           "barcode": "000270",
           "cost": null,
           "price": 140
-        },
+        }
+      ]
+    },
+    {
+      "id": 150,
+      "key": "twist",
+      "name": {
+        "ar": "تويست",
+        "en": "Twist"
+      },
+      "posPrefix": {
+        "ar": "تويست",
+        "en": "Twist"
+      },
+      "items": [
         {
-          "id": 120,
+          "id": 10,
           "name": {
             "ar": "فوروله تويست",
             "en": "Strawberry Twist"
@@ -1444,7 +1458,7 @@
           "price": 70
         },
         {
-          "id": 130,
+          "id": 20,
           "name": {
             "ar": "مانجو تويست",
             "en": "Mango Twist"
@@ -1454,7 +1468,7 @@
           "price": 80
         },
         {
-          "id": 140,
+          "id": 30,
           "name": {
             "ar": "خوخ تويست",
             "en": "Peach Twist"
@@ -1464,7 +1478,7 @@
           "price": 80
         },
         {
-          "id": 150,
+          "id": 40,
           "name": {
             "ar": "توت ازرق تويست",
             "en": "Blueberry Twist"
@@ -1474,7 +1488,7 @@
           "price": 75
         },
         {
-          "id": 160,
+          "id": 50,
           "name": {
             "ar": "بطيخ تويست",
             "en": "Watermelon Twist"
@@ -1484,7 +1498,7 @@
           "price": 85
         },
         {
-          "id": 170,
+          "id": 60,
           "name": {
             "ar": "باشن تويست",
             "en": "Passion Twist"
@@ -1494,7 +1508,7 @@
           "price": 90
         },
         {
-          "id": 180,
+          "id": 70,
           "name": {
             "ar": "توت تويست",
             "en": "Cherry Twist"
@@ -1504,7 +1518,7 @@
           "price": 80
         },
         {
-          "id": 190,
+          "id": 80,
           "name": {
             "ar": "ليمون تويست",
             "en": "Lemon Twist"
@@ -1514,7 +1528,7 @@
           "price": 65
         },
         {
-          "id": 200,
+          "id": 90,
           "name": {
             "ar": "تروبيكال تويست",
             "en": "Tropical Twist"
@@ -1522,9 +1536,23 @@
           "barcode": "000280",
           "cost": null,
           "price": 95
-        },
+        }
+      ]
+    },
+    {
+      "id": 160,
+      "key": "fury",
+      "name": {
+        "ar": "فيوري",
+        "en": "Fury"
+      },
+      "posPrefix": {
+        "ar": "فيوري",
+        "en": "Fury"
+      },
+      "items": [
         {
-          "id": 210,
+          "id": 10,
           "name": {
             "ar": "فراوله فيوري",
             "en": "Strawberry fury"
@@ -1534,7 +1562,7 @@
           "price": 80
         },
         {
-          "id": 220,
+          "id": 20,
           "name": {
             "ar": "مانجو فيوري",
             "en": "Mango fury"
@@ -1544,7 +1572,7 @@
           "price": 90
         },
         {
-          "id": 230,
+          "id": 30,
           "name": {
             "ar": "خوخ فيوري",
             "en": "Peach fury"
@@ -1554,7 +1582,7 @@
           "price": 85
         },
         {
-          "id": 240,
+          "id": 40,
           "name": {
             "ar": "بطيخ فيوري",
             "en": "Watermelon fury"
@@ -1564,7 +1592,7 @@
           "price": 85
         },
         {
-          "id": 250,
+          "id": 50,
           "name": {
             "ar": "توت ازرق فيوري",
             "en": "Blueberry fury"
@@ -1574,7 +1602,7 @@
           "price": 80
         },
         {
-          "id": 260,
+          "id": 60,
           "name": {
             "ar": "باشن فروت فيوري",
             "en": "Passion fury"
@@ -1584,7 +1612,7 @@
           "price": 90
         },
         {
-          "id": 270,
+          "id": 70,
           "name": {
             "ar": "تروبيكال فيوري",
             "en": "Tropical fury"
@@ -1594,7 +1622,7 @@
           "price": 100
         },
         {
-          "id": 280,
+          "id": 80,
           "name": {
             "ar": "توت فيوري",
             "en": "Cherry fury"
@@ -1604,7 +1632,7 @@
           "price": 85
         },
         {
-          "id": 290,
+          "id": 90,
           "name": {
             "ar": "ليمون فيوري",
             "en": "Lemon fury"
@@ -1616,7 +1644,38 @@
       ]
     },
     {
-      "id": 140,
+      "id": 170,
+      "key": "mixes",
+      "name": {
+        "ar": "ميكسات",
+        "en": "Mixes"
+      },
+      "posPrefix": {
+        "ar": "ميكس",
+        "en": "Mix"
+      },
+      "items": []
+    },
+    {
+      "id": 180,
+      "key": "desserts",
+      "name": {
+        "ar": "ديزرت وحلويات",
+        "en": "Desserts & Sweets"
+      },
+      "items": []
+    },
+    {
+      "id": 190,
+      "key": "breakfast",
+      "name": {
+        "ar": "فطار وسناكس",
+        "en": "Breakfast & Snacks"
+      },
+      "items": []
+    },
+    {
+      "id": 200,
       "key": "extras",
       "name": {
         "ar": "الإضافات",
@@ -1716,7 +1775,7 @@
       ]
     },
     {
-      "id": 150,
+      "id": 210,
       "key": "psTime",
       "name": {
         "ar": "بلايستيشن",

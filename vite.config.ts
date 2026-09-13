@@ -1,6 +1,7 @@
-import { defineConfig } from 'vite'
+import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import fs from 'node:fs'
 import path from 'node:path'
 
 // Vite config — https://vitejs.dev/config/
@@ -18,7 +19,7 @@ export default defineConfig({
       },
     },
   },
-  plugins: [react(), tailwindcss()],
+  plugins: [react(), tailwindcss(), menuJsonLd()],
   resolve: {
     alias: {
       '@': path.resolve(import.meta.dirname, './src'),
@@ -34,3 +35,28 @@ export default defineConfig({
     port: parseInt(process.env.PORT || '8443'),
   },
 })
+
+/**
+ * Fill the JSON-LD section list in index.html from src/menu.json. Sections are
+ * added and renamed through the data file, and the admin page republishes on
+ * every save, so a hand-kept copy in the HTML goes stale; this one rebuilds
+ * with the menu. Only sections that have drinks are listed.
+ */
+function menuJsonLd(): Plugin {
+  const TOKEN = '"%MENU_SECTIONS%"'
+  return {
+    name: 'menu-json-ld',
+    transformIndexHtml(html) {
+      if (!html.includes(TOKEN)) return html
+      const file = path.resolve(import.meta.dirname, 'src/menu.json')
+      const menu = JSON.parse(fs.readFileSync(file, 'utf8')) as {
+        sections: { id: number; name: { ar: string }; items: unknown[] }[]
+      }
+      const sections = [...menu.sections]
+        .sort((a, b) => a.id - b.id)
+        .filter((s) => s.items.length > 0)
+        .map((s) => ({ '@type': 'MenuSection', name: s.name.ar }))
+      return html.replace(TOKEN, JSON.stringify(sections))
+    },
+  }
+}

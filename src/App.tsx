@@ -334,27 +334,35 @@ function TwoColPage({ left, right, n }: { left: ReactNode; right: ReactNode; n: 
 // INNER PAGES
 // ═══════════════════════════════════════════════════════════════
 
-function InnerPages() {
-  const S = (d: Section, photo?: string) => <Section d={d} photo={photo}/>
+// Which sections share a sheet, and in which column. Sheets are composed by
+// hand because a section's length decides its neighbours. A sheet whose
+// sections are all still empty is skipped — otherwise a section created ahead
+// of its items would print a blank page — and the rest number themselves.
+type Slot = [key: string, photo?: string]
+const PAGES: { left: Slot[]; right: Slot[] }[] = [
+  { left: [['hotCoffee', P.espresso], ['icedCoffee', P.iced]], right: [['turkish'], ['tea', P.matcha]] },
+  { left: [['herbal', P.matcha]], right: [['chocolate'], ['winter'], ['mojito']] },
+  { left: [['milkshake', P.smoothie]], right: [['frappe'], ['juices']] },
+  { left: [['smoothie', P.smoothie], ['waterSoda'], ['psTime']], right: [['extras']] },
+  // مشروبات الطاقة (ريد بول + تويست + فيوري) get a page of their own so the
+  // family starts clean at the top of a sheet rather than trailing after an
+  // unrelated section. مكسات isn't part of that family, so it sits with the
+  // other new categories instead.
+  { left: [['powerDrinks']], right: [['twist'], ['fury']] },
+  { left: [['mixes']], right: [['desserts'], ['breakfast']] },
+]
 
+const hasItems = (slots: Slot[]) => slots.some(([key]) => (D[key]?.items.length ?? 0) > 0)
+
+function InnerPages() {
+  const column = (slots: Slot[]) => (
+    <>{slots.map(([key, photo]) => D[key] && <Section key={key} d={D[key]} photo={photo}/>)}</>
+  )
   return (
     <>
-      <TwoColPage n={1}
-        left={<>{S(D.hotCoffee, P.espresso)}{S(D.icedCoffee, P.iced)}</>}
-        right={<>{S(D.turkish)}{S(D.tea, P.matcha)}</>}
-      />
-      <TwoColPage n={2}
-        left={<>{S(D.herbal, P.matcha)}</>}
-        right={<>{S(D.chocolate)}{S(D.winter)}{S(D.mojito)}</>}
-      />
-      <TwoColPage n={3}
-        left={<>{S(D.milkshake, P.smoothie)}</>}
-        right={<>{S(D.frappe)}{S(D.juices)}</>}
-      />
-      <TwoColPage n={4}
-        left={<>{S(D.smoothie, P.smoothie)}{S(D.waterSoda)}{S(D.powerDrinks)}{S(D.psTime)}</>}
-        right={<>{S(D.extras)}</>}
-      />
+      {PAGES.filter((page) => hasItems(page.left) || hasItems(page.right)).map((page, n) => (
+        <TwoColPage key={n} n={n + 1} left={column(page.left)} right={column(page.right)}/>
+      ))}
     </>
   )
 }

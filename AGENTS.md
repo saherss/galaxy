@@ -19,7 +19,9 @@ their native binding on older versions, and the dev server fails to start.
 ## Project Structure
 
 - `index.html` — document shell; holds all SEO metadata, Open Graph/Twitter
-  tags, the Google Fonts `<link>`, and the `CafeOrCoffeeShop` JSON-LD block
+  tags, the Google Fonts `<link>`, and the `CafeOrCoffeeShop` JSON-LD block.
+  Its `hasMenuSection` list is a placeholder filled from `menu.json` at build
+  time by the `menuJsonLd` plugin in `vite.config.ts` — don't hand-edit it
 - `src/menu.json` — **the data**: sections, drinks, prices, translations,
   barcodes and costs. Everything the menu shows comes from here
 - `src/menu.ts` — types for that JSON plus the sorted `SECTIONS` / `BY_KEY`
@@ -64,9 +66,11 @@ from it — never the other way round.
 - `id` fixes the running order and is spaced by 10, so a new drink slots
   between two others without renumbering. Render paths sort by it.
 - The admin page edits drinks, not sections. A new section is added to
-  `menu.json` by hand and must also be placed in `InnerPages` in `App.tsx` —
-  pages are laid out by key, so an unplaced section never renders. Empty
-  sections render nothing, so one can be created before its drinks exist.
+  `menu.json` by hand and must also be placed in `PAGES` in `App.tsx` —
+  sheets are laid out by key, so an unplaced section never renders. Empty
+  sections render nothing and a sheet whose sections are all empty is
+  skipped (the rest renumber), so a section can be created before its drinks
+  exist.
 
 ## Direction
 
