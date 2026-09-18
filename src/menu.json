@@ -1685,7 +1685,28 @@
         "ar": "ديزرت وحلويات",
         "en": "Desserts & Sweets"
       },
-      "items": []
+      "items": [
+        {
+          "id": 10,
+          "name": {
+            "ar": "مولتن كيك",
+            "en": "Moltencake"
+          },
+          "barcode": "000292",
+          "cost": null,
+          "price": 115
+        },
+        {
+          "id": 20,
+          "name": {
+            "ar": "تشيز كيك",
+            "en": "Cheesecake"
+          },
+          "barcode": "000293",
+          "cost": null,
+          "price": 110
+        }
+      ]
     },
     {
       "id": 190,
@@ -2259,5 +2280,5 @@
       "archived": true
     }
   ],
-  "lastBarcode": "000291"
+  "lastBarcode": "000293"
 }
