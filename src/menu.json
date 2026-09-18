@@ -108,6 +108,16 @@
           "price": 125,
           "barcode": "000028",
           "cost": null
+        },
+        {
+          "id": 110,
+          "name": {
+            "ar": "نسكافيه لبن",
+            "en": "Niscafe"
+          },
+          "barcode": "000291",
+          "cost": null,
+          "price": 75
         }
       ]
     },
@@ -2249,5 +2259,5 @@
       "archived": true
     }
   ],
-  "lastBarcode": "000290"
+  "lastBarcode": "000291"
 }
