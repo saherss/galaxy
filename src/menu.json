@@ -819,7 +819,7 @@
             "ar": "كيندر",
             "en": "Kinder"
           },
-          "price": 130,
+          "price": 150,
           "barcode": "000099",
           "cost": null
         },
@@ -829,7 +829,7 @@
             "ar": "سنيكرز",
             "en": "Snickers"
           },
-          "price": 130,
+          "price": 160,
           "barcode": "000100",
           "cost": null
         }
