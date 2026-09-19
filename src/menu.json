@@ -698,16 +698,6 @@
           "price": 85,
           "barcode": "000084",
           "cost": null
-        },
-        {
-          "id": 100,
-          "name": {
-            "ar": "بيناكولادا",
-            "en": "Piña Colada"
-          },
-          "price": 90,
-          "barcode": "000085",
-          "cost": null
         }
       ],
       "posPrefix": {
@@ -1049,16 +1039,6 @@
           },
           "price": 95,
           "barcode": "000113",
-          "cost": null
-        },
-        {
-          "id": 110,
-          "name": {
-            "ar": "أفوكادو",
-            "en": "Avocado"
-          },
-          "price": 110,
-          "barcode": "000115",
           "cost": null
         },
         {
@@ -2276,6 +2256,22 @@
       "name": "",
       "category": "الباور درينك",
       "price": null,
+      "cost": null,
+      "archived": true
+    },
+    {
+      "barcode": "000085",
+      "name": "بيناكولادا",
+      "category": "الموهيتو",
+      "price": 90,
+      "cost": null,
+      "archived": true
+    },
+    {
+      "barcode": "000115",
+      "name": "أفوكادو",
+      "category": "العصائر الفريش",
+      "price": 110,
       "cost": null,
       "archived": true
     }
