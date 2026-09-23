@@ -1761,9 +1761,11 @@
             "ar": "آيس كريم (بولة)",
             "en": "Ice Cream (scoop)"
           },
-          "price": 45,
+          "price": 60,
           "barcode": "000134",
-          "cost": null
+          "cost": null,
+          "small": 35,
+          "barcodeSmall": "000298"
         },
         {
           "id": 30,
@@ -2316,5 +2318,5 @@
       "archived": true
     }
   ],
-  "lastBarcode": "000297"
+  "lastBarcode": "000298"
 }
