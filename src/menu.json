@@ -118,6 +118,16 @@
           "barcode": "000291",
           "cost": null,
           "price": 75
+        },
+        {
+          "id": 120,
+          "name": {
+            "ar": "نسكافيه",
+            "en": "Niscafe"
+          },
+          "barcode": "000294",
+          "cost": null,
+          "price": 55
         }
       ]
     },
@@ -1685,6 +1695,36 @@
           "barcode": "000293",
           "cost": null,
           "price": 110
+        },
+        {
+          "id": 30,
+          "name": {
+            "ar": "ريد فلفيد",
+            "en": "Red velved"
+          },
+          "barcode": "000295",
+          "cost": null,
+          "price": 95
+        },
+        {
+          "id": 40,
+          "name": {
+            "ar": "روشيه",
+            "en": "Rushee"
+          },
+          "barcode": "000296",
+          "cost": null,
+          "price": 100
+        },
+        {
+          "id": 50,
+          "name": {
+            "ar": "سينبون",
+            "en": "Senabon"
+          },
+          "barcode": "000297",
+          "cost": null,
+          "price": 65
         }
       ]
     },
@@ -1721,7 +1761,7 @@
             "ar": "آيس كريم (بولة)",
             "en": "Ice Cream (scoop)"
           },
-          "price": 35,
+          "price": 45,
           "barcode": "000134",
           "cost": null
         },
@@ -2276,5 +2316,5 @@
       "archived": true
     }
   ],
-  "lastBarcode": "000293"
+  "lastBarcode": "000297"
 }
