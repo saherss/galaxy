@@ -32,38 +32,38 @@
         {
           "id": 30,
           "name": {
-            "ar": "أمريكانو",
-            "en": "Americano"
+            "ar": "فلات ويت",
+            "en": "Flat white"
           },
-          "price": 70,
+          "price": 65,
           "barcode": "000021",
           "cost": null
         },
         {
           "id": 40,
           "name": {
-            "ar": "كابتشينو",
-            "en": "Cappuccino"
+            "ar": "كورتادو",
+            "en": "Cortado"
           },
-          "price": 85,
+          "price": 65,
           "barcode": "000022",
           "cost": null
         },
         {
           "id": 50,
           "name": {
-            "ar": "كافيه لاتيه",
-            "en": "Café Latte"
+            "ar": "كواترو",
+            "en": "Couatro"
           },
-          "price": 90,
+          "price": 65,
           "barcode": "000023",
           "cost": null
         },
         {
           "id": 60,
           "name": {
-            "ar": "فلات وايت",
-            "en": "Flat White"
+            "ar": "بون بون",
+            "en": "Ponpon"
           },
           "price": 75,
           "barcode": "000024",
@@ -72,62 +72,62 @@
         {
           "id": 70,
           "name": {
-            "ar": "كورتادو",
-            "en": "Cortado"
+            "ar": "ميكاتو دبل",
+            "en": "Mekato"
           },
-          "price": 90,
+          "price": 65,
           "barcode": "000025",
           "cost": null
         },
         {
           "id": 80,
           "name": {
-            "ar": "موكا",
-            "en": "Mocha"
+            "ar": "ديرتي",
+            "en": "Dirty"
           },
-          "price": 110,
+          "price": 85,
           "barcode": "000026",
           "cost": null
         },
         {
           "id": 90,
           "name": {
-            "ar": "سبانيش لاتيه",
-            "en": "Spanish Latte"
+            "ar": "موكا",
+            "en": "Moka"
           },
-          "price": 115,
+          "price": 85,
           "barcode": "000027",
           "cost": null
         },
         {
           "id": 100,
           "name": {
-            "ar": "كراميل لاتيه",
-            "en": "Caramel Latte"
+            "ar": "لاتيه",
+            "en": "Latte"
           },
-          "price": 125,
+          "price": 85,
           "barcode": "000028",
           "cost": null
         },
         {
           "id": 110,
           "name": {
-            "ar": "نسكافيه لبن",
-            "en": "Niscafe"
+            "ar": "سبانش لاتيه",
+            "en": "Spanish late"
           },
           "barcode": "000291",
           "cost": null,
-          "price": 75
+          "price": 90
         },
         {
           "id": 120,
           "name": {
-            "ar": "نسكافيه",
-            "en": "Niscafe"
+            "ar": "ماتشا لاتيه",
+            "en": "Matsha late"
           },
           "barcode": "000294",
           "cost": null,
-          "price": 55
+          "price": 90
         }
       ]
     },
@@ -142,40 +142,40 @@
         {
           "id": 10,
           "name": {
-            "ar": "آيس كوفي",
-            "en": "Iced Coffee"
+            "ar": "آيس لاتيه",
+            "en": "Ice  late"
           },
-          "price": 110,
+          "price": 85,
           "barcode": "000007",
           "cost": 60
         },
         {
           "id": 20,
           "name": {
-            "ar": "آيس أمريكانو",
-            "en": "Iced Americano"
+            "ar": "آيس سبانش",
+            "en": "Ice spanish"
           },
-          "price": 60,
+          "price": 95,
           "barcode": "000029",
           "cost": null
         },
         {
           "id": 30,
           "name": {
-            "ar": "آيس لاتيه",
+            "ar": "آيس موكا",
             "en": "Iced Latte"
           },
-          "price": 100,
+          "price": 90,
           "barcode": "000030",
           "cost": null
         },
         {
           "id": 40,
           "name": {
-            "ar": "آيس موكا",
-            "en": "Iced Mocha"
+            "ar": "آيس ماتشا لاتيه",
+            "en": "Icee Mocha"
           },
-          "price": 110,
+          "price": 95,
           "barcode": "000032",
           "cost": null
         },
@@ -183,41 +183,61 @@
           "id": 50,
           "name": {
             "ar": "آيس وايت موكا",
-            "en": "Iced White Mocha"
+            "en": "Iced White Mocka"
           },
-          "price": 120,
+          "price": 95,
           "barcode": "000033",
           "cost": null
         },
         {
           "id": 60,
           "name": {
-            "ar": "آيس فانيليا لاتيه",
-            "en": "Iced Vanilla Latte"
+            "ar": "آيس ميكاتو كارميل",
+            "en": "Ice Americano Carmel"
           },
-          "price": 110,
+          "price": 95,
           "barcode": "000034",
           "cost": null
         },
         {
           "id": 70,
           "name": {
-            "ar": "آيس سبانيش لاتيه",
-            "en": "Iced Spanish Latte"
+            "ar": "آيس سولتيد كارميل",
+            "en": "Iced Salted caramel"
           },
-          "price": 120,
+          "price": 95,
           "barcode": "000148",
           "cost": null
         },
         {
           "id": 80,
           "name": {
-            "ar": "ايس كوفي نوتيلا",
-            "en": "Ice coffee notila"
+            "ar": "ايس امريكانو",
+            "en": "Ice Americano"
           },
-          "barcode": "000253",
+          "barcode": "000299",
           "cost": null,
-          "price": 135
+          "price": 80
+        },
+        {
+          "id": 90,
+          "name": {
+            "ar": "ايس لونج بلاك",
+            "en": "Ice long black"
+          },
+          "barcode": "000300",
+          "cost": null,
+          "price": 80
+        },
+        {
+          "id": 100,
+          "name": {
+            "ar": "ايس ديرتي",
+            "en": "Ice dirty"
+          },
+          "barcode": "000301",
+          "cost": null,
+          "price": 90
         }
       ]
     },
@@ -2316,7 +2336,15 @@
       "price": 110,
       "cost": null,
       "archived": true
+    },
+    {
+      "barcode": "000253",
+      "name": "",
+      "category": "القهوة الباردة",
+      "price": 135,
+      "cost": null,
+      "archived": true
     }
   ],
-  "lastBarcode": "000298"
+  "lastBarcode": "000301"
 }
