@@ -252,58 +252,58 @@
         {
           "id": 10,
           "name": {
-            "ar": "تركي غامق دابل",
-            "en": "Turkish Dark, Double"
+            "ar": "تركي سنجل",
+            "en": "Turkish single"
           },
-          "price": 55,
+          "price": 40,
           "barcode": "000229",
           "cost": null
         },
         {
           "id": 20,
           "name": {
-            "ar": "تركي وسط سينجل",
-            "en": "Turkish Medium, Single"
+            "ar": "تركي  دبل",
+            "en": "Turkish double"
           },
-          "price": 40,
+          "price": 50,
           "barcode": "000230",
           "cost": null
         },
         {
           "id": 30,
           "name": {
-            "ar": "تركي وسط دابل",
-            "en": "Turkish Medium, Double"
+            "ar": "فرنساوي",
+            "en": "Frinsh cafee"
           },
-          "price": 55,
+          "price": 60,
           "barcode": "000231",
           "cost": null
         },
         {
           "id": 40,
           "name": {
-            "ar": "تركي فاتح سينجل",
-            "en": "Turkish Light, Single"
+            "ar": "بندق",
+            "en": "Hazelnut"
           },
-          "price": 40,
+          "price": 60,
           "barcode": "000232",
           "cost": null
         },
         {
           "id": 50,
           "name": {
-            "ar": "تركي فاتح دابل",
-            "en": "Turkish Light, Double"
+            "ar": "نسكافيه بلاك",
+            "en": "Niscafe black"
           },
-          "price": 55,
+          "price": 40,
           "barcode": "000233",
           "cost": null
         },
         {
           "id": 60,
           "name": {
-            "ar": "فرنساوي كلاسيك",
-            "en": "French Classic"
+            "ar": "نسكافيه حليب",
+            "en": "Niscafe milk"
           },
           "price": 70,
           "barcode": "000234",
@@ -312,32 +312,62 @@
         {
           "id": 70,
           "name": {
-            "ar": "فرنساوي بندق",
-            "en": "French Hazelnut"
+            "ar": "أعشاب",
+            "en": "Hearbis"
           },
-          "price": 90,
+          "price": 30,
           "barcode": "000235",
           "cost": null
         },
         {
           "id": 80,
           "name": {
-            "ar": "فرنساوي تشوكليت",
-            "en": "French Chocolate"
+            "ar": "شاي",
+            "en": "Tea"
           },
-          "price": 75,
+          "price": 25,
           "barcode": "000236",
           "cost": null
         },
         {
           "id": 90,
           "name": {
-            "ar": "فرنساوي فانيليا",
-            "en": "French Vanilla"
+            "ar": "شاي اخضر",
+            "en": "Green tea"
           },
-          "price": 75,
+          "price": 35,
           "barcode": "000237",
           "cost": null
+        },
+        {
+          "id": 100,
+          "name": {
+            "ar": "شاي حليب",
+            "en": "Tea milk"
+          },
+          "barcode": "000302",
+          "cost": null,
+          "price": 45
+        },
+        {
+          "id": 110,
+          "name": {
+            "ar": "شاي كرك",
+            "en": "Kark tea"
+          },
+          "barcode": "000304",
+          "cost": null,
+          "price": 35
+        },
+        {
+          "id": 130,
+          "name": {
+            "ar": "فيتامين سي",
+            "en": "Vitamin’s C"
+          },
+          "barcode": "000306",
+          "cost": null,
+          "price": 60
         }
       ]
     },
@@ -2344,7 +2374,23 @@
       "price": 135,
       "cost": null,
       "archived": true
+    },
+    {
+      "barcode": "000303",
+      "name": "",
+      "category": "القهوة",
+      "price": null,
+      "cost": null,
+      "archived": true
+    },
+    {
+      "barcode": "000305",
+      "name": "",
+      "category": "القهوة",
+      "price": null,
+      "cost": null,
+      "archived": true
     }
   ],
-  "lastBarcode": "000301"
+  "lastBarcode": "000306"
 }
