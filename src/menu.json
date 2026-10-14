@@ -25,7 +25,7 @@
             "ar": "إسبريسو دابل",
             "en": "Espresso Double"
           },
-          "price": 60,
+          "price": 55,
           "barcode": "000020",
           "cost": null
         },
@@ -35,7 +35,7 @@
             "ar": "أمريكانو",
             "en": "Americano"
           },
-          "price": 80,
+          "price": 70,
           "barcode": "000021",
           "cost": null
         },
@@ -55,7 +55,7 @@
             "ar": "كافيه لاتيه",
             "en": "Café Latte"
           },
-          "price": 100,
+          "price": 90,
           "barcode": "000023",
           "cost": null
         },
@@ -65,7 +65,7 @@
             "ar": "فلات وايت",
             "en": "Flat White"
           },
-          "price": 100,
+          "price": 75,
           "barcode": "000024",
           "cost": null
         },
