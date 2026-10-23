@@ -29,7 +29,7 @@ export type Section = {
    *  headings to tell one bare `مانجو` from another. */
   posPrefix?: Localized
   /** Parent category shown above several sections that belong together
-   *  (مشروبات الطاقة over ريد بول / تويست / فيوري). Sections sharing one
+   *  (مشروبات الطاقة over ريد بول). Sections sharing one
    *  group must sit on the same page — PAGES reads this to label it. */
   group?: Localized
   items: Item[]

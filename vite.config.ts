@@ -54,9 +54,9 @@ function menuJsonLd(): Plugin {
       }
       const priced = [...menu.sections].sort((a, b) => a.id - b.id).filter((s) => s.items.length > 0)
 
-      // Sections sharing a `group` (ريد بول / تويست / فيوري under مشروبات
-      // الطاقة) nest under one parent MenuSection, matching the shared page
-      // heading on the printed menu instead of listing as three flat peers.
+      // Sections sharing a `group` (ريد بول under مشروبات الطاقة) nest under
+      // one parent MenuSection, matching the shared page heading on the
+      // printed menu instead of listing as flat peers.
       const sections: unknown[] = []
       const nested = new Map<string, { '@type': string; name: string; hasMenuSection: unknown[] }>()
       for (const s of priced) {

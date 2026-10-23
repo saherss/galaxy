@@ -1590,40 +1590,6 @@
       }
     },
     {
-      "id": 150,
-      "key": "twist",
-      "name": {
-        "ar": "تويست",
-        "en": "Twist"
-      },
-      "posPrefix": {
-        "ar": "تويست",
-        "en": "Twist"
-      },
-      "items": [],
-      "group": {
-        "ar": "مشروبات الطاقة",
-        "en": "Energy Drinks"
-      }
-    },
-    {
-      "id": 160,
-      "key": "fury",
-      "name": {
-        "ar": "فيوري",
-        "en": "Fury"
-      },
-      "posPrefix": {
-        "ar": "فيوري",
-        "en": "Fury"
-      },
-      "items": [],
-      "group": {
-        "ar": "مشروبات الطاقة",
-        "en": "Energy Drinks"
-      }
-    },
-    {
       "id": 170,
       "key": "mixes",
       "name": {
