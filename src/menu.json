@@ -982,6 +982,26 @@
           "barcode": "000318",
           "cost": null,
           "price": 110
+        },
+        {
+          "id": 150,
+          "name": {
+            "ar": "كيوي",
+            "en": "Kiwe"
+          },
+          "barcode": "000332",
+          "cost": null,
+          "price": 145
+        },
+        {
+          "id": 160,
+          "name": {
+            "ar": "خوخ",
+            "en": "Beach"
+          },
+          "barcode": "000333",
+          "cost": null,
+          "price": 145
         }
       ],
       "posPrefix": {
@@ -1260,6 +1280,26 @@
           "barcode": "000254",
           "cost": null,
           "price": 140
+        },
+        {
+          "id": 180,
+          "name": {
+            "ar": "كيوي",
+            "en": "Kiwe"
+          },
+          "barcode": "000334",
+          "cost": null,
+          "price": 120
+        },
+        {
+          "id": 190,
+          "name": {
+            "ar": "خوخ",
+            "en": "Beach"
+          },
+          "barcode": "000335",
+          "cost": null,
+          "price": 120
         }
       ],
       "posPrefix": {
@@ -1488,6 +1528,16 @@
           "barcode": "000326",
           "cost": null,
           "price": 90
+        },
+        {
+          "id": 110,
+          "name": {
+            "ar": "صودا",
+            "en": "Soda"
+          },
+          "barcode": "000361",
+          "cost": null,
+          "price": 35
         }
       ]
     },
@@ -1506,82 +1556,74 @@
         {
           "id": 20,
           "name": {
-            "ar": "ريد بول ليمون",
-            "en": "Lemon power"
+            "ar": "فانيلا",
+            "en": "Vanilla"
           },
           "barcode": "000261",
           "cost": null,
-          "price": 120
+          "price": 50,
+          "small": 35,
+          "barcodeSmall": "000338"
         },
         {
           "id": 30,
           "name": {
-            "ar": "خوخ باور",
-            "en": "Peach power"
+            "ar": "شوكلاته",
+            "en": "Chocolate"
           },
           "barcode": "000262",
           "cost": null,
-          "price": 130
+          "price": 50,
+          "small": 35,
+          "barcodeSmall": "000339"
         },
         {
           "id": 40,
           "name": {
-            "ar": "مانجو باور",
-            "en": "Mango power"
+            "ar": "مانجو",
+            "en": "Mango"
           },
           "barcode": "000263",
           "cost": null,
-          "price": 135
+          "price": 50,
+          "small": 35,
+          "barcodeSmall": "000340"
         },
         {
           "id": 50,
           "name": {
-            "ar": "أناناس باور",
-            "en": "Pineapple power"
+            "ar": "بيستاشيو",
+            "en": "Pistachio"
           },
           "barcode": "000264",
           "cost": null,
-          "price": 135
+          "price": 60,
+          "small": 40,
+          "barcodeSmall": "000341"
         },
         {
           "id": 60,
           "name": {
-            "ar": "بطيخ باور",
-            "en": "Water melone"
+            "ar": "سنكرز",
+            "en": "Snikers"
           },
           "barcode": "000265",
           "cost": null,
-          "price": 135
+          "price": 60,
+          "small": 40,
+          "barcodeSmall": "000342"
         },
         {
           "id": 70,
           "name": {
-            "ar": "بلو بيري باور",
-            "en": "Blueberry power"
+            "ar": "بلو بيري",
+            "en": "Blueberry"
           },
           "barcode": "000266",
           "cost": null,
-          "price": 130
-        },
-        {
-          "id": 80,
-          "name": {
-            "ar": "شيري باور",
-            "en": "Cheery power"
-          },
-          "barcode": "000267",
-          "cost": null,
-          "price": 130
-        },
-        {
-          "id": 90,
-          "name": {
-            "ar": "جوز هند باور",
-            "en": "Coconut power"
-          },
-          "barcode": "000268",
-          "cost": null,
-          "price": 140
+          "price": 60,
+          "small": 40,
+          "barcodeSmall": "000343"
         }
       ],
       "group": {
@@ -1668,7 +1710,17 @@
           },
           "barcode": "000328",
           "cost": null,
-          "price": 65
+          "price": 75
+        },
+        {
+          "id": 70,
+          "name": {
+            "ar": "وافل",
+            "en": "Waffle"
+          },
+          "barcode": "000362",
+          "cost": null,
+          "price": 110
         }
       ]
     },
@@ -1699,6 +1751,98 @@
           "barcode": "000331",
           "cost": null,
           "price": 20
+        },
+        {
+          "id": 30,
+          "name": {
+            "ar": "باكيت باتيه ٤ قطع",
+            "en": "D"
+          },
+          "barcode": "000336",
+          "cost": null,
+          "price": 50
+        },
+        {
+          "id": 40,
+          "name": {
+            "ar": "كروسون",
+            "en": "D"
+          },
+          "barcode": "000337",
+          "cost": null,
+          "price": 35
+        },
+        {
+          "id": 50,
+          "name": {
+            "ar": "سندوتش جبنه فيتا",
+            "en": "Sandwich vita"
+          },
+          "barcode": "000344",
+          "cost": null,
+          "price": 40,
+          "small": 25,
+          "barcodeSmall": "000346"
+        },
+        {
+          "id": 60,
+          "name": {
+            "ar": "سندوتش رومي",
+            "en": "Sandwich romy"
+          },
+          "barcode": "000345",
+          "cost": null,
+          "price": 50,
+          "small": 30,
+          "barcodeSmall": "000350"
+        },
+        {
+          "id": 70,
+          "name": {
+            "ar": "حلاوه",
+            "en": "Sandwich"
+          },
+          "barcode": "000348",
+          "cost": null,
+          "price": 40,
+          "small": 25,
+          "barcodeSmall": "000349"
+        },
+        {
+          "id": 80,
+          "name": {
+            "ar": "سندوتش كيري",
+            "en": "Kerry sandwich"
+          },
+          "barcode": "000351",
+          "cost": null,
+          "price": 50,
+          "small": 35,
+          "barcodeSmall": "000352"
+        },
+        {
+          "id": 90,
+          "name": {
+            "ar": "سندوتش حلاوه بالقشطه",
+            "en": "Sweet k"
+          },
+          "barcode": "000353",
+          "cost": null,
+          "price": 50,
+          "small": 30,
+          "barcodeSmall": "000354"
+        },
+        {
+          "id": 100,
+          "name": {
+            "ar": "سندوتش مربي",
+            "en": "Geeky sweet"
+          },
+          "barcode": "000355",
+          "cost": null,
+          "price": 40,
+          "small": 20,
+          "barcodeSmall": "000356"
         }
       ]
     },
@@ -1716,91 +1860,41 @@
             "ar": "شوت إسبريسو",
             "en": "Espresso Shot"
           },
-          "price": 45,
-          "barcode": "000131",
-          "cost": null
-        },
-        {
-          "id": 20,
-          "name": {
-            "ar": "آيس كريم (بولة)",
-            "en": "Ice Cream (scoop)"
-          },
           "price": 60,
-          "barcode": "000134",
+          "barcode": "000131",
           "cost": null,
-          "small": 35,
-          "barcodeSmall": "000298"
-        },
-        {
-          "id": 30,
-          "name": {
-            "ar": "صوص شوكليت",
-            "en": "Chocolate Sauce"
-          },
-          "price": 20,
-          "barcode": "000135",
-          "cost": null
-        },
-        {
-          "id": 40,
-          "name": {
-            "ar": "صوص وايت",
-            "en": "White Sauce"
-          },
-          "price": 20,
-          "barcode": "000136",
-          "cost": null
-        },
-        {
-          "id": 50,
-          "name": {
-            "ar": "صوص كراميل",
-            "en": "Caramel Sauce"
-          },
-          "price": 20,
-          "barcode": "000137",
-          "cost": null
+          "small": 45,
+          "barcodeSmall": "000358"
         },
         {
           "id": 60,
           "name": {
-            "ar": "سيرب فانيليا",
-            "en": "Vanilla Syrup"
+            "ar": "صوص",
+            "en": "Souse"
           },
-          "price": 20,
+          "price": 25,
           "barcode": "000139",
           "cost": null
         },
         {
           "id": 70,
           "name": {
-            "ar": "سيرب ليمون",
-            "en": "Lemon Syrup"
+            "ar": "مكسرات",
+            "en": "Nuts"
           },
-          "price": 20,
-          "barcode": "000144",
-          "cost": null
+          "barcode": "000357",
+          "cost": null,
+          "price": 25
         },
         {
           "id": 80,
           "name": {
-            "ar": "سيرب بطيخ",
-            "en": "Watermelon Syrup"
+            "ar": "قرفه عيدان",
+            "en": "E bars"
           },
-          "price": 30,
-          "barcode": "000146",
-          "cost": null
-        },
-        {
-          "id": 90,
-          "name": {
-            "ar": "سيرب جوز الهند",
-            "en": "Coconut Syrup"
-          },
-          "price": 30,
-          "barcode": "000147",
-          "cost": null
+          "barcode": "000360",
+          "cost": null,
+          "price": 15
         }
       ]
     },
@@ -2545,7 +2639,95 @@
       "price": 80,
       "cost": null,
       "archived": true
+    },
+    {
+      "barcode": "000268",
+      "name": "جوز هند باور",
+      "category": "ريد بول",
+      "price": 140,
+      "cost": null,
+      "archived": true
+    },
+    {
+      "barcode": "000267",
+      "name": "",
+      "category": "ريد بول",
+      "price": 130,
+      "cost": null,
+      "archived": true
+    },
+    {
+      "barcode": "000134",
+      "name": "آيس كريم (بولة)",
+      "category": "الإضافات",
+      "price": 60,
+      "cost": null,
+      "archived": true
+    },
+    {
+      "barcode": "000298",
+      "name": "آيس كريم (بولة) - صغير",
+      "category": "الإضافات",
+      "price": 35,
+      "cost": null,
+      "archived": true
+    },
+    {
+      "barcode": "000147",
+      "name": "سيرب جوز الهند",
+      "category": "الإضافات",
+      "price": 30,
+      "cost": null,
+      "archived": true
+    },
+    {
+      "barcode": "000144",
+      "name": "سيرب ليمون",
+      "category": "الإضافات",
+      "price": 20,
+      "cost": null,
+      "archived": true
+    },
+    {
+      "barcode": "000146",
+      "name": "سيرب بطيخ",
+      "category": "الإضافات",
+      "price": 30,
+      "cost": null,
+      "archived": true
+    },
+    {
+      "barcode": "000135",
+      "name": "صوص شوكليت",
+      "category": "الإضافات",
+      "price": 20,
+      "cost": null,
+      "archived": true
+    },
+    {
+      "barcode": "000136",
+      "name": "صوص وايت",
+      "category": "الإضافات",
+      "price": 20,
+      "cost": null,
+      "archived": true
+    },
+    {
+      "barcode": "000137",
+      "name": "صوص كراميل",
+      "category": "الإضافات",
+      "price": 20,
+      "cost": null,
+      "archived": true
+    },
+    {
+      "barcode": "000359",
+      "name": "او",
+      "category": "الإضافات",
+      "price": null,
+      "cost": null,
+      "archived": true
     }
   ],
-  "lastBarcode": "000331"
+  "lastBarcode": "000362"
 }
