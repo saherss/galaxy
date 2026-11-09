@@ -658,6 +658,26 @@
           "barcode": "000312",
           "cost": null,
           "price": 120
+        },
+        {
+          "id": 60,
+          "name": {
+            "ar": "هوت شوكليت بيستاشيو",
+            "en": "Chocolate pistachio"
+          },
+          "barcode": "000366",
+          "cost": null,
+          "price": 90
+        },
+        {
+          "id": 70,
+          "name": {
+            "ar": "هوت شوكليت مارشميلو",
+            "en": "Marshmallow"
+          },
+          "barcode": "000367",
+          "cost": null,
+          "price": 90
         }
       ]
     },
@@ -718,6 +738,36 @@
           "price": 40,
           "barcode": "000074",
           "cost": null
+        },
+        {
+          "id": 60,
+          "name": {
+            "ar": "سحلب لوتس",
+            "en": "Lutas"
+          },
+          "barcode": "000363",
+          "cost": null,
+          "price": 90
+        },
+        {
+          "id": 70,
+          "name": {
+            "ar": "سحلب بيستاشيو",
+            "en": "Pistachio"
+          },
+          "barcode": "000364",
+          "cost": null,
+          "price": 90
+        },
+        {
+          "id": 80,
+          "name": {
+            "ar": "سحلب مارشميلو",
+            "en": "Marshmallow"
+          },
+          "barcode": "000365",
+          "cost": null,
+          "price": 90
         }
       ]
     },
@@ -2727,7 +2777,15 @@
       "price": null,
       "cost": null,
       "archived": true
+    },
+    {
+      "barcode": "000368",
+      "name": "",
+      "category": "مشروبات شوكولاتة",
+      "price": null,
+      "cost": null,
+      "archived": true
     }
   ],
-  "lastBarcode": "000362"
+  "lastBarcode": "000368"
 }
