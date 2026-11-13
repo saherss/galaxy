@@ -54,7 +54,7 @@ function menuJsonLd(): Plugin {
       }
       const priced = [...menu.sections].sort((a, b) => a.id - b.id).filter((s) => s.items.length > 0)
 
-      // Sections sharing a `group` (ريد بول under مشروبات الطاقة) nest under
+      // Sections sharing a `group` (a family over its brands) nest under
       // one parent MenuSection, matching the shared page heading on the
       // printed menu instead of listing as flat peers.
       const sections: unknown[] = []

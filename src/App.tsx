@@ -296,8 +296,8 @@ function Page({ children, pageNum }: { children: ReactNode; pageNum: number }) {
 
 // Page header (brand + divider + label)
 // A category label spanning a whole page, for when several sections on it
-// belong to one family (مشروبات الطاقة over ريد بول). Each section keeps its
-// own smaller SectionHeader underneath.
+// belong to one family (a shared `group` in menu.json). Each section keeps
+// its own smaller SectionHeader underneath.
 function PageGroupHeading({ name }: { name: Localized }) {
   const lang = useLang()
   const dir = useDir()
@@ -368,15 +368,7 @@ const PAGES: PageDef[] = [
   { left: [['herbal', P.matcha]], right: [['chocolate'], ['winter'], ['mojito']] },
   { left: [['milkshake', P.smoothie]], right: [['frappe'], ['juices']] },
   { left: [['smoothie', P.smoothie], ['waterSoda'], ['psTime']], right: [['extras']] },
-  // مشروبات الطاقة is the parent category; ريد بول is the brand under it
-  // (D.powerDrinks.group in menu.json, so the label can't drift from what
-  // the sections themselves declare). The page gets a
-  // shared heading so that reads clearly, and the family starts clean at
-  // the top of a sheet rather than trailing after an unrelated section.
-  // مكسات isn't part of that family, so it sits with the other new
-  // categories instead.
-  { left: [['powerDrinks']], right: [], title: D.powerDrinks?.group },
-  { left: [['mixes']], right: [['desserts'], ['breakfast']] },
+  { left: [['iceCream'], ['mixes']], right: [['desserts'], ['breakfast']] },
 ]
 
 const hasItems = (slots: Slot[]) => slots.some(([key]) => (D[key]?.items.length ?? 0) > 0)

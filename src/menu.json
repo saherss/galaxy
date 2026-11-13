@@ -1593,14 +1593,14 @@
     },
     {
       "id": 140,
-      "key": "powerDrinks",
+      "key": "iceCream",
       "name": {
-        "ar": "ريد بول",
-        "en": "Red Bull"
+        "ar": "آيس كريم",
+        "en": "Ice Cream"
       },
       "posPrefix": {
-        "ar": "باور",
-        "en": "Power"
+        "ar": "آيس كريم",
+        "en": "Ice Cream"
       },
       "items": [
         {
@@ -1675,11 +1675,7 @@
           "small": 40,
           "barcodeSmall": "000343"
         }
-      ],
-      "group": {
-        "ar": "مشروبات الطاقة",
-        "en": "Energy Drinks"
-      }
+      ]
     },
     {
       "id": 170,
