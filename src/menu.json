@@ -1052,6 +1052,16 @@
           "barcode": "000333",
           "cost": null,
           "price": 145
+        },
+        {
+          "id": 170,
+          "name": {
+            "ar": "ميلك شيك فشار",
+            "en": "Popcorn milkshake"
+          },
+          "barcode": "000378",
+          "cost": null,
+          "price": 135
         }
       ],
       "posPrefix": {
@@ -1314,7 +1324,7 @@
         {
           "id": 160,
           "name": {
-            "ar": "مينت بنانا",
+            "ar": "موز نعناع",
             "en": "Mint banana"
           },
           "barcode": "000247",
@@ -2862,5 +2872,5 @@
       "archived": true
     }
   ],
-  "lastBarcode": "000377"
+  "lastBarcode": "000378"
 }
