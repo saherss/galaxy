@@ -1350,6 +1350,16 @@
           "barcode": "000335",
           "cost": null,
           "price": 120
+        },
+        {
+          "id": 200,
+          "name": {
+            "ar": "كانتالوب",
+            "en": "Cantalop"
+          },
+          "barcode": "000369",
+          "cost": null,
+          "price": 80
         }
       ],
       "posPrefix": {
@@ -1688,7 +1698,68 @@
         "ar": "ميكس",
         "en": "Mix"
       },
-      "items": []
+      "items": [
+        {
+          "id": 10,
+          "name": {
+            "ar": "ماتشا فانيليا",
+            "en": "Vanilla Matsha"
+          },
+          "barcode": "000371",
+          "cost": null,
+          "price": 110
+        },
+        {
+          "id": 20,
+          "name": {
+            "ar": "ماتشا عسل",
+            "en": "Matsha honey"
+          },
+          "barcode": "000372",
+          "cost": null,
+          "price": 120
+        },
+        {
+          "id": 30,
+          "name": {
+            "ar": "ماتشا مانجو",
+            "en": "Mango matsha"
+          },
+          "barcode": "000373",
+          "cost": null,
+          "price": 120
+        },
+        {
+          "id": 40,
+          "name": {
+            "ar": "ماتشا جوز هند",
+            "en": "Coconuts matsha"
+          },
+          "barcode": "000374",
+          "cost": null,
+          "price": 120
+        },
+        {
+          "id": 50,
+          "name": {
+            "ar": "ماتشا فروله",
+            "en": "Strawberry matsha"
+          },
+          "barcode": "000375",
+          "cost": null,
+          "price": 120
+        },
+        {
+          "id": 60,
+          "name": {
+            "ar": "ماتشا بلو بيري",
+            "en": "Matsha blueberry"
+          },
+          "barcode": "000376",
+          "cost": null,
+          "price": 120
+        }
+      ]
     },
     {
       "id": 180,
@@ -2781,7 +2852,15 @@
       "price": null,
       "cost": null,
       "archived": true
+    },
+    {
+      "barcode": "000377",
+      "name": "",
+      "category": "ميكسات",
+      "price": null,
+      "cost": null,
+      "archived": true
     }
   ],
-  "lastBarcode": "000368"
+  "lastBarcode": "000377"
 }
